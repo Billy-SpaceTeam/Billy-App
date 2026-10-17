@@ -16,5 +16,12 @@ namespace Billy_App
         {
             InitializeComponent();
         }
+
+        private void m_MenuConnection_Click(object sender, EventArgs e)
+        {
+            Connection connection = new Connection();
+            connection.Dock = DockStyle.Fill;
+            this.Controls.Add(connection);
+        }
     }
 }
