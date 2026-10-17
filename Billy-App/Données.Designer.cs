@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.m_LblLiaisonSerie = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,13 +38,14 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Location = new System.Drawing.Point(436, 225);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(591, 362);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -54,7 +55,7 @@
             this.m_LblLiaisonSerie.AutoSize = true;
             this.m_LblLiaisonSerie.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblLiaisonSerie.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblLiaisonSerie.Location = new System.Drawing.Point(41, 63);
+            this.m_LblLiaisonSerie.Location = new System.Drawing.Point(45, 68);
             this.m_LblLiaisonSerie.Name = "m_LblLiaisonSerie";
             this.m_LblLiaisonSerie.Size = new System.Drawing.Size(117, 26);
             this.m_LblLiaisonSerie.TabIndex = 2;

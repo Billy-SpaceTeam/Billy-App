@@ -40,6 +40,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_PanelMenu = new System.Windows.Forms.Panel();
+            this.m_TimerSecondes = new System.Windows.Forms.Timer(this.components);
             this.m_StatBarre.SuspendLayout();
             this.m_Menu.SuspendLayout();
             this.SuspendLayout();
@@ -155,6 +156,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.Panel m_PanelMenu;
+        private System.Windows.Forms.Timer m_TimerSecondes;
     }
 }
 

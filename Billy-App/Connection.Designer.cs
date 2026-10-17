@@ -36,6 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.m_BoxBauds = new System.Windows.Forms.ComboBox();
             this.m_BpConnecter = new System.Windows.Forms.Button();
+            this.m_TxtBoxConnection = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // m_BpDetecter
@@ -117,10 +118,20 @@
             this.m_BpConnecter.Text = "Se Connecter";
             this.m_BpConnecter.UseVisualStyleBackColor = true;
             // 
+            // m_TxtBoxConnection
+            // 
+            this.m_TxtBoxConnection.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_TxtBoxConnection.Location = new System.Drawing.Point(0, 400);
+            this.m_TxtBoxConnection.Name = "m_TxtBoxConnection";
+            this.m_TxtBoxConnection.Size = new System.Drawing.Size(1070, 230);
+            this.m_TxtBoxConnection.TabIndex = 8;
+            this.m_TxtBoxConnection.Text = "";
+            // 
             // Connection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.m_TxtBoxConnection);
             this.Controls.Add(this.m_BpConnecter);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.m_BoxBauds);
@@ -146,5 +157,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox m_BoxBauds;
         private System.Windows.Forms.Button m_BpConnecter;
+        private System.Windows.Forms.RichTextBox m_TxtBoxConnection;
     }
 }
