@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,13 @@ namespace Billy_App
         public Connection()
         {
             InitializeComponent();
+        }
+
+        private void m_BpDetecter_Click(object sender, EventArgs e)
+        {
+            string[] ports = SerialPort.GetPortNames();
+            //SerialPort port = new SerialPort(ports[0]);
+
         }
     }
 }

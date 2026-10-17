@@ -19,37 +19,41 @@ namespace Billy_App
 
         private void m_MenuConnection_Click(object sender, EventArgs e)
         {
+            m_PanelMenu.Controls.Clear();
             Connection connection = new Connection();
             connection.Dock = DockStyle.Fill;
-            this.Controls.Add(connection);
+            m_PanelMenu.Controls.Add(connection);
         }
 
         private void m_MenuDonnées_Click(object sender, EventArgs e)
         {
+            m_PanelMenu.Controls.Clear();
             Données données = new Données();
             données.Dock = DockStyle.Fill;
-            this.Controls.Add(données);
+            m_PanelMenu.Controls.Add(données);
         }
 
         private void m_MenuActions_Click(object sender, EventArgs e)
         {
+            m_PanelMenu.Controls.Clear();
             Actions actions = new Actions();
             actions.Dock = DockStyle.Fill;
-            this.Controls.Add(actions);
+            m_PanelMenu.Controls.Add(actions);
         }
 
         private void m_MenuModes_Click(object sender, EventArgs e)
         {
+            m_PanelMenu.Controls.Clear();
             Modes modes = new Modes();
             modes.Dock = DockStyle.Fill;
-            this.Controls.Add(modes);
+            m_PanelMenu.Controls.Add(modes);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             Connection connection = new Connection();
             connection.Dock = DockStyle.Fill;
-            this.Controls.Add(connection);
+            m_PanelMenu .Controls.Add(connection);
         }
     }
 }
