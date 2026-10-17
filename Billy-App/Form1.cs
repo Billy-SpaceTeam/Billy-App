@@ -44,5 +44,12 @@ namespace Billy_App
             modes.Dock = DockStyle.Fill;
             this.Controls.Add(modes);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Connection connection = new Connection();
+            connection.Dock = DockStyle.Fill;
+            this.Controls.Add(connection);
+        }
     }
 }

@@ -99,6 +99,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Billy";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.m_Menu.ResumeLayout(false);
             this.m_Menu.PerformLayout();
             this.ResumeLayout(false);
