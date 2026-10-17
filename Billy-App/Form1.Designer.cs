@@ -32,18 +32,18 @@
             this.m_StatBarre = new System.Windows.Forms.StatusStrip();
             this.m_Menu = new System.Windows.Forms.MenuStrip();
             this.m_MenuConnection = new System.Windows.Forms.ToolStripMenuItem();
-            this.donnéesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.actionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_MenuDonnées = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_MenuActions = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_MenuModes = new System.Windows.Forms.ToolStripMenuItem();
             this.m_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_StatBarre
             // 
             this.m_StatBarre.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.m_StatBarre.Location = new System.Drawing.Point(0, 426);
+            this.m_StatBarre.Location = new System.Drawing.Point(0, 561);
             this.m_StatBarre.Name = "m_StatBarre";
-            this.m_StatBarre.Size = new System.Drawing.Size(800, 24);
+            this.m_StatBarre.Size = new System.Drawing.Size(1052, 22);
             this.m_StatBarre.TabIndex = 1;
             this.m_StatBarre.Text = "statusStrip1";
             // 
@@ -52,12 +52,12 @@
             this.m_Menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.m_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_MenuConnection,
-            this.donnéesToolStripMenuItem,
-            this.actionsToolStripMenuItem,
-            this.modesToolStripMenuItem});
+            this.m_MenuDonnées,
+            this.m_MenuActions,
+            this.m_MenuModes});
             this.m_Menu.Location = new System.Drawing.Point(0, 0);
             this.m_Menu.Name = "m_Menu";
-            this.m_Menu.Size = new System.Drawing.Size(800, 28);
+            this.m_Menu.Size = new System.Drawing.Size(1052, 28);
             this.m_Menu.TabIndex = 2;
             this.m_Menu.Text = "menuStrip1";
             // 
@@ -68,29 +68,32 @@
             this.m_MenuConnection.Text = "Connection";
             this.m_MenuConnection.Click += new System.EventHandler(this.m_MenuConnection_Click);
             // 
-            // donnéesToolStripMenuItem
+            // m_MenuDonnées
             // 
-            this.donnéesToolStripMenuItem.Name = "donnéesToolStripMenuItem";
-            this.donnéesToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
-            this.donnéesToolStripMenuItem.Text = "Données";
+            this.m_MenuDonnées.Name = "m_MenuDonnées";
+            this.m_MenuDonnées.Size = new System.Drawing.Size(81, 24);
+            this.m_MenuDonnées.Text = "Données";
+            this.m_MenuDonnées.Click += new System.EventHandler(this.m_MenuDonnées_Click);
             // 
-            // actionsToolStripMenuItem
+            // m_MenuActions
             // 
-            this.actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
-            this.actionsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
-            this.actionsToolStripMenuItem.Text = "Actions";
+            this.m_MenuActions.Name = "m_MenuActions";
+            this.m_MenuActions.Size = new System.Drawing.Size(72, 24);
+            this.m_MenuActions.Text = "Actions";
+            this.m_MenuActions.Click += new System.EventHandler(this.m_MenuActions_Click);
             // 
-            // modesToolStripMenuItem
+            // m_MenuModes
             // 
-            this.modesToolStripMenuItem.Name = "modesToolStripMenuItem";
-            this.modesToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
-            this.modesToolStripMenuItem.Text = "Modes";
+            this.m_MenuModes.Name = "m_MenuModes";
+            this.m_MenuModes.Size = new System.Drawing.Size(68, 24);
+            this.m_MenuModes.Text = "Modes";
+            this.m_MenuModes.Click += new System.EventHandler(this.m_MenuModes_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1052, 583);
             this.Controls.Add(this.m_StatBarre);
             this.Controls.Add(this.m_Menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -108,9 +111,9 @@
         private System.Windows.Forms.StatusStrip m_StatBarre;
         private System.Windows.Forms.MenuStrip m_Menu;
         private System.Windows.Forms.ToolStripMenuItem m_MenuConnection;
-        private System.Windows.Forms.ToolStripMenuItem donnéesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem actionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem m_MenuDonnées;
+        private System.Windows.Forms.ToolStripMenuItem m_MenuActions;
+        private System.Windows.Forms.ToolStripMenuItem m_MenuModes;
     }
 }
 

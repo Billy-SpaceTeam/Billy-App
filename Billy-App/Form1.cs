@@ -23,5 +23,26 @@ namespace Billy_App
             connection.Dock = DockStyle.Fill;
             this.Controls.Add(connection);
         }
+
+        private void m_MenuDonnées_Click(object sender, EventArgs e)
+        {
+            Données données = new Données();
+            données.Dock = DockStyle.Fill;
+            this.Controls.Add(données);
+        }
+
+        private void m_MenuActions_Click(object sender, EventArgs e)
+        {
+            Actions actions = new Actions();
+            actions.Dock = DockStyle.Fill;
+            this.Controls.Add(actions);
+        }
+
+        private void m_MenuModes_Click(object sender, EventArgs e)
+        {
+            Modes modes = new Modes();
+            modes.Dock = DockStyle.Fill;
+            this.Controls.Add(modes);
+        }
     }
 }
