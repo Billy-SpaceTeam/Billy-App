@@ -37,10 +37,13 @@
             this.m_MenuActions = new System.Windows.Forms.ToolStripMenuItem();
             this.m_MenuModes = new System.Windows.Forms.ToolStripMenuItem();
             this.m_SerialPort = new System.IO.Ports.SerialPort(this.components);
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.m_LblStatusConnection = new System.Windows.Forms.ToolStripStatusLabel();
+            this.m_TxtStatusConnection = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_PanelMenu = new System.Windows.Forms.Panel();
             this.m_TimerSecondes = new System.Windows.Forms.Timer(this.components);
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.m_LblStatusPort = new System.Windows.Forms.ToolStripStatusLabel();
+            this.m_TxtStatusPort = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_StatBarre.SuspendLayout();
             this.m_Menu.SuspendLayout();
             this.SuspendLayout();
@@ -49,13 +52,16 @@
             // 
             this.m_StatBarre.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.m_StatBarre.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2});
+            this.m_LblStatusConnection,
+            this.m_TxtStatusConnection,
+            this.toolStripProgressBar1,
+            this.m_LblStatusPort,
+            this.m_TxtStatusPort});
             this.m_StatBarre.Location = new System.Drawing.Point(0, 557);
             this.m_StatBarre.Name = "m_StatBarre";
             this.m_StatBarre.Size = new System.Drawing.Size(1052, 26);
             this.m_StatBarre.TabIndex = 1;
-            this.m_StatBarre.Text = "statusStrip1";
+            this.m_StatBarre.Text = "Port: ";
             // 
             // m_Menu
             // 
@@ -67,35 +73,35 @@
             this.m_MenuModes});
             this.m_Menu.Location = new System.Drawing.Point(0, 0);
             this.m_Menu.Name = "m_Menu";
-            this.m_Menu.Size = new System.Drawing.Size(1052, 30);
+            this.m_Menu.Size = new System.Drawing.Size(1052, 28);
             this.m_Menu.TabIndex = 2;
             this.m_Menu.Text = "menuStrip1";
             // 
             // m_MenuConnection
             // 
             this.m_MenuConnection.Name = "m_MenuConnection";
-            this.m_MenuConnection.Size = new System.Drawing.Size(98, 26);
+            this.m_MenuConnection.Size = new System.Drawing.Size(98, 24);
             this.m_MenuConnection.Text = "Connection";
             this.m_MenuConnection.Click += new System.EventHandler(this.m_MenuConnection_Click);
             // 
             // m_MenuDonnées
             // 
             this.m_MenuDonnées.Name = "m_MenuDonnées";
-            this.m_MenuDonnées.Size = new System.Drawing.Size(81, 26);
+            this.m_MenuDonnées.Size = new System.Drawing.Size(81, 24);
             this.m_MenuDonnées.Text = "Données";
             this.m_MenuDonnées.Click += new System.EventHandler(this.m_MenuDonnées_Click);
             // 
             // m_MenuActions
             // 
             this.m_MenuActions.Name = "m_MenuActions";
-            this.m_MenuActions.Size = new System.Drawing.Size(72, 26);
+            this.m_MenuActions.Size = new System.Drawing.Size(72, 24);
             this.m_MenuActions.Text = "Actions";
             this.m_MenuActions.Click += new System.EventHandler(this.m_MenuActions_Click);
             // 
             // m_MenuModes
             // 
             this.m_MenuModes.Name = "m_MenuModes";
-            this.m_MenuModes.Size = new System.Drawing.Size(68, 26);
+            this.m_MenuModes.Size = new System.Drawing.Size(68, 24);
             this.m_MenuModes.Text = "Modes";
             this.m_MenuModes.Click += new System.EventHandler(this.m_MenuModes_Click);
             // 
@@ -103,25 +109,42 @@
             // 
             this.m_SerialPort.RtsEnable = true;
             // 
-            // toolStripStatusLabel1
+            // m_LblStatusConnection
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(54, 20);
-            this.toolStripStatusLabel1.Text = "status :";
+            this.m_LblStatusConnection.Name = "m_LblStatusConnection";
+            this.m_LblStatusConnection.Size = new System.Drawing.Size(54, 20);
+            this.m_LblStatusConnection.Text = "status :";
             // 
-            // toolStripStatusLabel2
+            // m_TxtStatusConnection
             // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(23, 20);
-            this.toolStripStatusLabel2.Text = "xx";
+            this.m_TxtStatusConnection.Name = "m_TxtStatusConnection";
+            this.m_TxtStatusConnection.Size = new System.Drawing.Size(23, 20);
+            this.m_TxtStatusConnection.Text = "xx";
             // 
             // m_PanelMenu
             // 
             this.m_PanelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_PanelMenu.Location = new System.Drawing.Point(0, 30);
+            this.m_PanelMenu.Location = new System.Drawing.Point(0, 28);
             this.m_PanelMenu.Name = "m_PanelMenu";
-            this.m_PanelMenu.Size = new System.Drawing.Size(1052, 527);
+            this.m_PanelMenu.Size = new System.Drawing.Size(1052, 529);
             this.m_PanelMenu.TabIndex = 3;
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 18);
+            // 
+            // m_LblStatusPort
+            // 
+            this.m_LblStatusPort.Name = "m_LblStatusPort";
+            this.m_LblStatusPort.Size = new System.Drawing.Size(42, 20);
+            this.m_LblStatusPort.Text = "Port :";
+            // 
+            // m_TxtStatusPort
+            // 
+            this.m_TxtStatusPort.Name = "m_TxtStatusPort";
+            this.m_TxtStatusPort.Size = new System.Drawing.Size(23, 20);
+            this.m_TxtStatusPort.Text = "xx";
             // 
             // Form1
             // 
@@ -153,10 +176,13 @@
         private System.Windows.Forms.ToolStripMenuItem m_MenuActions;
         private System.Windows.Forms.ToolStripMenuItem m_MenuModes;
         private System.IO.Ports.SerialPort m_SerialPort;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel m_LblStatusConnection;
+        private System.Windows.Forms.ToolStripStatusLabel m_TxtStatusConnection;
         private System.Windows.Forms.Panel m_PanelMenu;
         private System.Windows.Forms.Timer m_TimerSecondes;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripStatusLabel m_LblStatusPort;
+        private System.Windows.Forms.ToolStripStatusLabel m_TxtStatusPort;
     }
 }
 

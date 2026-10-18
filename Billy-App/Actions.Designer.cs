@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.m_LblLiaisonSerie = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // m_LblLiaisonSerie
             // 
+            this.m_LblLiaisonSerie.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.m_LblLiaisonSerie.AutoSize = true;
             this.m_LblLiaisonSerie.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblLiaisonSerie.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -42,10 +44,23 @@
             this.m_LblLiaisonSerie.TabIndex = 3;
             this.m_LblLiaisonSerie.Text = "Moteur à Réaction";
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(533, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 26);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "ServoMoteur";
+            // 
             // Actions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.m_LblLiaisonSerie);
             this.Name = "Actions";
             this.Size = new System.Drawing.Size(1070, 630);
@@ -57,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.Label m_LblLiaisonSerie;
+        private System.Windows.Forms.Label label1;
     }
 }
