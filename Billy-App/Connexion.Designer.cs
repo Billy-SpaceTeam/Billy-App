@@ -1,6 +1,6 @@
 ﻿namespace Billy_App
 {
-    partial class Connection
+    partial class Connexion
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.

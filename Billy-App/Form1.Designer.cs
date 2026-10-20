@@ -37,13 +37,14 @@
             this.m_LblStatusPort = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_TxtStatusPort = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_Menu = new System.Windows.Forms.MenuStrip();
-            this.m_MenuConnection = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_MenuConnexion = new System.Windows.Forms.ToolStripMenuItem();
             this.m_MenuDonnées = new System.Windows.Forms.ToolStripMenuItem();
             this.m_MenuActions = new System.Windows.Forms.ToolStripMenuItem();
             this.m_MenuModes = new System.Windows.Forms.ToolStripMenuItem();
             this.m_SerialPort = new System.IO.Ports.SerialPort(this.components);
             this.m_PanelMenu = new System.Windows.Forms.Panel();
             this.m_TimerSecondes = new System.Windows.Forms.Timer(this.components);
+            this.m_MenuTransfert = new System.Windows.Forms.ToolStripMenuItem();
             this.m_StatBarre.SuspendLayout();
             this.m_Menu.SuspendLayout();
             this.SuspendLayout();
@@ -96,22 +97,23 @@
             // 
             this.m_Menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.m_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_MenuConnection,
+            this.m_MenuConnexion,
             this.m_MenuDonnées,
             this.m_MenuActions,
-            this.m_MenuModes});
+            this.m_MenuModes,
+            this.m_MenuTransfert});
             this.m_Menu.Location = new System.Drawing.Point(0, 0);
             this.m_Menu.Name = "m_Menu";
             this.m_Menu.Size = new System.Drawing.Size(1052, 28);
             this.m_Menu.TabIndex = 2;
             this.m_Menu.Text = "menuStrip1";
             // 
-            // m_MenuConnection
+            // m_MenuConnexion
             // 
-            this.m_MenuConnection.Name = "m_MenuConnection";
-            this.m_MenuConnection.Size = new System.Drawing.Size(98, 24);
-            this.m_MenuConnection.Text = "Connection";
-            this.m_MenuConnection.Click += new System.EventHandler(this.m_MenuConnection_Click);
+            this.m_MenuConnexion.Name = "m_MenuConnexion";
+            this.m_MenuConnexion.Size = new System.Drawing.Size(93, 24);
+            this.m_MenuConnexion.Text = "Connexion";
+            this.m_MenuConnexion.Click += new System.EventHandler(this.m_MenuConnection_Click);
             // 
             // m_MenuDonnées
             // 
@@ -147,6 +149,12 @@
             this.m_PanelMenu.Size = new System.Drawing.Size(1052, 529);
             this.m_PanelMenu.TabIndex = 3;
             // 
+            // m_MenuTransfert
+            // 
+            this.m_MenuTransfert.Name = "m_MenuTransfert";
+            this.m_MenuTransfert.Size = new System.Drawing.Size(80, 24);
+            this.m_MenuTransfert.Text = "Transfert";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -172,7 +180,7 @@
 
         private System.Windows.Forms.StatusStrip m_StatBarre;
         private System.Windows.Forms.MenuStrip m_Menu;
-        private System.Windows.Forms.ToolStripMenuItem m_MenuConnection;
+        private System.Windows.Forms.ToolStripMenuItem m_MenuConnexion;
         private System.Windows.Forms.ToolStripMenuItem m_MenuDonnées;
         private System.Windows.Forms.ToolStripMenuItem m_MenuActions;
         private System.Windows.Forms.ToolStripMenuItem m_MenuModes;
@@ -184,6 +192,7 @@
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.ToolStripStatusLabel m_LblStatusPort;
         private System.Windows.Forms.ToolStripStatusLabel m_TxtStatusPort;
+        private System.Windows.Forms.ToolStripMenuItem m_MenuTransfert;
     }
 }
 

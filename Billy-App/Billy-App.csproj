@@ -53,11 +53,11 @@
     <Compile Include="Actions.Designer.cs">
       <DependentUpon>Actions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connection.cs">
+    <Compile Include="Connexion.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Connection.Designer.cs">
-      <DependentUpon>Connection.cs</DependentUpon>
+    <Compile Include="Connexion.Designer.cs">
+      <DependentUpon>Connexion.cs</DependentUpon>
     </Compile>
     <Compile Include="Données.cs">
       <SubType>UserControl</SubType>
@@ -79,11 +79,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transfert.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Transfert.Designer.cs">
+      <DependentUpon>Transfert.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Actions.resx">
       <DependentUpon>Actions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Connection.resx">
-      <DependentUpon>Connection.cs</DependentUpon>
+    <EmbeddedResource Include="Connexion.resx">
+      <DependentUpon>Connexion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Données.resx">
       <DependentUpon>Données.cs</DependentUpon>
@@ -103,6 +109,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Transfert.resx">
+      <DependentUpon>Transfert.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

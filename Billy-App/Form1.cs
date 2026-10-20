@@ -38,7 +38,7 @@ namespace Billy_App
         private void m_MenuConnection_Click(object sender, EventArgs e)
         {
             m_PanelMenu.Controls.Clear();
-            Connection connection = new Connection();
+            Connexion connection = new Connexion();
             connection.Dock = DockStyle.Fill;
             m_PanelMenu.Controls.Add(connection);
         }
@@ -69,7 +69,7 @@ namespace Billy_App
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
+            Connexion connection = new Connexion();
             connection.Dock = DockStyle.Fill;
             m_PanelMenu .Controls.Add(connection);
         }

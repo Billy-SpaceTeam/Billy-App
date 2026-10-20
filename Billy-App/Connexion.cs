@@ -12,10 +12,10 @@ using System.Windows.Forms.VisualStyles;
 
 namespace Billy_App
 {
-    public partial class Connection : UserControl
+    public partial class Connexion : UserControl
     {
         Form1 Form;
-        public Connection()
+        public Connexion()
         {
             InitializeComponent();
             this.Form = new Form1();
