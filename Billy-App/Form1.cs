@@ -112,18 +112,19 @@ namespace Billy_App
             m_PanelMenu.Controls.Add(modes);
         }
 
+        private void m_MenuTransfert_Click(object sender, EventArgs e)
+        {
+            m_PanelMenu.Controls.Clear();
+            Transfert transfert = new Transfert();
+            transfert.Dock = DockStyle.Fill;
+            m_PanelMenu.Controls.Add(transfert);
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             Connexion connection = new Connexion();
             connection.Dock = DockStyle.Fill;
             m_PanelMenu .Controls.Add(connection);
-        }
-
-        private void m_MenuTransfert_Click(object sender, EventArgs e)
-        {
-            Transfert transfert = new Transfert();
-            transfert.Dock = DockStyle.Fill;
-            m_PanelMenu.Controls.Add(transfert);
         }
     }
 }
