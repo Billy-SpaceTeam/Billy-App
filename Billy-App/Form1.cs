@@ -27,11 +27,15 @@ namespace Billy_App
                 m_SerialPort.PortName = portName;
                 m_SerialPort.BaudRate = baudRate;
                 m_SerialPort.Open();
-                m_TxtStatusConnection.Text = $"Connecté au port {portName} à {baudRate} bauds.";
+                m_TxtStatusPort.Text = portName;
+                m_TxtStatusBauds.Text = baudRate.ToString();
+                m_TxtStatusConnection.Text = "Connecté";
+
                 return true;
             }
             catch (Exception ex)
             {
+                m_TxtStatusConnection.Text = "Echec de la connexion";
                 MessageBox.Show("Erreur lors de la connexion : " + ex.Message);
                 return false;
             }
