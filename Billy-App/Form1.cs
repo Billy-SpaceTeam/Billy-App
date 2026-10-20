@@ -49,6 +49,32 @@ namespace Billy_App
             }
         }
 
+        public bool Deconnexion()
+        {
+            bool deconnexion = false;
+            try
+            {
+                m_SerialPort.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                m_TxtStatusConnection.Text = "Echec de la déconnexion";
+                MessageBox.Show("Erreur lors de la déconnexion : " + ex.Message);
+                return false;
+            }
+            if (deconnexion)
+            {
+                m_TxtStatusPort.Text = "Aucun port sélectionné";
+                m_TxtStatusBauds.Text = "Aucun débit sélectionné";
+                m_TxtStatusConnection.Text = "Déconnecté";
+            }
+            else
+            {
+                m_TxtStatusConnection.Text = "Echec de la déconnexion";
+            }
+        }
+
         private void m_MenuConnection_Click(object sender, EventArgs e)
         {
             m_PanelMenu.Controls.Clear();
