@@ -29,12 +29,20 @@ namespace Billy_App
         private void m_BpDetecter_Click(object sender, EventArgs e)
         {
             string horodatage = DateTime.Now.ToString("HH:mm:ss");
-            string message = $"[{horodatage}] Détection des ports série...";
-            this.m_TxtBoxConnection.AppendText(message + Environment.NewLine);
+            string message = $"[{horodatage}]";
+            this.m_TxtBoxConnection.AppendText(message + "Détection des ports série..." + Environment.NewLine);
 
             string[] ports = SerialPort.GetPortNames();
+
             m_BoxPorts.Text = string.Join(", ", ports);
-            m_TxtBoxConnection.AppendText("Detect " + string.Join(", ", ports) + Environment.NewLine);
+            if(ports.Length == 0)
+            {
+                this.m_TxtBoxConnection.AppendText(message + "Aucun port série détecté." + Environment.NewLine);
+            }
+            else
+            {
+                this.m_TxtBoxConnection.AppendText(message + "Ports série détectés : " + string.Join(", ", ports) + Environment.NewLine);
+            }
         }
 
         private void m_BpConnecter_Click(object sender, EventArgs e)
@@ -54,7 +62,6 @@ namespace Billy_App
             {
                 isConnected = form.Connexion(m_BoxPorts.SelectedItem.ToString(), int.Parse(m_BoxBauds.SelectedItem.ToString()));
             }
-            
         }
     }   
 }

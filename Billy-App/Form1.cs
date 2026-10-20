@@ -16,6 +16,8 @@ namespace Billy_App
         {
             InitializeComponent();
             m_TxtStatusConnection.Text = "Attente";
+            m_TxtStatusPort.Text = "Aucun port sélectionné";
+            m_TxtStatusBauds.Text = "Aucun débit sélectionné";
         }
 
         public bool Connexion(string portName, int baudRate)
@@ -72,6 +74,13 @@ namespace Billy_App
             Connexion connection = new Connexion();
             connection.Dock = DockStyle.Fill;
             m_PanelMenu .Controls.Add(connection);
+        }
+
+        private void m_MenuTransfert_Click(object sender, EventArgs e)
+        {
+            Transfert transfert = new Transfert();
+            transfert.Dock = DockStyle.Fill;
+            m_PanelMenu.Controls.Add(transfert);
         }
     }
 }
