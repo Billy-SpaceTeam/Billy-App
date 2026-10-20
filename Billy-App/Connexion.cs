@@ -14,11 +14,11 @@ namespace Billy_App
 {
     public partial class Connexion : UserControl
     {
-        Form1 Form;
+        Form1 form;
         public Connexion()
         {
             InitializeComponent();
-            this.Form = new Form1();
+            form = new Form1();
 
             this.m_BoxBauds.Items.Clear();
             this.m_BoxBauds.Items.Add("2400");
@@ -34,7 +34,7 @@ namespace Billy_App
 
             string[] ports = SerialPort.GetPortNames();
 
-            m_BoxPorts.Text = string.Join(", ", ports);
+            m_BoxPorts.Items.Add(string.Join(", ", ports));
             if(ports.Length == 0)
             {
                 this.m_TxtBoxConnection.AppendText(message + "Aucun port série détecté." + Environment.NewLine);
@@ -47,21 +47,23 @@ namespace Billy_App
 
         private void m_BpConnecter_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
             bool isConnected = false;
 
             string horodatage = DateTime.Now.ToString("HH:mm:ss");
             m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Connecting..." + Environment.NewLine);
 
-            if (m_BoxPorts.SelectedItem == null || m_BoxBauds.SelectedItem == null)
+            if(m_BoxPorts == null)
             {
-                MessageBox.Show("Veuillez choisir un port série et un débit en bauds.");
+                m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Veuillez choisir un port série." + Environment.NewLine);
+                return;
+
+            }
+            else if(m_BoxBauds == null)
+            {
+                m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Veuillez choisir un débit." + Environment.NewLine);
                 return;
             }
-            if (isConnected)
-            {
-                isConnected = form.Connexion(m_BoxPorts.SelectedItem.ToString(), int.Parse(m_BoxBauds.SelectedItem.ToString()));
-            }
+            isConnected = form.Connexion(m_BoxPorts.SelectedItem.ToString(), int.Parse(m_BoxBauds.SelectedItem.ToString()));
         }
     }   
 }

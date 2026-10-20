@@ -27,6 +27,7 @@ namespace Billy_App
                 m_SerialPort.PortName = portName;
                 m_SerialPort.BaudRate = baudRate;
                 m_SerialPort.Open();
+
                 m_TxtStatusPort.Text = portName;
                 m_TxtStatusBauds.Text = baudRate.ToString();
                 m_TxtStatusConnection.Text = "Connecté";
