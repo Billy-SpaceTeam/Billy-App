@@ -52,26 +52,31 @@ namespace Billy_App
             string horodatage = DateTime.Now.ToString("HH:mm:ss");
             m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Connecting..." + Environment.NewLine);
 
-            if(m_BoxPorts == null)
+            if(m_BoxPorts.SelectedItem == null)
             {
-                m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Veuillez choisir un port série." + Environment.NewLine);
+                m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Erreur lors de la connexion : Veuillez choisir un port série" + Environment.NewLine);
+                MessageBox.Show("Erreur lors de la connexion : Aucun port série détecté");
                 return;
 
             }
-            else if(m_BoxBauds == null)
+            else if(m_BoxBauds.SelectedItem == null)
             {
-                m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Veuillez choisir un débit." + Environment.NewLine);
+                m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Erreur lors de la connexion : Veuillez choisir un débit" + Environment.NewLine);
+                MessageBox.Show("Erreur lors de la connexion : Aucun port bauds séléctionné");
                 return;
             }
             isConnected = form.Connexion(m_BoxPorts.SelectedItem.ToString(), int.Parse(m_BoxBauds.SelectedItem.ToString()));
+
+            
+            if (isConnected)
+            {
+                m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Connecté au port série " + m_BoxPorts.SelectedItem.ToString() + " avec un débit de " + m_BoxBauds.SelectedItem.ToString() + "." + Environment.NewLine);
+            }
+            else
+            {
+                m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Echec de la connexion au port série " + m_BoxPorts.SelectedItem.ToString() + "." + Environment.NewLine);
+                MessageBox.Show("Erreur lors de la connexion : Echec de la connexion");
+            }
         }
     }   
 }
-
-/*
-m_TxtHeures.Text = DateTime.Now.Hour.ToString();
-m_TxtMinutes.Text = DateTime.Now.Minute.ToString();
-m_TxtSecondes.Text = DateTime.Now.Second.ToString();
-
-MessageBox.Show("Veuillez choisir un port série.");
-*/

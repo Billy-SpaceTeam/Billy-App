@@ -22,15 +22,12 @@ namespace Billy_App
 
         public bool Connexion(string portName, int baudRate)
         {
+            bool connexion = false;
             try
             {
                 m_SerialPort.PortName = portName;
                 m_SerialPort.BaudRate = baudRate;
                 m_SerialPort.Open();
-
-                m_TxtStatusPort.Text = portName;
-                m_TxtStatusBauds.Text = baudRate.ToString();
-                m_TxtStatusConnection.Text = "Connecté";
 
                 return true;
             }
@@ -39,6 +36,16 @@ namespace Billy_App
                 m_TxtStatusConnection.Text = "Echec de la connexion";
                 MessageBox.Show("Erreur lors de la connexion : " + ex.Message);
                 return false;
+            }
+            if(connexion)
+            {
+                m_TxtStatusPort.Text = portName;
+                m_TxtStatusBauds.Text = baudRate.ToString();
+                m_TxtStatusConnection.Text = "Connecté";
+            }
+            else
+            {
+                m_TxtStatusConnection.Text = "Echec de la connexion";
             }
         }
 
