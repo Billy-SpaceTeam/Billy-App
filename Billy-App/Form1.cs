@@ -22,18 +22,56 @@ namespace Billy_App
 
         public bool Connexion(string portName, int baudRate)
         {
+            bool connexion = false;
             try
             {
                 m_SerialPort.PortName = portName;
                 m_SerialPort.BaudRate = baudRate;
                 m_SerialPort.Open();
-                m_TxtStatusConnection.Text = $"Connecté au port {portName} à {baudRate} bauds.";
+
                 return true;
             }
             catch (Exception ex)
             {
+                m_TxtStatusConnection.Text = "Echec de la connexion";
                 MessageBox.Show("Erreur lors de la connexion : " + ex.Message);
                 return false;
+            }
+            if(connexion)
+            {
+                m_TxtStatusPort.Text = portName;
+                m_TxtStatusBauds.Text = baudRate.ToString();
+                m_TxtStatusConnection.Text = "Connecté";
+            }
+            else
+            {
+                m_TxtStatusConnection.Text = "Echec de la connexion";
+            }
+        }
+
+        public bool Deconnexion()
+        {
+            bool deconnexion = false;
+            try
+            {
+                m_SerialPort.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                m_TxtStatusConnection.Text = "Echec de la déconnexion";
+                MessageBox.Show("Erreur lors de la déconnexion : " + ex.Message);
+                return false;
+            }
+            if (deconnexion)
+            {
+                m_TxtStatusPort.Text = "Aucun port sélectionné";
+                m_TxtStatusBauds.Text = "Aucun débit sélectionné";
+                m_TxtStatusConnection.Text = "Déconnecté";
+            }
+            else
+            {
+                m_TxtStatusConnection.Text = "Echec de la déconnexion";
             }
         }
 
