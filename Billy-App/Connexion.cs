@@ -88,6 +88,7 @@ namespace Billy_App
                 bool deconnexion = form.Deconnexion();
                 if (deconnexion)
                 {
+                    isConnected = false;
                     m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Déconnecté du port série." + Environment.NewLine);
                     m_BpConnecter.Text = "Connecter";
                 }

@@ -25,10 +25,15 @@ namespace Billy_App
             bool connexion = false;
             try
             {
+                m_TxtStatusPort.Text = portName;
+                m_TxtStatusBauds.Text = baudRate.ToString();
+
+
                 m_SerialPort.PortName = portName;
                 m_SerialPort.BaudRate = baudRate;
                 m_SerialPort.Open();
 
+                connexion = true;
                 return true;
             }
             catch (Exception ex)
