@@ -31,19 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.m_StatBarre = new System.Windows.Forms.StatusStrip();
+            this.m_LblStatusConnection = new System.Windows.Forms.ToolStripStatusLabel();
+            this.m_TxtStatusConnection = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.m_LblStatusPort = new System.Windows.Forms.ToolStripStatusLabel();
+            this.m_TxtStatusPort = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_Menu = new System.Windows.Forms.MenuStrip();
             this.m_MenuConnection = new System.Windows.Forms.ToolStripMenuItem();
             this.m_MenuDonnées = new System.Windows.Forms.ToolStripMenuItem();
             this.m_MenuActions = new System.Windows.Forms.ToolStripMenuItem();
             this.m_MenuModes = new System.Windows.Forms.ToolStripMenuItem();
             this.m_SerialPort = new System.IO.Ports.SerialPort(this.components);
-            this.m_LblStatusConnection = new System.Windows.Forms.ToolStripStatusLabel();
-            this.m_TxtStatusConnection = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_PanelMenu = new System.Windows.Forms.Panel();
             this.m_TimerSecondes = new System.Windows.Forms.Timer(this.components);
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.m_LblStatusPort = new System.Windows.Forms.ToolStripStatusLabel();
-            this.m_TxtStatusPort = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_StatBarre.SuspendLayout();
             this.m_Menu.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +62,35 @@
             this.m_StatBarre.Size = new System.Drawing.Size(1052, 26);
             this.m_StatBarre.TabIndex = 1;
             this.m_StatBarre.Text = "Port: ";
+            // 
+            // m_LblStatusConnection
+            // 
+            this.m_LblStatusConnection.Name = "m_LblStatusConnection";
+            this.m_LblStatusConnection.Size = new System.Drawing.Size(54, 20);
+            this.m_LblStatusConnection.Text = "status :";
+            // 
+            // m_TxtStatusConnection
+            // 
+            this.m_TxtStatusConnection.Name = "m_TxtStatusConnection";
+            this.m_TxtStatusConnection.Size = new System.Drawing.Size(23, 20);
+            this.m_TxtStatusConnection.Text = "xx";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 18);
+            // 
+            // m_LblStatusPort
+            // 
+            this.m_LblStatusPort.Name = "m_LblStatusPort";
+            this.m_LblStatusPort.Size = new System.Drawing.Size(42, 20);
+            this.m_LblStatusPort.Text = "Port :";
+            // 
+            // m_TxtStatusPort
+            // 
+            this.m_TxtStatusPort.Name = "m_TxtStatusPort";
+            this.m_TxtStatusPort.Size = new System.Drawing.Size(23, 20);
+            this.m_TxtStatusPort.Text = "xx";
             // 
             // m_Menu
             // 
@@ -107,19 +136,8 @@
             // 
             // m_SerialPort
             // 
+            this.m_SerialPort.DtrEnable = true;
             this.m_SerialPort.RtsEnable = true;
-            // 
-            // m_LblStatusConnection
-            // 
-            this.m_LblStatusConnection.Name = "m_LblStatusConnection";
-            this.m_LblStatusConnection.Size = new System.Drawing.Size(54, 20);
-            this.m_LblStatusConnection.Text = "status :";
-            // 
-            // m_TxtStatusConnection
-            // 
-            this.m_TxtStatusConnection.Name = "m_TxtStatusConnection";
-            this.m_TxtStatusConnection.Size = new System.Drawing.Size(23, 20);
-            this.m_TxtStatusConnection.Text = "xx";
             // 
             // m_PanelMenu
             // 
@@ -128,23 +146,6 @@
             this.m_PanelMenu.Name = "m_PanelMenu";
             this.m_PanelMenu.Size = new System.Drawing.Size(1052, 529);
             this.m_PanelMenu.TabIndex = 3;
-            // 
-            // toolStripProgressBar1
-            // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 18);
-            // 
-            // m_LblStatusPort
-            // 
-            this.m_LblStatusPort.Name = "m_LblStatusPort";
-            this.m_LblStatusPort.Size = new System.Drawing.Size(42, 20);
-            this.m_LblStatusPort.Text = "Port :";
-            // 
-            // m_TxtStatusPort
-            // 
-            this.m_TxtStatusPort.Name = "m_TxtStatusPort";
-            this.m_TxtStatusPort.Size = new System.Drawing.Size(23, 20);
-            this.m_TxtStatusPort.Text = "xx";
             // 
             // Form1
             // 

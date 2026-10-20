@@ -15,6 +15,24 @@ namespace Billy_App
         public Form1()
         {
             InitializeComponent();
+            m_TxtStatusConnection.Text = "Attente";
+        }
+
+        public bool Connexion(string portName, int baudRate)
+        {
+            try
+            {
+                m_SerialPort.PortName = portName;
+                m_SerialPort.BaudRate = baudRate;
+                m_SerialPort.Open();
+                m_TxtStatusConnection.Text = $"Connecté au port {portName} à {baudRate} bauds.";
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la connexion : " + ex.Message);
+                return false;
+            }
         }
 
         private void m_MenuConnection_Click(object sender, EventArgs e)
