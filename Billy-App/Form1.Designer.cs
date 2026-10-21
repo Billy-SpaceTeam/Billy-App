@@ -33,20 +33,20 @@
             this.m_StatBarre = new System.Windows.Forms.StatusStrip();
             this.m_LblStatusConnection = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_TxtStatusConnection = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.m_ProgressBarConnexion = new System.Windows.Forms.ToolStripProgressBar();
             this.m_LblStatusPort = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_TxtStatusPort = new System.Windows.Forms.ToolStripStatusLabel();
+            this.m_LblStatusBauds = new System.Windows.Forms.ToolStripStatusLabel();
+            this.m_TxtStatusBauds = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_Menu = new System.Windows.Forms.MenuStrip();
             this.m_MenuConnexion = new System.Windows.Forms.ToolStripMenuItem();
             this.m_MenuDonnées = new System.Windows.Forms.ToolStripMenuItem();
             this.m_MenuActions = new System.Windows.Forms.ToolStripMenuItem();
             this.m_MenuModes = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_MenuTransfert = new System.Windows.Forms.ToolStripMenuItem();
             this.m_SerialPort = new System.IO.Ports.SerialPort(this.components);
             this.m_PanelMenu = new System.Windows.Forms.Panel();
             this.m_TimerSecondes = new System.Windows.Forms.Timer(this.components);
-            this.m_MenuTransfert = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_LblStatusBauds = new System.Windows.Forms.ToolStripStatusLabel();
-            this.m_TxtStatusBauds = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_StatBarre.SuspendLayout();
             this.m_Menu.SuspendLayout();
             this.SuspendLayout();
@@ -57,45 +57,58 @@
             this.m_StatBarre.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_LblStatusConnection,
             this.m_TxtStatusConnection,
-            this.toolStripProgressBar1,
+            this.m_ProgressBarConnexion,
             this.m_LblStatusPort,
             this.m_TxtStatusPort,
             this.m_LblStatusBauds,
             this.m_TxtStatusBauds});
-            this.m_StatBarre.Location = new System.Drawing.Point(0, 557);
+            this.m_StatBarre.Location = new System.Drawing.Point(0, 452);
             this.m_StatBarre.Name = "m_StatBarre";
-            this.m_StatBarre.Size = new System.Drawing.Size(1052, 26);
+            this.m_StatBarre.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.m_StatBarre.Size = new System.Drawing.Size(789, 22);
             this.m_StatBarre.TabIndex = 1;
             this.m_StatBarre.Text = "Port: ";
             // 
             // m_LblStatusConnection
             // 
             this.m_LblStatusConnection.Name = "m_LblStatusConnection";
-            this.m_LblStatusConnection.Size = new System.Drawing.Size(54, 20);
+            this.m_LblStatusConnection.Size = new System.Drawing.Size(44, 17);
             this.m_LblStatusConnection.Text = "status :";
             // 
             // m_TxtStatusConnection
             // 
             this.m_TxtStatusConnection.Name = "m_TxtStatusConnection";
-            this.m_TxtStatusConnection.Size = new System.Drawing.Size(23, 20);
+            this.m_TxtStatusConnection.Size = new System.Drawing.Size(17, 17);
             this.m_TxtStatusConnection.Text = "xx";
             // 
-            // toolStripProgressBar1
+            // m_ProgressBarConnexion
             // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 18);
+            this.m_ProgressBarConnexion.Name = "m_ProgressBarConnexion";
+            this.m_ProgressBarConnexion.Size = new System.Drawing.Size(75, 16);
             // 
             // m_LblStatusPort
             // 
             this.m_LblStatusPort.Name = "m_LblStatusPort";
-            this.m_LblStatusPort.Size = new System.Drawing.Size(42, 20);
+            this.m_LblStatusPort.Size = new System.Drawing.Size(35, 17);
             this.m_LblStatusPort.Text = "Port :";
             // 
             // m_TxtStatusPort
             // 
             this.m_TxtStatusPort.Name = "m_TxtStatusPort";
-            this.m_TxtStatusPort.Size = new System.Drawing.Size(23, 20);
+            this.m_TxtStatusPort.Size = new System.Drawing.Size(17, 17);
             this.m_TxtStatusPort.Text = "xx";
+            // 
+            // m_LblStatusBauds
+            // 
+            this.m_LblStatusBauds.Name = "m_LblStatusBauds";
+            this.m_LblStatusBauds.Size = new System.Drawing.Size(45, 17);
+            this.m_LblStatusBauds.Text = "Bauds :";
+            // 
+            // m_TxtStatusBauds
+            // 
+            this.m_TxtStatusBauds.Name = "m_TxtStatusBauds";
+            this.m_TxtStatusBauds.Size = new System.Drawing.Size(17, 17);
+            this.m_TxtStatusBauds.Text = "xx";
             // 
             // m_Menu
             // 
@@ -108,37 +121,45 @@
             this.m_MenuTransfert});
             this.m_Menu.Location = new System.Drawing.Point(0, 0);
             this.m_Menu.Name = "m_Menu";
-            this.m_Menu.Size = new System.Drawing.Size(1052, 30);
+            this.m_Menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.m_Menu.Size = new System.Drawing.Size(789, 24);
             this.m_Menu.TabIndex = 2;
             this.m_Menu.Text = "menuStrip1";
             // 
             // m_MenuConnexion
             // 
             this.m_MenuConnexion.Name = "m_MenuConnexion";
-            this.m_MenuConnexion.Size = new System.Drawing.Size(93, 26);
+            this.m_MenuConnexion.Size = new System.Drawing.Size(76, 20);
             this.m_MenuConnexion.Text = "Connexion";
             this.m_MenuConnexion.Click += new System.EventHandler(this.m_MenuConnection_Click);
             // 
             // m_MenuDonnées
             // 
             this.m_MenuDonnées.Name = "m_MenuDonnées";
-            this.m_MenuDonnées.Size = new System.Drawing.Size(81, 26);
+            this.m_MenuDonnées.Size = new System.Drawing.Size(65, 20);
             this.m_MenuDonnées.Text = "Données";
             this.m_MenuDonnées.Click += new System.EventHandler(this.m_MenuDonnées_Click);
             // 
             // m_MenuActions
             // 
             this.m_MenuActions.Name = "m_MenuActions";
-            this.m_MenuActions.Size = new System.Drawing.Size(72, 26);
+            this.m_MenuActions.Size = new System.Drawing.Size(59, 20);
             this.m_MenuActions.Text = "Actions";
             this.m_MenuActions.Click += new System.EventHandler(this.m_MenuActions_Click);
             // 
             // m_MenuModes
             // 
             this.m_MenuModes.Name = "m_MenuModes";
-            this.m_MenuModes.Size = new System.Drawing.Size(68, 26);
+            this.m_MenuModes.Size = new System.Drawing.Size(55, 20);
             this.m_MenuModes.Text = "Modes";
             this.m_MenuModes.Click += new System.EventHandler(this.m_MenuModes_Click);
+            // 
+            // m_MenuTransfert
+            // 
+            this.m_MenuTransfert.Name = "m_MenuTransfert";
+            this.m_MenuTransfert.Size = new System.Drawing.Size(65, 20);
+            this.m_MenuTransfert.Text = "Transfert";
+            this.m_MenuTransfert.Click += new System.EventHandler(this.m_MenuTransfert_Click);
             // 
             // m_SerialPort
             // 
@@ -148,39 +169,22 @@
             // m_PanelMenu
             // 
             this.m_PanelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_PanelMenu.Location = new System.Drawing.Point(0, 30);
+            this.m_PanelMenu.Location = new System.Drawing.Point(0, 24);
+            this.m_PanelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.m_PanelMenu.Name = "m_PanelMenu";
-            this.m_PanelMenu.Size = new System.Drawing.Size(1052, 527);
+            this.m_PanelMenu.Size = new System.Drawing.Size(789, 428);
             this.m_PanelMenu.TabIndex = 3;
-            // 
-            // m_MenuTransfert
-            // 
-            this.m_MenuTransfert.Name = "m_MenuTransfert";
-            this.m_MenuTransfert.Size = new System.Drawing.Size(80, 26);
-            this.m_MenuTransfert.Text = "Transfert";
-            this.m_MenuTransfert.Click += new System.EventHandler(this.m_MenuTransfert_Click);
-            // 
-            // m_LblStatusBauds
-            // 
-            this.m_LblStatusBauds.Name = "m_LblStatusBauds";
-            this.m_LblStatusBauds.Size = new System.Drawing.Size(56, 20);
-            this.m_LblStatusBauds.Text = "Bauds :";
-            // 
-            // m_TxtStatusBauds
-            // 
-            this.m_TxtStatusBauds.Name = "m_TxtStatusBauds";
-            this.m_TxtStatusBauds.Size = new System.Drawing.Size(23, 20);
-            this.m_TxtStatusBauds.Text = "xx";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 583);
+            this.ClientSize = new System.Drawing.Size(789, 474);
             this.Controls.Add(this.m_PanelMenu);
             this.Controls.Add(this.m_StatBarre);
             this.Controls.Add(this.m_Menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Billy";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -206,7 +210,7 @@
         private System.Windows.Forms.ToolStripStatusLabel m_TxtStatusConnection;
         private System.Windows.Forms.Panel m_PanelMenu;
         private System.Windows.Forms.Timer m_TimerSecondes;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripProgressBar m_ProgressBarConnexion;
         private System.Windows.Forms.ToolStripStatusLabel m_LblStatusPort;
         private System.Windows.Forms.ToolStripStatusLabel m_TxtStatusPort;
         private System.Windows.Forms.ToolStripMenuItem m_MenuTransfert;

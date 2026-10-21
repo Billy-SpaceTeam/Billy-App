@@ -21,7 +21,10 @@ namespace Billy_App
             modes = new Modes();
             transfert = new Transfert();
 
-        m_TxtStatusConnection.Text = "Déconnecté";
+            this.m_ProgressBarConnexion.Value = 0;
+            this.m_ProgressBarConnexion.Maximum = 100;
+
+            m_TxtStatusConnection.Text = "Déconnecté";
             m_TxtStatusPort.Text = "Aucun port sélectionné";
             m_TxtStatusBauds.Text = "Aucun débit sélectionné";
         }
@@ -33,6 +36,7 @@ namespace Billy_App
             {
                 m_TxtStatusPort.Text = portName;
                 m_TxtStatusBauds.Text = baudRate.ToString();
+                this.m_ProgressBarConnexion.Value = 30;
 
 
                 m_SerialPort.PortName = portName;
@@ -57,6 +61,7 @@ namespace Billy_App
                 m_TxtStatusPort.Text = portName;
                 m_TxtStatusBauds.Text = baudRate.ToString();
                 m_TxtStatusConnection.Text = "Connecté";
+                this.m_ProgressBarConnexion.Value = 100;
             }
             return ConnexionPort;
         }
@@ -80,6 +85,7 @@ namespace Billy_App
                 m_TxtStatusPort.Text = "Aucun port sélectionné";
                 m_TxtStatusBauds.Text = "Aucun débit sélectionné";
                 m_TxtStatusConnection.Text = "Déconnecté";
+                this.m_ProgressBarConnexion.Value = 0;
             }
             else
             {
