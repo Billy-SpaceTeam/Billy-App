@@ -5,10 +5,23 @@ namespace Billy_App
 {
     public partial class Form1 : Form
     {
+        private Connexion connexion;
+        private Données données;
+        private Actions actions;
+        private Modes modes;
+        private Transfert transfert;
+
         public Form1()
         {
             InitializeComponent();
-            m_TxtStatusConnection.Text = "Déconnecté";
+
+            connexion = new Connexion(this);
+            données = new Données();
+            actions = new Actions();
+            modes = new Modes();
+            transfert = new Transfert();
+
+        m_TxtStatusConnection.Text = "Déconnecté";
             m_TxtStatusPort.Text = "Aucun port sélectionné";
             m_TxtStatusBauds.Text = "Aucun débit sélectionné";
         }
@@ -79,15 +92,13 @@ namespace Billy_App
         private void m_MenuConnection_Click(object sender, EventArgs e)
         {
             m_PanelMenu.Controls.Clear();
-            Connexion connection = new Connexion(this);
-            connection.Dock = DockStyle.Fill;
-            m_PanelMenu.Controls.Add(connection);
+            connexion.Dock = DockStyle.Fill;
+            m_PanelMenu.Controls.Add(connexion);
         }
 
         private void m_MenuDonnées_Click(object sender, EventArgs e)
         {
             m_PanelMenu.Controls.Clear();
-            Données données = new Données();
             données.Dock = DockStyle.Fill;
             m_PanelMenu.Controls.Add(données);
         }
@@ -95,7 +106,6 @@ namespace Billy_App
         private void m_MenuActions_Click(object sender, EventArgs e)
         {
             m_PanelMenu.Controls.Clear();
-            Actions actions = new Actions();
             actions.Dock = DockStyle.Fill;
             m_PanelMenu.Controls.Add(actions);
         }
@@ -103,7 +113,6 @@ namespace Billy_App
         private void m_MenuModes_Click(object sender, EventArgs e)
         {
             m_PanelMenu.Controls.Clear();
-            Modes modes = new Modes();
             modes.Dock = DockStyle.Fill;
             m_PanelMenu.Controls.Add(modes);
         }
@@ -111,16 +120,14 @@ namespace Billy_App
         private void m_MenuTransfert_Click(object sender, EventArgs e)
         {
             m_PanelMenu.Controls.Clear();
-            Transfert transfert = new Transfert();
             transfert.Dock = DockStyle.Fill;
             m_PanelMenu.Controls.Add(transfert);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Connexion connection = new Connexion(this);
-            connection.Dock = DockStyle.Fill;
-            m_PanelMenu.Controls.Add(connection);
+            connexion.Dock = DockStyle.Fill;
+            m_PanelMenu.Controls.Add(connexion);
         }
     }
 }

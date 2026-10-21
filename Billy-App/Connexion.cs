@@ -22,7 +22,6 @@ namespace Billy_App
             InitializeComponent();
             form = parent;
 
-            this.m_BoxBauds.Items.Clear();
             this.m_BoxBauds.Items.Add("2400");
             this.m_BoxBauds.Items.Add("9600");
             this.m_BoxBauds.Items.Add("19200");
@@ -30,6 +29,7 @@ namespace Billy_App
 
         private void m_BpDetecter_Click(object sender, EventArgs e)
         {
+            this.m_BoxPorts.Items.Clear();
             string horodatage = DateTime.Now.ToString("HH:mm:ss");
             string message = $"[{horodatage}]";
             this.m_TxtBoxConnection.AppendText(message + "Détection des ports série..." + Environment.NewLine);
