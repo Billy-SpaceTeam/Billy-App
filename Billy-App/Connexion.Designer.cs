@@ -133,11 +133,12 @@
             this.m_TxtBoxConnection.EnableAutoDragDrop = true;
             this.m_TxtBoxConnection.Location = new System.Drawing.Point(0, 400);
             this.m_TxtBoxConnection.Name = "m_TxtBoxConnection";
+            this.m_TxtBoxConnection.ReadOnly = true;
             this.m_TxtBoxConnection.Size = new System.Drawing.Size(1070, 230);
             this.m_TxtBoxConnection.TabIndex = 8;
             this.m_TxtBoxConnection.Text = "";
             // 
-            // Connection
+            // Connexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -151,7 +152,7 @@
             this.Controls.Add(this.m_BoxPorts);
             this.Controls.Add(this.m_LblLiaisonSerie);
             this.Controls.Add(this.m_BpDetecter);
-            this.Name = "Connection";
+            this.Name = "Connexion";
             this.Size = new System.Drawing.Size(1070, 630);
             this.ResumeLayout(false);
             this.PerformLayout();

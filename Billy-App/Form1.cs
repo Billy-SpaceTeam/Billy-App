@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Billy_App
@@ -22,7 +15,7 @@ namespace Billy_App
 
         public bool Connexion(string portName, int baudRate)
         {
-            bool connexion = false;
+            bool ConnexionPort = false;
             try
             {
                 m_TxtStatusPort.Text = portName;
@@ -33,25 +26,26 @@ namespace Billy_App
                 m_SerialPort.BaudRate = baudRate;
                 m_SerialPort.Open();
 
-                connexion = true;
-                return true;
+                ConnexionPort = true;
             }
             catch (Exception ex)
             {
                 m_TxtStatusConnection.Text = "Echec de la connexion";
                 MessageBox.Show("Erreur lors de la connexion : " + ex.Message);
-                return false;
+
+                ConnexionPort = false;
             }
-            if(connexion)
+            if (!ConnexionPort)
+            {
+                m_TxtStatusConnection.Text = "Echec de la connexion";
+            }
+            else
             {
                 m_TxtStatusPort.Text = portName;
                 m_TxtStatusBauds.Text = baudRate.ToString();
                 m_TxtStatusConnection.Text = "Connecté";
             }
-            else
-            {
-                m_TxtStatusConnection.Text = "Echec de la connexion";
-            }
+            return ConnexionPort;
         }
 
         public bool Deconnexion()
@@ -124,7 +118,7 @@ namespace Billy_App
         {
             Connexion connection = new Connexion();
             connection.Dock = DockStyle.Fill;
-            m_PanelMenu .Controls.Add(connection);
+            m_PanelMenu.Controls.Add(connection);
         }
     }
 }
