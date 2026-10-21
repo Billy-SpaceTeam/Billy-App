@@ -17,10 +17,10 @@ namespace Billy_App
         Form1 form;
 
         bool isConnected = false;
-        public Connexion()
+        public Connexion(Form1 parent)
         {
             InitializeComponent();
-            form = new Form1();
+            form = parent;
 
             this.m_BoxBauds.Items.Clear();
             this.m_BoxBauds.Items.Add("2400");
@@ -36,7 +36,12 @@ namespace Billy_App
 
             string[] ports = SerialPort.GetPortNames();
 
-            m_BoxPorts.Items.Add(string.Join(", ", ports));
+            //m_BoxPorts.Items.Add(string.Join(", ", ports));
+            foreach (string port in ports)
+            {
+                m_BoxPorts.Items.Add(port);
+            }
+
             if(ports.Length == 0)
             {
                 this.m_TxtBoxConnection.AppendText(message + "Aucun port série détecté." + Environment.NewLine);

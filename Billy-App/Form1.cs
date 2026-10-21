@@ -8,7 +8,7 @@ namespace Billy_App
         public Form1()
         {
             InitializeComponent();
-            m_TxtStatusConnection.Text = "Attente";
+            m_TxtStatusConnection.Text = "Déconnecté";
             m_TxtStatusPort.Text = "Aucun port sélectionné";
             m_TxtStatusBauds.Text = "Aucun débit sélectionné";
         }
@@ -54,13 +54,13 @@ namespace Billy_App
             try
             {
                 m_SerialPort.Close();
-                return true;
+                deconnexion = true;
             }
             catch (Exception ex)
             {
                 m_TxtStatusConnection.Text = "Echec de la déconnexion";
                 MessageBox.Show("Erreur lors de la déconnexion : " + ex.Message);
-                return false;
+                deconnexion = false;
             }
             if (deconnexion)
             {
@@ -72,12 +72,14 @@ namespace Billy_App
             {
                 m_TxtStatusConnection.Text = "Echec de la déconnexion";
             }
+
+            return deconnexion;
         }
 
         private void m_MenuConnection_Click(object sender, EventArgs e)
         {
             m_PanelMenu.Controls.Clear();
-            Connexion connection = new Connexion();
+            Connexion connection = new Connexion(this);
             connection.Dock = DockStyle.Fill;
             m_PanelMenu.Controls.Add(connection);
         }
@@ -116,7 +118,7 @@ namespace Billy_App
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Connexion connection = new Connexion();
+            Connexion connection = new Connexion(this);
             connection.Dock = DockStyle.Fill;
             m_PanelMenu.Controls.Add(connection);
         }
