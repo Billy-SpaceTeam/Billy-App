@@ -15,6 +15,15 @@ namespace Billy_App
         public Modes()
         {
             InitializeComponent();
+
+            m_BoxModes.Items.Add("Manuel");
+            m_BoxModes.Items.Add("Semi-Auto");
+            m_BoxModes.Items.Add("Automatique");
+        }
+
+        private void m_BoxModes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

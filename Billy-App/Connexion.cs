@@ -78,7 +78,7 @@ namespace Billy_App
                 if (isConnected)
                 {
                     m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Connecté au port série " + m_BoxPorts.SelectedItem.ToString() + " avec un débit de " + m_BoxBauds.SelectedItem.ToString() + "." + Environment.NewLine);
-                    m_BpConnecter.Text = "Déconnecter";
+                    m_BpConnecterSerialPort.Text = "Déconnecter";
                 }
                 else
                 {
@@ -95,7 +95,7 @@ namespace Billy_App
                 {
                     isConnected = false;
                     m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Déconnecté du port série." + Environment.NewLine);
-                    m_BpConnecter.Text = "Connecter";
+                    m_BpConnecterSerialPort.Text = "Connecter";
                 }
                 else
                 {
@@ -103,6 +103,13 @@ namespace Billy_App
                 }
             }
             
+        }
+
+        private void m_BpDetecterWifi_Click(object sender, EventArgs e)
+        {
+            string horodatage = DateTime.Now.ToString("HH:mm:ss");
+            string message = $"[{horodatage}]";
+            this.m_TxtBoxConnection.AppendText(message + "Recherche des appareils Wi-Fi..." + Environment.NewLine);
         }
     }   
 }
