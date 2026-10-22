@@ -27,6 +27,7 @@ namespace Billy_App
             m_TxtStatusConnection.Text = "Déconnecté";
             m_TxtStatusPort.Text = "Aucun port sélectionné";
             m_TxtStatusBauds.Text = "Aucun débit sélectionné";
+            m_TxtStatusMode.Text = "Aucun mode sélectionné"; 
         }
 
         public bool ConnexionSerialPort(string portName, int baudRate)

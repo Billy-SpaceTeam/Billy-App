@@ -118,7 +118,7 @@ namespace Billy_App
             string horodatage = DateTime.Now.ToString("HH:mm:ss");
             string message = $"[{horodatage}]";
 
-            bool connexion = form.ConnexionWifi("MonSSID", "MonMotDePasse");
+            bool connexion = form.ConnexionWifi("MonSSID", this.m_TxtBoxConnecterMdp.Text);
 
             if (connexion)
             {

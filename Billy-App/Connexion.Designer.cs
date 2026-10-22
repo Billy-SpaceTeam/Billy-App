@@ -38,8 +38,8 @@
             this.m_BpConnecterSerialPort = new System.Windows.Forms.Button();
             this.m_TxtBoxConnection = new System.Windows.Forms.RichTextBox();
             this.m_BpDetecterWifi = new System.Windows.Forms.Button();
-            this.m_BoxDevicesWifi = new System.Windows.Forms.ComboBox();
             this.m_BpConnecterWifi = new System.Windows.Forms.Button();
+            this.m_TxtBoxConnecterMdp = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // m_BpDetecterSerialPort
@@ -162,20 +162,10 @@
             this.m_BpDetecterWifi.UseVisualStyleBackColor = true;
             this.m_BpDetecterWifi.Click += new System.EventHandler(this.m_BpDetecterWifi_Click);
             // 
-            // m_BoxDevicesWifi
-            // 
-            this.m_BoxDevicesWifi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.m_BoxDevicesWifi.FormattingEnabled = true;
-            this.m_BoxDevicesWifi.Location = new System.Drawing.Point(571, 104);
-            this.m_BoxDevicesWifi.Margin = new System.Windows.Forms.Padding(2);
-            this.m_BoxDevicesWifi.Name = "m_BoxDevicesWifi";
-            this.m_BoxDevicesWifi.Size = new System.Drawing.Size(86, 21);
-            this.m_BoxDevicesWifi.TabIndex = 10;
-            // 
             // m_BpConnecterWifi
             // 
             this.m_BpConnecterWifi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.m_BpConnecterWifi.Location = new System.Drawing.Point(571, 141);
+            this.m_BpConnecterWifi.Location = new System.Drawing.Point(586, 141);
             this.m_BpConnecterWifi.Margin = new System.Windows.Forms.Padding(2);
             this.m_BpConnecterWifi.Name = "m_BpConnecterWifi";
             this.m_BpConnecterWifi.Size = new System.Drawing.Size(85, 33);
@@ -184,13 +174,20 @@
             this.m_BpConnecterWifi.UseVisualStyleBackColor = true;
             this.m_BpConnecterWifi.Click += new System.EventHandler(this.m_BpConnecterWifi_Click);
             // 
+            // m_TxtBoxConnecterMdp
+            // 
+            this.m_TxtBoxConnecterMdp.Location = new System.Drawing.Point(571, 104);
+            this.m_TxtBoxConnecterMdp.Name = "m_TxtBoxConnecterMdp";
+            this.m_TxtBoxConnecterMdp.Size = new System.Drawing.Size(100, 20);
+            this.m_TxtBoxConnecterMdp.TabIndex = 12;
+            // 
             // Connexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.Controls.Add(this.m_TxtBoxConnecterMdp);
             this.Controls.Add(this.m_BpConnecterWifi);
-            this.Controls.Add(this.m_BoxDevicesWifi);
             this.Controls.Add(this.m_BpDetecterWifi);
             this.Controls.Add(this.m_LblLiaisonWifi);
             this.Controls.Add(this.m_TxtBoxConnection);
@@ -221,7 +218,7 @@
         private System.Windows.Forms.Button m_BpConnecterSerialPort;
         private System.Windows.Forms.RichTextBox m_TxtBoxConnection;
         private System.Windows.Forms.Button m_BpDetecterWifi;
-        private System.Windows.Forms.ComboBox m_BoxDevicesWifi;
         private System.Windows.Forms.Button m_BpConnecterWifi;
+        private System.Windows.Forms.TextBox m_TxtBoxConnecterMdp;
     }
 }
