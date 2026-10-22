@@ -5,23 +5,29 @@ using System.Data;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
+using System.Net.Sockets;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using static System.Net.Sockets.TcpClient;
 
 namespace Billy_App
 {
     public partial class Connexion : UserControl
     {
         Form1 form;
+        TcpClient tcpclient;
 
-        bool isConnected = false;
+        private bool isConnected = false;
+        private Int32 PortWifi = 8080;
         public Connexion(Form1 parent)
         {
             InitializeComponent();
+
             form = parent;
+            tcpclient = new TcpClient();
 
             this.m_BoxBauds.Items.Add("2400");
             this.m_BoxBauds.Items.Add("9600");

@@ -18,7 +18,7 @@ namespace Billy_App
             connexion = new Connexion(this);
             données = new Données();
             actions = new Actions();
-            modes = new Modes();
+            modes = new Modes(this);
             transfert = new Transfert(this);
 
             this.m_ProgressBarConnexion.Value = 0;
@@ -99,6 +99,11 @@ namespace Billy_App
         public bool ConnexionWifi(string ssid, string password)
         {
             return true;
+        }
+
+        public void SetMode(string mode)
+        {
+            m_TxtStatusMode.Text = mode;
         }
 
         public bool Transfert(string data)

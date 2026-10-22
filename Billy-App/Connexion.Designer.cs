@@ -40,6 +40,9 @@
             this.m_BpDetecterWifi = new System.Windows.Forms.Button();
             this.m_BpConnecterWifi = new System.Windows.Forms.Button();
             this.m_TxtBoxConnecterMdp = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // m_BpDetecterSerialPort
@@ -165,7 +168,7 @@
             // m_BpConnecterWifi
             // 
             this.m_BpConnecterWifi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.m_BpConnecterWifi.Location = new System.Drawing.Point(586, 141);
+            this.m_BpConnecterWifi.Location = new System.Drawing.Point(586, 175);
             this.m_BpConnecterWifi.Margin = new System.Windows.Forms.Padding(2);
             this.m_BpConnecterWifi.Name = "m_BpConnecterWifi";
             this.m_BpConnecterWifi.Size = new System.Drawing.Size(85, 33);
@@ -176,16 +179,54 @@
             // 
             // m_TxtBoxConnecterMdp
             // 
-            this.m_TxtBoxConnecterMdp.Location = new System.Drawing.Point(571, 104);
+            this.m_TxtBoxConnecterMdp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.m_TxtBoxConnecterMdp.Location = new System.Drawing.Point(571, 141);
             this.m_TxtBoxConnecterMdp.Name = "m_TxtBoxConnecterMdp";
             this.m_TxtBoxConnecterMdp.Size = new System.Drawing.Size(100, 20);
             this.m_TxtBoxConnecterMdp.TabIndex = 12;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.Location = new System.Drawing.Point(571, 104);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(676, 108);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 19);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Ports";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(676, 145);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 19);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Ports";
             // 
             // Connexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.m_TxtBoxConnecterMdp);
             this.Controls.Add(this.m_BpConnecterWifi);
             this.Controls.Add(this.m_BpDetecterWifi);
@@ -220,5 +261,8 @@
         private System.Windows.Forms.Button m_BpDetecterWifi;
         private System.Windows.Forms.Button m_BpConnecterWifi;
         private System.Windows.Forms.TextBox m_TxtBoxConnecterMdp;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

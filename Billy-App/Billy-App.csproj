@@ -140,7 +140,6 @@
     <EmbeddedResource Include="Transfert.resx">
       <DependentUpon>Transfert.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Billy-App_1_TemporaryKey.pfx" />
     <None Include="Billy-App_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
