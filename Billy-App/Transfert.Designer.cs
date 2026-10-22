@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.m_LblTransfert = new System.Windows.Forms.Label();
+            this.m_TxtBoxTransfert = new System.Windows.Forms.RichTextBox();
+            this.m_BpTransfert = new System.Windows.Forms.Button();
+            this.m_BoxTransfert = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // m_LblTransfert
@@ -37,19 +40,58 @@
             this.m_LblTransfert.AutoSize = true;
             this.m_LblTransfert.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblTransfert.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblTransfert.Location = new System.Drawing.Point(47, 66);
+            this.m_LblTransfert.Location = new System.Drawing.Point(35, 54);
+            this.m_LblTransfert.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.m_LblTransfert.Name = "m_LblTransfert";
             this.m_LblTransfert.Size = new System.Drawing.Size(227, 26);
             this.m_LblTransfert.TabIndex = 2;
             this.m_LblTransfert.Text = "Transfert Programme";
             // 
+            // m_TxtBoxTransfert
+            // 
+            this.m_TxtBoxTransfert.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_TxtBoxTransfert.EnableAutoDragDrop = true;
+            this.m_TxtBoxTransfert.Location = new System.Drawing.Point(0, 324);
+            this.m_TxtBoxTransfert.Margin = new System.Windows.Forms.Padding(2);
+            this.m_TxtBoxTransfert.Name = "m_TxtBoxTransfert";
+            this.m_TxtBoxTransfert.ReadOnly = true;
+            this.m_TxtBoxTransfert.Size = new System.Drawing.Size(802, 188);
+            this.m_TxtBoxTransfert.TabIndex = 9;
+            this.m_TxtBoxTransfert.Text = "";
+            // 
+            // m_BpTransfert
+            // 
+            this.m_BpTransfert.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_BpTransfert.Location = new System.Drawing.Point(156, 100);
+            this.m_BpTransfert.Margin = new System.Windows.Forms.Padding(2);
+            this.m_BpTransfert.Name = "m_BpTransfert";
+            this.m_BpTransfert.Size = new System.Drawing.Size(85, 33);
+            this.m_BpTransfert.TabIndex = 10;
+            this.m_BpTransfert.Text = "Transférer";
+            this.m_BpTransfert.UseVisualStyleBackColor = true;
+            this.m_BpTransfert.Click += new System.EventHandler(this.m_BpTransfert_Click);
+            // 
+            // m_BoxTransfert
+            // 
+            this.m_BoxTransfert.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_BoxTransfert.FormattingEnabled = true;
+            this.m_BoxTransfert.Location = new System.Drawing.Point(50, 107);
+            this.m_BoxTransfert.Margin = new System.Windows.Forms.Padding(2);
+            this.m_BoxTransfert.Name = "m_BoxTransfert";
+            this.m_BoxTransfert.Size = new System.Drawing.Size(86, 21);
+            this.m_BoxTransfert.TabIndex = 11;
+            // 
             // Transfert
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.m_BoxTransfert);
+            this.Controls.Add(this.m_BpTransfert);
+            this.Controls.Add(this.m_TxtBoxTransfert);
             this.Controls.Add(this.m_LblTransfert);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Transfert";
-            this.Size = new System.Drawing.Size(1070, 630);
+            this.Size = new System.Drawing.Size(802, 512);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -58,5 +100,8 @@
         #endregion
 
         private System.Windows.Forms.Label m_LblTransfert;
+        private System.Windows.Forms.RichTextBox m_TxtBoxTransfert;
+        private System.Windows.Forms.Button m_BpTransfert;
+        private System.Windows.Forms.ComboBox m_BoxTransfert;
     }
 }

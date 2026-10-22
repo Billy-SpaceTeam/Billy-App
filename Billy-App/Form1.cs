@@ -19,7 +19,7 @@ namespace Billy_App
             données = new Données();
             actions = new Actions();
             modes = new Modes();
-            transfert = new Transfert();
+            transfert = new Transfert(this);
 
             this.m_ProgressBarConnexion.Value = 0;
             this.m_ProgressBarConnexion.Maximum = 100;
@@ -29,7 +29,7 @@ namespace Billy_App
             m_TxtStatusBauds.Text = "Aucun débit sélectionné";
         }
 
-        public bool Connexion(string portName, int baudRate)
+        public bool ConnexionSerialPort(string portName, int baudRate)
         {
             bool ConnexionPort = false;
             try
@@ -66,7 +66,7 @@ namespace Billy_App
             return ConnexionPort;
         }
 
-        public bool Deconnexion()
+        public bool DeconnexionSerialPort()
         {
             bool deconnexion = false;
             try
@@ -93,6 +93,33 @@ namespace Billy_App
             }
 
             return deconnexion;
+        }
+
+        public bool ConnexionWifi(string ssid, string password)
+        {
+            return true;
+        }
+
+        public bool Transfert(string data)
+        {
+            if(m_SerialPort.IsOpen)
+            {
+                try
+                {
+                    m_SerialPort.WriteLine(data);
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur lors de l'envoi des données : " + ex.Message);
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Le port série n'est pas ouvert.");
+                return  false;
+            }
         }
 
         private void m_MenuConnection_Click(object sender, EventArgs e)

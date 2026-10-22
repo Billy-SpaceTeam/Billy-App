@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,14 +36,12 @@ namespace Billy_App
             this.m_TxtBoxConnection.AppendText(message + "Détection des ports série..." + Environment.NewLine);
 
             string[] ports = SerialPort.GetPortNames();
-
-            //m_BoxPorts.Items.Add(string.Join(", ", ports));
             foreach (string port in ports)
             {
                 m_BoxPorts.Items.Add(port);
             }
 
-            if(ports.Length == 0)
+            if (ports.Length == 0)
             {
                 this.m_TxtBoxConnection.AppendText(message + "Aucun port série détecté." + Environment.NewLine);
             }
@@ -72,8 +71,8 @@ namespace Billy_App
                     MessageBox.Show("Erreur lors de la connexion : Aucun port bauds séléctionné");
                     return;
                 }
-                isConnected = form.Connexion(m_BoxPorts.SelectedItem.ToString(), int.Parse(m_BoxBauds.SelectedItem.ToString()));
 
+                isConnected = form.ConnexionSerialPort(m_BoxPorts.SelectedItem.ToString(), int.Parse(m_BoxBauds.SelectedItem.ToString()));
 
                 if (isConnected)
                 {
@@ -90,7 +89,7 @@ namespace Billy_App
             {
                 string horodatage = DateTime.Now.ToString("HH:mm:ss");
 
-                bool deconnexion = form.Deconnexion();
+                bool deconnexion = form.DeconnexionSerialPort();
                 if (deconnexion)
                 {
                     isConnected = false;
@@ -102,7 +101,7 @@ namespace Billy_App
                     m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Echec de la déconnexion du port série." + Environment.NewLine);
                 }
             }
-            
+
         }
 
         private void m_BpDetecterWifi_Click(object sender, EventArgs e)
@@ -110,6 +109,26 @@ namespace Billy_App
             string horodatage = DateTime.Now.ToString("HH:mm:ss");
             string message = $"[{horodatage}]";
             this.m_TxtBoxConnection.AppendText(message + "Recherche des appareils Wi-Fi..." + Environment.NewLine);
+
+           
+        }
+
+        private void m_BpConnecterWifi_Click(object sender, EventArgs e)
+        {
+            string horodatage = DateTime.Now.ToString("HH:mm:ss");
+            string message = $"[{horodatage}]";
+
+            bool connexion = form.ConnexionWifi("MonSSID", "MonMotDePasse");
+
+            if (connexion)
+            {
+                this.m_TxtBoxConnection.AppendText(message + "Connexion Wi-Fi réussie." + Environment.NewLine);
+
+            }
+            else
+            {
+                this.m_TxtBoxConnection.AppendText(message + "Connexion Wi-Fi échouée." + Environment.NewLine);
+            }
         }
     }   
 }

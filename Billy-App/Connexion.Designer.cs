@@ -63,7 +63,7 @@
             this.m_LblLiaisonSerie.Location = new System.Drawing.Point(35, 54);
             this.m_LblLiaisonSerie.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.m_LblLiaisonSerie.Name = "m_LblLiaisonSerie";
-            this.m_LblLiaisonSerie.Size = new System.Drawing.Size(114, 20);
+            this.m_LblLiaisonSerie.Size = new System.Drawing.Size(142, 26);
             this.m_LblLiaisonSerie.TabIndex = 1;
             this.m_LblLiaisonSerie.Text = "Liaison Serie";
             // 
@@ -76,7 +76,7 @@
             this.m_LblLiaisonWifi.Location = new System.Drawing.Point(468, 54);
             this.m_LblLiaisonWifi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.m_LblLiaisonWifi.Name = "m_LblLiaisonWifi";
-            this.m_LblLiaisonWifi.Size = new System.Drawing.Size(106, 20);
+            this.m_LblLiaisonWifi.Size = new System.Drawing.Size(128, 26);
             this.m_LblLiaisonWifi.TabIndex = 2;
             this.m_LblLiaisonWifi.Text = "Liaison Wifi";
             // 
@@ -99,7 +99,7 @@
             this.label3.Location = new System.Drawing.Point(226, 108);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 16);
+            this.label3.Size = new System.Drawing.Size(48, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "Ports";
             // 
@@ -112,7 +112,7 @@
             this.label4.Location = new System.Drawing.Point(226, 145);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 16);
+            this.label4.Size = new System.Drawing.Size(54, 19);
             this.label4.TabIndex = 6;
             this.label4.Text = "Bauds";
             // 
@@ -182,6 +182,7 @@
             this.m_BpConnecterWifi.TabIndex = 11;
             this.m_BpConnecterWifi.Text = "Se Connecter";
             this.m_BpConnecterWifi.UseVisualStyleBackColor = true;
+            this.m_BpConnecterWifi.Click += new System.EventHandler(this.m_BpConnecterWifi_Click);
             // 
             // Connexion
             // 
