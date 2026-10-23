@@ -116,9 +116,9 @@
             this.m_LblImportFichier.Location = new System.Drawing.Point(308, 147);
             this.m_LblImportFichier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.m_LblImportFichier.Name = "m_LblImportFichier";
-            this.m_LblImportFichier.Size = new System.Drawing.Size(21, 16);
+            this.m_LblImportFichier.Size = new System.Drawing.Size(129, 16);
             this.m_LblImportFichier.TabIndex = 16;
-            this.m_LblImportFichier.Text = "xx";
+            this.m_LblImportFichier.Text = "Importer un fichier";
             // 
             // Transfert
             // 

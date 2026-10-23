@@ -22,15 +22,24 @@ namespace Billy_App
             this.m_BoxTransfert.Text = "Type de transfert";
             this.m_BoxTransfert.Items.Add("Github");
             this.m_BoxTransfert.Items.Add("Fichier local");
-            this.m_LblImportFichier.Text = "Importer un fichier"; 
         }
 
         private void m_BpTransfert_Click(object sender, EventArgs e)
         {
-            this.m_BoxTransfert.Items.Clear();
             string horodatage = DateTime.Now.ToString("HH:mm:ss");
             string message = $"[{horodatage}]";
             this.m_TxtBoxTransfert.AppendText(message + "Début du transfert..." + Environment.NewLine);
+
+            if(this.m_BoxTransfert.SelectedItem == null)
+            {
+                this.m_TxtBoxTransfert.AppendText(message + "Veuillez sélectionner un type de transfert." + Environment.NewLine);
+                return;
+            }
+            else if(this.m_BoxTransfert.SelectedItem == "Fichier local" && this.m_LblImportFichier.Text == "Importer un fichier")
+            {
+                this.m_TxtBoxTransfert.AppendText(message + "Erreur de Transfert : Veuillez importer un fichier." + Environment.NewLine);
+                return;
+            }
 
             bool etat = form.Transfert("Test");
             if(etat)
@@ -41,6 +50,7 @@ namespace Billy_App
             {
                 this.m_TxtBoxTransfert.AppendText(message + "Transfert échoué" + Environment.NewLine);
             }
+            */
         }
 
         private void m_BpImportFichier_Click(object sender, EventArgs e)
