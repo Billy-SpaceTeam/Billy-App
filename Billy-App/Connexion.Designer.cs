@@ -40,7 +40,7 @@
             this.m_BpDetecterWifi = new System.Windows.Forms.Button();
             this.m_BpConnecterWifi = new System.Windows.Forms.Button();
             this.m_TxtBoxConnecterMdp = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.m_TxtBoxConnecterIp = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -185,13 +185,13 @@
             this.m_TxtBoxConnecterMdp.Size = new System.Drawing.Size(100, 20);
             this.m_TxtBoxConnecterMdp.TabIndex = 12;
             // 
-            // textBox1
+            // m_TxtBoxConnecterIp
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(571, 104);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 13;
+            this.m_TxtBoxConnecterIp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.m_TxtBoxConnecterIp.Location = new System.Drawing.Point(571, 104);
+            this.m_TxtBoxConnecterIp.Name = "m_TxtBoxConnecterIp";
+            this.m_TxtBoxConnecterIp.Size = new System.Drawing.Size(100, 20);
+            this.m_TxtBoxConnecterIp.TabIndex = 13;
             // 
             // label1
             // 
@@ -202,9 +202,9 @@
             this.label1.Location = new System.Drawing.Point(676, 108);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 19);
+            this.label1.Size = new System.Drawing.Size(23, 19);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Ports";
+            this.label1.Text = "Ip";
             // 
             // label2
             // 
@@ -215,9 +215,9 @@
             this.label2.Location = new System.Drawing.Point(676, 145);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 19);
+            this.label2.Size = new System.Drawing.Size(40, 19);
             this.label2.TabIndex = 15;
-            this.label2.Text = "Ports";
+            this.label2.Text = "Mdp";
             // 
             // Connexion
             // 
@@ -226,7 +226,7 @@
             this.AutoScroll = true;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.m_TxtBoxConnecterIp);
             this.Controls.Add(this.m_TxtBoxConnecterMdp);
             this.Controls.Add(this.m_BpConnecterWifi);
             this.Controls.Add(this.m_BpDetecterWifi);
@@ -261,7 +261,7 @@
         private System.Windows.Forms.Button m_BpDetecterWifi;
         private System.Windows.Forms.Button m_BpConnecterWifi;
         private System.Windows.Forms.TextBox m_TxtBoxConnecterMdp;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox m_TxtBoxConnecterIp;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

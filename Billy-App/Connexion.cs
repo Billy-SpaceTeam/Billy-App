@@ -29,6 +29,9 @@ namespace Billy_App
             form = parent;
             tcpclient = new TcpClient();
 
+            this.m_BoxPorts.Text = "Port COM";
+            this.m_BoxBauds.Text = "Débit µC";
+
             this.m_BoxBauds.Items.Add("2400");
             this.m_BoxBauds.Items.Add("9600");
             this.m_BoxBauds.Items.Add("19200");

@@ -18,6 +18,10 @@ namespace Billy_App
         {
             InitializeComponent();
             form = parent;
+
+            this.m_BoxTransfert.Text = "Type de transfert";
+            this.m_BoxTransfert.Items.Add("Github");
+            this.m_BoxTransfert.Items.Add("Fichier local");
         }
 
         private void m_BpTransfert_Click(object sender, EventArgs e)
