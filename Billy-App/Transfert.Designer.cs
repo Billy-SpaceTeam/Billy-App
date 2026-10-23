@@ -93,6 +93,7 @@
             this.m_BpImportFichier.TabIndex = 12;
             this.m_BpImportFichier.Text = "Importer un fichier";
             this.m_BpImportFichier.UseVisualStyleBackColor = true;
+            this.m_BpImportFichier.Click += new System.EventHandler(this.m_BpImportFichier_Click);
             // 
             // m_PanelImportFichier
             // 

@@ -41,5 +41,21 @@ namespace Billy_App
                 this.m_TxtBoxTransfert.AppendText(message + "Transfert échoué" + Environment.NewLine);
             }
         }
+
+        private void m_BpImportFichier_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Title = "Sélectionner un fichier";
+                openFileDialog.Filter = "Tous les fichiers (*.*)|*.*|Fichiers texte (*.txt)|*.txt";
+                openFileDialog.FilterIndex = 1;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string cheminFichier = openFileDialog.FileName;
+                    //TraiterFichier(cheminFichier);
+                }
+            }
+        }
     }
 }
