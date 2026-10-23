@@ -22,6 +22,7 @@ namespace Billy_App
             this.m_BoxTransfert.Text = "Type de transfert";
             this.m_BoxTransfert.Items.Add("Github");
             this.m_BoxTransfert.Items.Add("Fichier local");
+            this.m_LblImportFichier.Text = "Importer un fichier"; 
         }
 
         private void m_BpTransfert_Click(object sender, EventArgs e)
@@ -53,8 +54,21 @@ namespace Billy_App
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string cheminFichier = openFileDialog.FileName;
+                    this.m_LblImportFichier.Text = (cheminFichier);
                     //TraiterFichier(cheminFichier);
                 }
+            }
+        }
+
+        private void m_PanelImportFichier_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
             }
         }
     }

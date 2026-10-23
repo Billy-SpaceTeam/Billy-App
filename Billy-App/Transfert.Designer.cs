@@ -34,6 +34,7 @@
             this.m_BoxTransfert = new System.Windows.Forms.ComboBox();
             this.m_BpImportFichier = new System.Windows.Forms.Button();
             this.m_PanelImportFichier = new System.Windows.Forms.Panel();
+            this.m_LblImportFichier = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // m_LblTransfert
@@ -104,11 +105,27 @@
             this.m_PanelImportFichier.Name = "m_PanelImportFichier";
             this.m_PanelImportFichier.Size = new System.Drawing.Size(200, 100);
             this.m_PanelImportFichier.TabIndex = 13;
+            this.m_PanelImportFichier.DragEnter += new System.Windows.Forms.DragEventHandler(this.m_PanelImportFichier_DragEnter);
+            // 
+            // m_LblImportFichier
+            // 
+            this.m_LblImportFichier.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_LblImportFichier.AutoSize = true;
+            this.m_LblImportFichier.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblImportFichier.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblImportFichier.Location = new System.Drawing.Point(308, 147);
+            this.m_LblImportFichier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblImportFichier.Name = "m_LblImportFichier";
+            this.m_LblImportFichier.Size = new System.Drawing.Size(21, 16);
+            this.m_LblImportFichier.TabIndex = 16;
+            this.m_LblImportFichier.Text = "xx";
             // 
             // Transfert
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.m_LblImportFichier);
             this.Controls.Add(this.m_PanelImportFichier);
             this.Controls.Add(this.m_BpImportFichier);
             this.Controls.Add(this.m_BoxTransfert);
@@ -131,5 +148,6 @@
         private System.Windows.Forms.ComboBox m_BoxTransfert;
         private System.Windows.Forms.Button m_BpImportFichier;
         private System.Windows.Forms.Panel m_PanelImportFichier;
+        private System.Windows.Forms.Label m_LblImportFichier;
     }
 }
