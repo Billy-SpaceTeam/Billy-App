@@ -61,6 +61,7 @@ namespace Billy_App
             {
                 m_TxtStatusPort.Text = portName;
                 m_TxtStatusBauds.Text = baudRate.ToString();
+                this.m_LblStatusPort.Text = "Port :";
                 m_TxtStatusConnection.Text = "Connecté";
                 this.m_ProgressBarConnexion.Value = 100;
             }
@@ -98,7 +99,42 @@ namespace Billy_App
 
         public bool ConnexionWifi(string ssid, string password)
         {
-            return true;
+            try
+            {
+                this.m_ProgressBarConnexion.Value = 30;
+                this.m_LblStatusPort.Text = "IP :";
+                this.m_TxtStatusPort.Text = ssid;
+                //this.m_TxtStatusBauds.Text = password;
+                //code de connexion wifi
+                this.m_ProgressBarConnexion.Value = 100;
+                this.m_TxtStatusConnection.Text = "Connecté";
+                return true;
+            }
+            catch(Exception ex)
+            {
+                m_TxtStatusConnection.Text = "Echec de la connexion";
+                MessageBox.Show("Erreur lors de la connexion : " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool DeconnexionWifi()
+        {
+            try
+            {
+                //code deconnexion wifi
+                this.m_ProgressBarConnexion.Value = 0;
+                this.m_TxtStatusConnection.Text = "Déconnecté";
+                this.m_TxtStatusPort.Text = "Aucun port sélectionné";
+                this.m_TxtStatusBauds.Text = "Aucun débit sélectionné";
+                return true;
+            }
+            catch (Exception ex)
+            {
+                m_TxtStatusConnection.Text = "Echec de la déconnexion";
+                MessageBox.Show("Erreur lors de la déconnexion : " + ex.Message);
+                return false;
+            }
         }
 
         public void SetMode(string mode)

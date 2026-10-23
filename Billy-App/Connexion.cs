@@ -20,7 +20,8 @@ namespace Billy_App
         Form1 form;
         TcpClient tcpclient;
 
-        private bool isConnected = false;
+        private bool isConnectedSerialPort = false;
+        private bool isConnectedWifi = false;
         private Int32 PortWifi = 8080;
         public Connexion(Form1 parent)
         {
@@ -30,7 +31,9 @@ namespace Billy_App
             tcpclient = new TcpClient();
 
             this.m_BoxPorts.Text = "Port COM";
-            this.m_BoxBauds.Text = "Débit µC";
+            this.m_BoxBauds.Text = "Débit";
+            //this.m_TxtBoxConnecterIp.
+            //this.m_TxtBoxConnecterMdp.Text = "Mot de passe";
 
             this.m_BoxBauds.Items.Add("2400");
             this.m_BoxBauds.Items.Add("9600");
@@ -62,7 +65,7 @@ namespace Billy_App
 
         private void m_BpConnecter_Click(object sender, EventArgs e)
         {
-            if (!isConnected)
+            if (!isConnectedSerialPort)
             {
                 string horodatage = DateTime.Now.ToString("HH:mm:ss");
                 m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Connecting..." + Environment.NewLine);
@@ -81,9 +84,9 @@ namespace Billy_App
                     return;
                 }
 
-                isConnected = form.ConnexionSerialPort(m_BoxPorts.SelectedItem.ToString(), int.Parse(m_BoxBauds.SelectedItem.ToString()));
+                isConnectedSerialPort = form.ConnexionSerialPort(m_BoxPorts.SelectedItem.ToString(), int.Parse(m_BoxBauds.SelectedItem.ToString()));
 
-                if (isConnected)
+                if (isConnectedSerialPort)
                 {
                     m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Connecté au port série " + m_BoxPorts.SelectedItem.ToString() + " avec un débit de " + m_BoxBauds.SelectedItem.ToString() + "." + Environment.NewLine);
                     m_BpConnecterSerialPort.Text = "Déconnecter";
@@ -101,13 +104,13 @@ namespace Billy_App
                 bool deconnexion = form.DeconnexionSerialPort();
                 if (deconnexion)
                 {
-                    isConnected = false;
-                    m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Déconnecté du port série." + Environment.NewLine);
+                    isConnectedSerialPort = false;
+                    m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Déconnecté du port série" + Environment.NewLine);
                     m_BpConnecterSerialPort.Text = "Connecter";
                 }
                 else
                 {
-                    m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Echec de la déconnexion du port série." + Environment.NewLine);
+                    m_TxtBoxConnection.AppendText("[" + horodatage + "] " + "Echec de la déconnexion du port série" + Environment.NewLine);
                 }
             }
 
@@ -126,17 +129,50 @@ namespace Billy_App
         {
             string horodatage = DateTime.Now.ToString("HH:mm:ss");
             string message = $"[{horodatage}]";
-
-            bool connexion = form.ConnexionWifi("MonSSID", this.m_TxtBoxConnecterMdp.Text);
-
-            if (connexion)
+            if (!isConnectedWifi)
             {
-                this.m_TxtBoxConnection.AppendText(message + "Connexion Wi-Fi réussie." + Environment.NewLine);
+                this.m_TxtBoxConnection.AppendText(message + "Début de la connexion Wi-Fi..." + Environment.NewLine);
 
+                if (this.m_TxtBoxConnecterIp.Text == "")
+                {
+                    this.m_TxtBoxConnection.AppendText(message + "Erreur : Adresse IP non renseignée" + Environment.NewLine);
+                    MessageBox.Show("Erreur lors de la connexion : Adresse IP non renseignée");
+                    return;
+                }
+                else if (this.m_TxtBoxConnecterMdp.Text == "")
+                {
+                    this.m_TxtBoxConnection.AppendText(message + "Erreur : Mot de passe non renseigné" + Environment.NewLine);
+                    MessageBox.Show("Erreur lors de la connexion : Mot de passe non renseigné");
+                    return;
+                }
+
+                bool connexion = form.ConnexionWifi(this.m_TxtBoxConnecterIp.Text, this.m_TxtBoxConnecterMdp.Text);
+
+                if (connexion)
+                {
+                    this.m_TxtBoxConnection.AppendText(message + "Connexion Wi-Fi réussie" + Environment.NewLine);
+                    this.isConnectedWifi = true;
+                    this.m_BpConnecterWifi.Text = "Déconnecter";
+                }
+                else
+                {
+                    this.m_TxtBoxConnection.AppendText(message + "Connexion Wi-Fi échouée" + Environment.NewLine);
+                }
             }
             else
             {
-                this.m_TxtBoxConnection.AppendText(message + "Connexion Wi-Fi échouée." + Environment.NewLine);
+                this.m_TxtBoxConnection.AppendText(message + "Déconnection du Wifi..." + Environment.NewLine);
+                bool connexion = form.DeconnexionWifi();
+                if(connexion)
+                {
+                    this.m_TxtBoxConnection.AppendText(message + "Déconnexion Wi-Fi réussie" + Environment.NewLine);
+                    this.m_BpConnecterWifi.Text = "Se Connecter";
+                    this.isConnectedWifi = false;
+                }
+                else
+                {
+                    this.m_TxtBoxConnection.AppendText(message + "Déconnexion Wi-Fi échouée" + Environment.NewLine);
+                }
             }
         }
     }   
