@@ -1,15 +1,44 @@
-# Billy-App
+# 🚀 Billy-App
 
-Projet etudiant d'une maquette de satellite – 2ème année ESE (Électronique et Systèmes Embarqués)  
-**Début du projet :** 22/09/2026
-
-[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![Language](https://img.shields.io/badge/language-C#-orange.svg)]()
+> Application de bureau .NET (Windows Forms) développée pour le contrôle, la communication et la gestion du projet **Billy CubeSat** (Billy-SpaceTeam).
 
 ---
 
-## 📌 Description du projet
-Billy est le nom de notre maquette de satellite. Il s'agit d'un système embarqué communicant développé dans le cadre de notre cursus en Génie Électronique et Informatique Industrielle (option ESE). Ce projet a pour objectif de concevoir et de déployer un objet connecté capable de transmettre diverses données issues de capteurs via plusieurs protocoles de communication. Le satellite embarquera également une roue de réaction lui permettant de s'orienter automatiquement vers le Soleil.
+## ✨ Fonctionnalités principales
+
+* **🔌 Connexion multi-modes :**
+  * Communication série (UART / Port COM) pour le dialogue direct avec les cartes STM32 Nucleo.
+  * Connexion réseau (TCP/IP / Wi-Fi) pour le suivi des données à distance.
+* **⚡ Flashage et Transfert de firmware :**
+  * Détection automatique des cartes STM32 Nucleo connectées en USB.
+  * Transfert et flashage de fichiers binaires (`.bin`) avec suivi de progression en temps réel.
+* **🎨 Interface adaptative & Paramètres :**
+  * Basculement dynamique entre le **Thème Clair** et le **Thème Sombre** (avec sauvegarde des préférences utilisateur).
+  * Gestion centralisée des configurations (ports, débits, adresses IP, chemins de données).
+* **🔄 Système de mise à jour intégré :**
+  * Vérification automatique des nouvelles versions directement depuis les Releases GitHub.
+  * Téléchargement et installation transparente des mises à jour de l'application.
 
 ---
+
+## 🛠️ Technologies utilisées
+
+* **Langage :** C# (.NET 8 / Windows Forms)
+* **Matériel ciblé :** STM32 Nucleo (via ST-Link / USB & Wi-Fi)
+
+---
+
+## 🚀 Installation & Utilisation
+
+1. Rendez-vous dans l'onglet [Releases](https://github.com/Billy-SpaceTeam/Billy-App/releases) du dépôt.
+2. Téléchargez la dernière archive ZIP disponible (`Billy-App.zip`).
+3. Extrayez le contenu dans le dossier de votre choix.
+4. Lancez l'exécutable `Billy-App.exe`.
+
+---
+
+## 🔄 Compilation & Développement (Pour les contributeurs)
+
+1. Clonez le dépôt :
+   ```bash
+   git clone [https://github.com/Billy-SpaceTeam/Billy-App.git](https://github.com/Billy-SpaceTeam/Billy-App.git)
