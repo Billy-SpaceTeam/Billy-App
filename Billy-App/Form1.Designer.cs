@@ -49,6 +49,7 @@
             this.m_SerialPort = new System.IO.Ports.SerialPort(this.components);
             this.m_PanelMenu = new System.Windows.Forms.Panel();
             this.m_TimerSecondes = new System.Windows.Forms.Timer(this.components);
+            this.m_MenuParametre = new System.Windows.Forms.ToolStripMenuItem();
             this.m_StatBarre.SuspendLayout();
             this.m_Menu.SuspendLayout();
             this.SuspendLayout();
@@ -134,7 +135,8 @@
             this.m_MenuDonnées,
             this.m_MenuActions,
             this.m_MenuModes,
-            this.m_MenuTransfert});
+            this.m_MenuTransfert,
+            this.m_MenuParametre});
             this.m_Menu.Location = new System.Drawing.Point(0, 0);
             this.m_Menu.Name = "m_Menu";
             this.m_Menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -191,6 +193,13 @@
             this.m_PanelMenu.Size = new System.Drawing.Size(789, 426);
             this.m_PanelMenu.TabIndex = 3;
             // 
+            // m_MenuParametre
+            // 
+            this.m_MenuParametre.Name = "m_MenuParametre";
+            this.m_MenuParametre.Size = new System.Drawing.Size(78, 20);
+            this.m_MenuParametre.Text = "Paramètres";
+            this.m_MenuParametre.Click += new System.EventHandler(this.m_MenuParametre_Click);
+            // 
             // Form1
             // 
             this.AllowDrop = true;
@@ -235,6 +244,7 @@
         private System.Windows.Forms.ToolStripStatusLabel m_TxtStatusBauds;
         private System.Windows.Forms.ToolStripStatusLabel m_LblStatusMode;
         private System.Windows.Forms.ToolStripStatusLabel m_TxtStatusMode;
+        private System.Windows.Forms.ToolStripMenuItem m_MenuParametre;
     }
 }
 

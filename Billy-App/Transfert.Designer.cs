@@ -34,8 +34,8 @@
             this.m_BoxTransfert = new System.Windows.Forms.ComboBox();
             this.m_BpImportFichier = new System.Windows.Forms.Button();
             this.m_PanelImportFichier = new System.Windows.Forms.Panel();
-            this.m_LblImportFichier = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.m_LblImportFichier = new System.Windows.Forms.Label();
             this.m_PanelImportFichier.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,13 +48,14 @@
             this.m_LblTransfert.Location = new System.Drawing.Point(35, 54);
             this.m_LblTransfert.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.m_LblTransfert.Name = "m_LblTransfert";
-            this.m_LblTransfert.Size = new System.Drawing.Size(227, 26);
+            this.m_LblTransfert.Size = new System.Drawing.Size(181, 20);
             this.m_LblTransfert.TabIndex = 2;
             this.m_LblTransfert.Text = "Transfert Programme";
             // 
             // m_TxtBoxTransfert
             // 
-            this.m_TxtBoxTransfert.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.m_TxtBoxTransfert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.m_TxtBoxTransfert.EnableAutoDragDrop = true;
             this.m_TxtBoxTransfert.Location = new System.Drawing.Point(0, 290);
             this.m_TxtBoxTransfert.Margin = new System.Windows.Forms.Padding(2);
@@ -110,19 +111,6 @@
             this.m_PanelImportFichier.TabIndex = 13;
             this.m_PanelImportFichier.DragEnter += new System.Windows.Forms.DragEventHandler(this.m_PanelImportFichier_DragEnter);
             // 
-            // m_LblImportFichier
-            // 
-            this.m_LblImportFichier.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.m_LblImportFichier.AutoSize = true;
-            this.m_LblImportFichier.BackColor = System.Drawing.SystemColors.Control;
-            this.m_LblImportFichier.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblImportFichier.Location = new System.Drawing.Point(308, 147);
-            this.m_LblImportFichier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.m_LblImportFichier.Name = "m_LblImportFichier";
-            this.m_LblImportFichier.Size = new System.Drawing.Size(129, 16);
-            this.m_LblImportFichier.TabIndex = 16;
-            this.m_LblImportFichier.Text = "Importer un fichier";
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -132,9 +120,22 @@
             this.label1.Location = new System.Drawing.Point(43, 34);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 16);
+            this.label1.Size = new System.Drawing.Size(92, 15);
             this.label1.TabIndex = 17;
             this.label1.Text = "Drop un fichier";
+            // 
+            // m_LblImportFichier
+            // 
+            this.m_LblImportFichier.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_LblImportFichier.AutoSize = true;
+            this.m_LblImportFichier.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblImportFichier.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblImportFichier.Location = new System.Drawing.Point(308, 147);
+            this.m_LblImportFichier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblImportFichier.Name = "m_LblImportFichier";
+            this.m_LblImportFichier.Size = new System.Drawing.Size(115, 15);
+            this.m_LblImportFichier.TabIndex = 16;
+            this.m_LblImportFichier.Text = "Importer un fichier";
             // 
             // Transfert
             // 

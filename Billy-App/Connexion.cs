@@ -22,7 +22,7 @@ namespace Billy_App
 
         private bool isConnectedSerialPort = false;
         private bool isConnectedWifi = false;
-        private Int32 PortWifi = 8080;
+        //private Int32 PortWifi = 8080;
         public Connexion(Form1 parent)
         {
             InitializeComponent();

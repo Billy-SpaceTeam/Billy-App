@@ -16,7 +16,7 @@ namespace Billy_App
     {
         Form1 form;
         private string cheminFichier;
-        private string urlGithub = "https://github.com/Billy-SpaceTeam/Billy-CubeSat";
+        //private string urlGithub = "https://github.com/Billy-SpaceTeam/Billy-CubeSat";
         public Transfert(Form1 parent)
         {
             InitializeComponent();

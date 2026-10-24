@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Billy_App
 {
@@ -10,6 +12,7 @@ namespace Billy_App
         private Actions actions;
         private Modes modes;
         private Transfert transfert;
+        private Parametres parametres;
 
         public Form1()
         {
@@ -20,6 +23,7 @@ namespace Billy_App
             actions = new Actions();
             modes = new Modes(this);
             transfert = new Transfert(this);
+            parametres = new Parametres(this);
 
             this.m_ProgressBarConnexion.Value = 0;
             this.m_ProgressBarConnexion.Maximum = 100;
@@ -164,6 +168,56 @@ namespace Billy_App
             }
         }
 
+        public void AppliquerTheme(bool sombre)
+        {
+            //Définition des couleurs selon le mode choisi
+            Color couleurFond = sombre ? Color.FromArgb(32, 32, 32) : Color.FromKnownColor(KnownColor.Control);
+            Color couleurTexte = sombre ? Color.White : Color.Black;
+            Color couleurChamps = sombre ? Color.FromArgb(45, 45, 48) : Color.White;
+            Color couleurBoutons = sombre ? Color.FromArgb(60, 60, 60) : Color.FromKnownColor(KnownColor.ControlLight);
+
+            //Application au Form principal
+            this.BackColor = couleurFond;
+            this.ForeColor = couleurTexte;
+
+            //Application récursive à tous les contrôles (incluant le UserControl)
+            AppliquerCouleursRecursif(this.Controls, couleurFond, couleurTexte, couleurChamps, couleurBoutons);
+        }
+
+
+        private void AppliquerCouleursRecursif(Control.ControlCollection controles, Color fond, Color texte, Color champs, Color boutons)
+        {
+            foreach (Control ctrl in controles)
+            {
+                if (ctrl is Button)
+                {
+                    ctrl.BackColor = boutons;
+                    ctrl.ForeColor = texte;
+                }
+                else if (ctrl is TextBox || ctrl is ComboBox || ctrl is ListBox)
+                {
+                    ctrl.BackColor = champs;
+                    ctrl.ForeColor = texte;
+                }
+                else if (ctrl is Panel || ctrl is GroupBox || ctrl is UserControl)
+                {
+                    ctrl.BackColor = fond;
+                    ctrl.ForeColor = texte;
+
+                    // Relance la recherche sur les contrôles situés à l'intérieur du UserControl ou Panel
+                    if (ctrl.HasChildren)
+                    {
+                        AppliquerCouleursRecursif(ctrl.Controls, fond, texte, champs, boutons);
+                    }
+                }
+                else
+                {
+                    ctrl.BackColor = fond;
+                    ctrl.ForeColor = texte;
+                }
+            }
+        }
+
         private void m_MenuConnection_Click(object sender, EventArgs e)
         {
             m_PanelMenu.Controls.Clear();
@@ -199,10 +253,21 @@ namespace Billy_App
             m_PanelMenu.Controls.Add(transfert);
         }
 
+        private void m_MenuParametre_Click(object sender, EventArgs e)
+        {
+            m_PanelMenu.Controls.Clear();
+            parametres.Dock = DockStyle.Fill;
+            m_PanelMenu.Controls.Add(parametres);
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             connexion.Dock = DockStyle.Fill;
             m_PanelMenu.Controls.Add(connexion);
+
+            bool themeSombre = false;
+            themeSombre = Properties.Settings.Default.ThemeSombre;
+            AppliquerTheme(themeSombre);
         }
     }
 }
