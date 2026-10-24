@@ -174,6 +174,7 @@
             this.m_TxtBoxStockTrans.Name = "m_TxtBoxStockTrans";
             this.m_TxtBoxStockTrans.Size = new System.Drawing.Size(235, 20);
             this.m_TxtBoxStockTrans.TabIndex = 21;
+            this.m_TxtBoxStockTrans.TextChanged += new System.EventHandler(this.m_TxtBoxStockTrans_TextChanged);
             // 
             // m_LblRaccourcis
             // 
@@ -195,6 +196,7 @@
             this.m_TxtBoxRaccourciIp.Name = "m_TxtBoxRaccourciIp";
             this.m_TxtBoxRaccourciIp.Size = new System.Drawing.Size(176, 20);
             this.m_TxtBoxRaccourciIp.TabIndex = 23;
+            this.m_TxtBoxRaccourciIp.TextChanged += new System.EventHandler(this.m_TxtBoxRaccourciIp_TextChanged);
             // 
             // m_TxtBoxRaccourciMdp
             // 
@@ -203,6 +205,7 @@
             this.m_TxtBoxRaccourciMdp.Name = "m_TxtBoxRaccourciMdp";
             this.m_TxtBoxRaccourciMdp.Size = new System.Drawing.Size(100, 20);
             this.m_TxtBoxRaccourciMdp.TabIndex = 24;
+            this.m_TxtBoxRaccourciMdp.TextChanged += new System.EventHandler(this.m_TxtBoxRaccourciMdp_TextChanged);
             // 
             // label6
             // 
@@ -240,6 +243,7 @@
             this.m_BpLienGithub.TabIndex = 27;
             this.m_BpLienGithub.Text = "Github du Projet";
             this.m_BpLienGithub.UseVisualStyleBackColor = true;
+            this.m_BpLienGithub.Click += new System.EventHandler(this.m_BpLienGithub_Click);
             // 
             // label8
             // 
@@ -274,6 +278,7 @@
             this.m_TxtBoxStockDonnees.Name = "m_TxtBoxStockDonnees";
             this.m_TxtBoxStockDonnees.Size = new System.Drawing.Size(235, 20);
             this.m_TxtBoxStockDonnees.TabIndex = 30;
+            this.m_TxtBoxStockDonnees.TextChanged += new System.EventHandler(this.m_TxtBoxStockDonnees_TextChanged);
             // 
             // m_TxtBoxStockExp
             // 
@@ -282,6 +287,7 @@
             this.m_TxtBoxStockExp.Name = "m_TxtBoxStockExp";
             this.m_TxtBoxStockExp.Size = new System.Drawing.Size(235, 20);
             this.m_TxtBoxStockExp.TabIndex = 32;
+            this.m_TxtBoxStockExp.TextChanged += new System.EventHandler(this.m_TxtBoxStockExp_TextChanged);
             // 
             // label10
             // 
