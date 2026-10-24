@@ -145,11 +145,11 @@
             // 
             this.m_TxtBoxConnection.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_TxtBoxConnection.EnableAutoDragDrop = true;
-            this.m_TxtBoxConnection.Location = new System.Drawing.Point(0, 324);
+            this.m_TxtBoxConnection.Location = new System.Drawing.Point(0, 312);
             this.m_TxtBoxConnection.Margin = new System.Windows.Forms.Padding(2);
             this.m_TxtBoxConnection.Name = "m_TxtBoxConnection";
             this.m_TxtBoxConnection.ReadOnly = true;
-            this.m_TxtBoxConnection.Size = new System.Drawing.Size(802, 188);
+            this.m_TxtBoxConnection.Size = new System.Drawing.Size(802, 200);
             this.m_TxtBoxConnection.TabIndex = 8;
             this.m_TxtBoxConnection.Text = "";
             // 

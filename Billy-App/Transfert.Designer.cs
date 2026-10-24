@@ -57,18 +57,18 @@
             this.m_TxtBoxTransfert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.m_TxtBoxTransfert.EnableAutoDragDrop = true;
-            this.m_TxtBoxTransfert.Location = new System.Drawing.Point(0, 290);
+            this.m_TxtBoxTransfert.Location = new System.Drawing.Point(0, 312);
             this.m_TxtBoxTransfert.Margin = new System.Windows.Forms.Padding(2);
             this.m_TxtBoxTransfert.Name = "m_TxtBoxTransfert";
             this.m_TxtBoxTransfert.ReadOnly = true;
-            this.m_TxtBoxTransfert.Size = new System.Drawing.Size(802, 222);
+            this.m_TxtBoxTransfert.Size = new System.Drawing.Size(802, 200);
             this.m_TxtBoxTransfert.TabIndex = 9;
             this.m_TxtBoxTransfert.Text = "";
             // 
             // m_BpTransfert
             // 
             this.m_BpTransfert.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.m_BpTransfert.Location = new System.Drawing.Point(312, 181);
+            this.m_BpTransfert.Location = new System.Drawing.Point(301, 163);
             this.m_BpTransfert.Margin = new System.Windows.Forms.Padding(2);
             this.m_BpTransfert.Name = "m_BpTransfert";
             this.m_BpTransfert.Size = new System.Drawing.Size(85, 33);
@@ -81,7 +81,7 @@
             // 
             this.m_BoxTransfert.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.m_BoxTransfert.FormattingEnabled = true;
-            this.m_BoxTransfert.Location = new System.Drawing.Point(50, 107);
+            this.m_BoxTransfert.Location = new System.Drawing.Point(39, 89);
             this.m_BoxTransfert.Margin = new System.Windows.Forms.Padding(2);
             this.m_BoxTransfert.Name = "m_BoxTransfert";
             this.m_BoxTransfert.Size = new System.Drawing.Size(101, 21);
@@ -90,7 +90,7 @@
             // m_BpImportFichier
             // 
             this.m_BpImportFichier.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.m_BpImportFichier.Location = new System.Drawing.Point(76, 252);
+            this.m_BpImportFichier.Location = new System.Drawing.Point(65, 234);
             this.m_BpImportFichier.Margin = new System.Windows.Forms.Padding(2);
             this.m_BpImportFichier.Name = "m_BpImportFichier";
             this.m_BpImportFichier.Size = new System.Drawing.Size(120, 34);
@@ -105,7 +105,7 @@
             this.m_PanelImportFichier.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.m_PanelImportFichier.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.m_PanelImportFichier.Controls.Add(this.label1);
-            this.m_PanelImportFichier.Location = new System.Drawing.Point(50, 147);
+            this.m_PanelImportFichier.Location = new System.Drawing.Point(39, 129);
             this.m_PanelImportFichier.Name = "m_PanelImportFichier";
             this.m_PanelImportFichier.Size = new System.Drawing.Size(200, 100);
             this.m_PanelImportFichier.TabIndex = 13;
@@ -130,7 +130,7 @@
             this.m_LblImportFichier.AutoSize = true;
             this.m_LblImportFichier.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblImportFichier.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblImportFichier.Location = new System.Drawing.Point(308, 147);
+            this.m_LblImportFichier.Location = new System.Drawing.Point(297, 129);
             this.m_LblImportFichier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.m_LblImportFichier.Name = "m_LblImportFichier";
             this.m_LblImportFichier.Size = new System.Drawing.Size(115, 15);

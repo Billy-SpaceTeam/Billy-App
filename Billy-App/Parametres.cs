@@ -22,8 +22,11 @@ namespace Billy_App
 
         private void m_BpThemes_Click(object sender, EventArgs e)
         {
-            this.themeSombre = !this.themeSombre;
-            if (this.themeSombre)
+            form.ThemeSombre = !form.ThemeSombre;
+            Properties.Settings.Default.ThemeSombre = form.ThemeSombre;
+            Properties.Settings.Default.Save();
+
+            if (form.ThemeSombre)
             {
                 m_BpThemes.Text = "Thème Clair";
             }
@@ -31,7 +34,7 @@ namespace Billy_App
             {
                 m_BpThemes.Text = "Thème Sombre";
             }
-            form.AppliquerTheme(themeSombre);
+            form.AppliquerTheme();
         }
     }
 }
