@@ -38,6 +38,9 @@ namespace Billy_App
             this.m_BoxBauds.Items.Add("2400");
             this.m_BoxBauds.Items.Add("9600");
             this.m_BoxBauds.Items.Add("19200");
+
+            this.m_TxtBoxConnecterIp.Text = Properties.Settings.Default.Ip;
+            this.m_TxtBoxConnecterMdp.Text = Properties.Settings.Default.MotDePasse;
         }
 
         private void m_BpDetecter_Click(object sender, EventArgs e)

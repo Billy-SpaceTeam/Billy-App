@@ -33,26 +33,26 @@
             this.m_LblMiseAJour = new System.Windows.Forms.Label();
             this.m_BpVerifMaj = new System.Windows.Forms.Button();
             this.m_BpMetAJour = new System.Windows.Forms.Button();
-            this.m_LblImportFichier = new System.Windows.Forms.Label();
+            this.m_LblInfoVersion = new System.Windows.Forms.Label();
             this.m_LblInformations = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.m_LblInfoDate = new System.Windows.Forms.Label();
             this.m_LblStockage = new System.Windows.Forms.Label();
             this.m_TxtBoxStockTrans = new System.Windows.Forms.TextBox();
             this.m_LblRaccourcis = new System.Windows.Forms.Label();
             this.m_TxtBoxRaccourciIp = new System.Windows.Forms.TextBox();
             this.m_TxtBoxRaccourciMdp = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.m_LblRaccourcisIp = new System.Windows.Forms.Label();
+            this.m_LblRaccourcisMdp = new System.Windows.Forms.Label();
             this.m_BpLienGithub = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.m_LblStockTrans = new System.Windows.Forms.Label();
+            this.m_LblStockDonnees = new System.Windows.Forms.Label();
             this.m_TxtBoxStockDonnees = new System.Windows.Forms.TextBox();
             this.m_TxtBoxStockExp = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.m_LblStockExp = new System.Windows.Forms.Label();
             this.m_LblMajStatus = new System.Windows.Forms.Label();
             this.m_LblVMajVersion = new System.Windows.Forms.Label();
             this.m_LblMajDate = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.m_LblInfoCredit = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // m_LblApparence
@@ -115,18 +115,18 @@
             this.m_BpMetAJour.Text = "Mettre à jour";
             this.m_BpMetAJour.UseVisualStyleBackColor = true;
             // 
-            // m_LblImportFichier
+            // m_LblInfoVersion
             // 
-            this.m_LblImportFichier.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.m_LblImportFichier.AutoSize = true;
-            this.m_LblImportFichier.BackColor = System.Drawing.SystemColors.Control;
-            this.m_LblImportFichier.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblImportFichier.Location = new System.Drawing.Point(449, 368);
-            this.m_LblImportFichier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.m_LblImportFichier.Name = "m_LblImportFichier";
-            this.m_LblImportFichier.Size = new System.Drawing.Size(136, 16);
-            this.m_LblImportFichier.TabIndex = 17;
-            this.m_LblImportFichier.Text = "Version du logiciel :";
+            this.m_LblInfoVersion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.m_LblInfoVersion.AutoSize = true;
+            this.m_LblInfoVersion.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblInfoVersion.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblInfoVersion.Location = new System.Drawing.Point(449, 368);
+            this.m_LblInfoVersion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblInfoVersion.Name = "m_LblInfoVersion";
+            this.m_LblInfoVersion.Size = new System.Drawing.Size(136, 16);
+            this.m_LblInfoVersion.TabIndex = 17;
+            this.m_LblInfoVersion.Text = "Version du logiciel :";
             // 
             // m_LblInformations
             // 
@@ -141,18 +141,18 @@
             this.m_LblInformations.TabIndex = 18;
             this.m_LblInformations.Text = "Informations";
             // 
-            // label3
+            // m_LblInfoDate
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.Control;
-            this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(449, 393);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 16);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Date :";
+            this.m_LblInfoDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.m_LblInfoDate.AutoSize = true;
+            this.m_LblInfoDate.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblInfoDate.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblInfoDate.Location = new System.Drawing.Point(449, 393);
+            this.m_LblInfoDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblInfoDate.Name = "m_LblInfoDate";
+            this.m_LblInfoDate.Size = new System.Drawing.Size(49, 16);
+            this.m_LblInfoDate.TabIndex = 19;
+            this.m_LblInfoDate.Text = "Date :";
             // 
             // m_LblStockage
             // 
@@ -207,31 +207,31 @@
             this.m_TxtBoxRaccourciMdp.TabIndex = 24;
             this.m_TxtBoxRaccourciMdp.TextChanged += new System.EventHandler(this.m_TxtBoxRaccourciMdp_TextChanged);
             // 
-            // label6
+            // m_LblRaccourcisIp
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.Control;
-            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(37, 372);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 16);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Ip :";
+            this.m_LblRaccourcisIp.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_LblRaccourcisIp.AutoSize = true;
+            this.m_LblRaccourcisIp.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblRaccourcisIp.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblRaccourcisIp.Location = new System.Drawing.Point(37, 372);
+            this.m_LblRaccourcisIp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblRaccourcisIp.Name = "m_LblRaccourcisIp";
+            this.m_LblRaccourcisIp.Size = new System.Drawing.Size(31, 16);
+            this.m_LblRaccourcisIp.TabIndex = 25;
+            this.m_LblRaccourcisIp.Text = "Ip :";
             // 
-            // label7
+            // m_LblRaccourcisMdp
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.Control;
-            this.label7.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(37, 408);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 16);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "Mot de Passe :";
+            this.m_LblRaccourcisMdp.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_LblRaccourcisMdp.AutoSize = true;
+            this.m_LblRaccourcisMdp.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblRaccourcisMdp.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblRaccourcisMdp.Location = new System.Drawing.Point(37, 408);
+            this.m_LblRaccourcisMdp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblRaccourcisMdp.Name = "m_LblRaccourcisMdp";
+            this.m_LblRaccourcisMdp.Size = new System.Drawing.Size(107, 16);
+            this.m_LblRaccourcisMdp.TabIndex = 26;
+            this.m_LblRaccourcisMdp.Text = "Mot de Passe :";
             // 
             // m_BpLienGithub
             // 
@@ -245,31 +245,31 @@
             this.m_BpLienGithub.UseVisualStyleBackColor = true;
             this.m_BpLienGithub.Click += new System.EventHandler(this.m_BpLienGithub_Click);
             // 
-            // label8
+            // m_LblStockTrans
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.Control;
-            this.label8.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(450, 103);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(229, 16);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Chemin des fichiers de transfert :";
+            this.m_LblStockTrans.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.m_LblStockTrans.AutoSize = true;
+            this.m_LblStockTrans.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblStockTrans.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblStockTrans.Location = new System.Drawing.Point(450, 103);
+            this.m_LblStockTrans.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblStockTrans.Name = "m_LblStockTrans";
+            this.m_LblStockTrans.Size = new System.Drawing.Size(229, 16);
+            this.m_LblStockTrans.TabIndex = 28;
+            this.m_LblStockTrans.Text = "Chemin des fichiers de transfert :";
             // 
-            // label9
+            // m_LblStockDonnees
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.Control;
-            this.label9.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(450, 159);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(153, 16);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "Chemin des données :";
+            this.m_LblStockDonnees.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.m_LblStockDonnees.AutoSize = true;
+            this.m_LblStockDonnees.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblStockDonnees.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblStockDonnees.Location = new System.Drawing.Point(450, 159);
+            this.m_LblStockDonnees.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblStockDonnees.Name = "m_LblStockDonnees";
+            this.m_LblStockDonnees.Size = new System.Drawing.Size(153, 16);
+            this.m_LblStockDonnees.TabIndex = 29;
+            this.m_LblStockDonnees.Text = "Chemin des données :";
             // 
             // m_TxtBoxStockDonnees
             // 
@@ -289,18 +289,18 @@
             this.m_TxtBoxStockExp.TabIndex = 32;
             this.m_TxtBoxStockExp.TextChanged += new System.EventHandler(this.m_TxtBoxStockExp_TextChanged);
             // 
-            // label10
+            // m_LblStockExp
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.SystemColors.Control;
-            this.label10.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(450, 219);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(180, 16);
-            this.label10.TabIndex = 31;
-            this.label10.Text = "Chemin des exportations :";
+            this.m_LblStockExp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.m_LblStockExp.AutoSize = true;
+            this.m_LblStockExp.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblStockExp.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblStockExp.Location = new System.Drawing.Point(450, 219);
+            this.m_LblStockExp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblStockExp.Name = "m_LblStockExp";
+            this.m_LblStockExp.Size = new System.Drawing.Size(180, 16);
+            this.m_LblStockExp.TabIndex = 31;
+            this.m_LblStockExp.Text = "Chemin des exportations :";
             // 
             // m_LblMajStatus
             // 
@@ -341,43 +341,43 @@
             this.m_LblMajDate.TabIndex = 35;
             this.m_LblMajDate.Text = "Date :";
             // 
-            // label14
+            // m_LblInfoCredit
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.SystemColors.Control;
-            this.label14.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(449, 344);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(240, 16);
-            this.label14.TabIndex = 36;
-            this.label14.Text = "Developpée par Clément et Jérémie";
+            this.m_LblInfoCredit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.m_LblInfoCredit.AutoSize = true;
+            this.m_LblInfoCredit.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblInfoCredit.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblInfoCredit.Location = new System.Drawing.Point(449, 344);
+            this.m_LblInfoCredit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblInfoCredit.Name = "m_LblInfoCredit";
+            this.m_LblInfoCredit.Size = new System.Drawing.Size(240, 16);
+            this.m_LblInfoCredit.TabIndex = 36;
+            this.m_LblInfoCredit.Text = "Developpée par Clément et Jérémie";
             // 
             // Parametres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.m_LblInfoCredit);
             this.Controls.Add(this.m_LblMajDate);
             this.Controls.Add(this.m_LblVMajVersion);
             this.Controls.Add(this.m_LblMajStatus);
             this.Controls.Add(this.m_TxtBoxStockExp);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.m_LblStockExp);
             this.Controls.Add(this.m_TxtBoxStockDonnees);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.m_LblStockDonnees);
+            this.Controls.Add(this.m_LblStockTrans);
             this.Controls.Add(this.m_BpLienGithub);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.m_LblRaccourcisMdp);
+            this.Controls.Add(this.m_LblRaccourcisIp);
             this.Controls.Add(this.m_TxtBoxRaccourciMdp);
             this.Controls.Add(this.m_TxtBoxRaccourciIp);
             this.Controls.Add(this.m_LblRaccourcis);
             this.Controls.Add(this.m_TxtBoxStockTrans);
             this.Controls.Add(this.m_LblStockage);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.m_LblInfoDate);
             this.Controls.Add(this.m_LblInformations);
-            this.Controls.Add(this.m_LblImportFichier);
+            this.Controls.Add(this.m_LblInfoVersion);
             this.Controls.Add(this.m_BpMetAJour);
             this.Controls.Add(this.m_BpVerifMaj);
             this.Controls.Add(this.m_LblMiseAJour);
@@ -397,25 +397,25 @@
         private System.Windows.Forms.Label m_LblMiseAJour;
         private System.Windows.Forms.Button m_BpVerifMaj;
         private System.Windows.Forms.Button m_BpMetAJour;
-        private System.Windows.Forms.Label m_LblImportFichier;
+        private System.Windows.Forms.Label m_LblInfoVersion;
         private System.Windows.Forms.Label m_LblInformations;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label m_LblInfoDate;
         private System.Windows.Forms.Label m_LblStockage;
         private System.Windows.Forms.TextBox m_TxtBoxStockTrans;
         private System.Windows.Forms.Label m_LblRaccourcis;
         private System.Windows.Forms.TextBox m_TxtBoxRaccourciIp;
         private System.Windows.Forms.TextBox m_TxtBoxRaccourciMdp;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label m_LblRaccourcisIp;
+        private System.Windows.Forms.Label m_LblRaccourcisMdp;
         private System.Windows.Forms.Button m_BpLienGithub;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label m_LblStockTrans;
+        private System.Windows.Forms.Label m_LblStockDonnees;
         private System.Windows.Forms.TextBox m_TxtBoxStockDonnees;
         private System.Windows.Forms.TextBox m_TxtBoxStockExp;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label m_LblStockExp;
         private System.Windows.Forms.Label m_LblMajStatus;
         private System.Windows.Forms.Label m_LblVMajVersion;
         private System.Windows.Forms.Label m_LblMajDate;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label m_LblInfoCredit;
     }
 }
