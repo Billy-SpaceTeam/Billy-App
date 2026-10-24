@@ -2,9 +2,9 @@ name: Build & Release Billy-App
 
 on:
   push:
-    tags:
-      - 'v*'
-  workflow_dispatch:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
 
 jobs:
   build:
@@ -14,21 +14,24 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0.x
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v2
 
-    - name: Publish WinForms App
-      run: dotnet publish Billy-App/Billy-App.csproj -c Release -r win-x64 --self-contained false -o ./publish
+    - name: Restore NuGet Packages
+      run: nuget restore Billy-App/Billy-App.sln
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Build WinForms App
+      run: msbuild Billy-App/Billy-App.csproj /p:Configuration=Release /p:OutputPath=../publish
 
     - name: Zip Build Output
-      run: Compress-Archive -Path ./publish/* -DestinationPath ./Billy-App.zip
+      run: |
+        Compress-Archive -Path ./publish/* -DestinationPath ./Billy-App-Release.zip
 
-    - name: Create GitHub Release
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
       with:
-        files: Billy-App.zip
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        name: Billy-App-Release
+        path: Billy-App-Release.zip
