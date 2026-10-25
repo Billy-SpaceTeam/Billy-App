@@ -95,7 +95,8 @@ namespace Billy_App
                 System.Diagnostics.Process.Start(SiteProjet);
             }
             catch (System.ComponentModel.Win32Exception noBrowser)
-            {https://open.spotify.com/track/6TWWauThn6z8xOFpG4XF3O
+            {
+            https://open.spotify.com/track/6TWWauThn6z8xOFpG4XF3O
                 if (noBrowser.ErrorCode == -2147467259)
                     MessageBox.Show(noBrowser.Message);
             }
@@ -201,66 +202,67 @@ namespace Billy_App
                 MessageBox.Show("Aucune mise à jour disponible pour le moment.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            //await InstallerMiseAJour(urlDownload);
+
             try
             {
-                // 1. Définir les chemins dans le dossier temporaire de Windows
                 string tempPath = Path.GetTempPath();
                 string zipPath = Path.Combine(tempPath, "BillyAppUpdate.zip");
                 string extractPath = Path.Combine(tempPath, "BillyAppUpdateExtracted");
                 string batPath = Path.Combine(tempPath, "update.bat");
 
-                // Dossier actuel de l'application en cours
                 string currentAppPath = AppDomain.CurrentDomain.BaseDirectory;
 
-                // 2. Télécharger le fichier ZIP depuis GitHub
+                // 1. Télécharger le fichier ZIP
                 using (HttpClient client = new HttpClient())
                 {
-                    // Ajouter un User-Agent pour GitHub
                     client.DefaultRequestHeaders.UserAgent.ParseAdd("BillyAppUpdater");
                     byte[] fileBytes = await client.GetByteArrayAsync(urlDownload);
                     File.WriteAllBytes(zipPath, fileBytes);
                 }
 
-                // 3. Nettoyer le dossier d'extraction s'il existe déjà, puis extraire le ZIP
+                // 2. Extraire l'archive
                 if (Directory.Exists(extractPath))
                 {
                     Directory.Delete(extractPath, true);
                 }
                 ZipFile.ExtractToDirectory(zipPath, extractPath);
 
-                // 4. Créer le script Batch (.bat) qui fera le remplacement
+                // 3. Détecter le dossier réel contenant Billy-App.exe (même s'il est dans un sous-dossier)
+                string sourceDir = extractPath;
+                string[] exeFiles = Directory.GetFiles(extractPath, "Billy-App.exe", SearchOption.AllDirectories);
+                if (exeFiles.Length > 0)
+                {
+                    sourceDir = Path.GetDirectoryName(exeFiles[0]);
+                }
+
+                // 4. Générer le script Batch avec le chemin source exact
                 string batContent = $@"
 @echo off
 echo Mise a jour de Billy-App en cours. Veuillez patienter...
-:: Attend 2 secondes pour s'assurer que l'app C# est bien fermee
 timeout /t 2 /nobreak > NUL
 
-:: Copie et ecrase tous les nouveaux fichiers vers le dossier de l'app
-xcopy /Y /E ""{extractPath}\*"" ""{currentAppPath}""
+:: Copie les fichiers depuis le dossier source vers l'emplacement actuel
+xcopy /Y /E ""{sourceDir}\*"" ""{currentAppPath}""
 
 :: Relance l'application
 start """" ""{Path.Combine(currentAppPath, "Billy-App.exe")}""
 
-:: Nettoie les fichiers temporaires
+:: Nettoyage
 del ""{zipPath}""
 rmdir /S /Q ""{extractPath}""
-
-:: Le script se supprime lui-meme a la fin
 del ""%~f0""
 ";
                 File.WriteAllText(batPath, batContent);
 
-                // 5. Exécuter le script Batch
+                // 5. Lancer le script et fermer l'application
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
                     FileName = batPath,
                     UseShellExecute = true,
-                    WindowStyle = ProcessWindowStyle.Normal // Tu peux mettre .Hidden plus tard pour cacher la console
+                    WindowStyle = ProcessWindowStyle.Normal
                 };
                 Process.Start(psi);
 
-                // 6. Quitter IMMEDIATEMENT l'application pour libérer les fichiers
                 Application.Exit();
             }
             catch (Exception ex)
