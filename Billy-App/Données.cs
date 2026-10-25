@@ -13,8 +13,10 @@ namespace Billy_App
 {
     public partial class Données : UserControl
     {
-        private int x_Photo;
-        private int Y_Photo = 0;
+        private int x_Photo = 0;
+        private int x_Gyro = 0;
+        private int y_Photo = 0;
+        private int y_Gyro = 0;
         public Données()
         {
             InitializeComponent();
@@ -23,22 +25,6 @@ namespace Billy_App
             this.m_LblGyroConstructeur.Text = "Constructeur : DFROBOT";
             this.m_LblPhotoModele.Text = "Modèle : BPW34";
             this.m_LblPhotoConstructeur.Text = "Constructeur : Vishay Semiconductors";
-
-            // Data arrays - Graph 1
-            string[] seriesArray = { "Cats", "Dogs" };
-            int[] pointsArray = { 1, 2 };
-            // Set palette.
-            this.m_ChartGyroscope.Palette = ChartColorPalette.SeaGreen;
-            // Set title.
-            this.m_ChartGyroscope.Titles.Add("Pets");
-            // Add series.
-            for (int i = 0; i < seriesArray.Length; i++)
-            {
-                // Add series.
-                Series series = this.m_ChartGyroscope.Series.Add(seriesArray[i]);
-                // Add point.
-                series.Points.Add(pointsArray[i]);
-            }
         }
 
         private void m_ChartPhotodiode_Load(object sender, EventArgs e)
@@ -64,9 +50,23 @@ namespace Billy_App
 
         private void m_TimerGraph_Tick(object sender, EventArgs e)
         {
+            this.m_LblGyro.Text = "Valeur : " + y_Gyro.ToString();
+            this.m_LblPhoto.Text = "Valeur : " + y_Photo.ToString();
             x_Photo++;
-            double nouvelleValeur = ObtenirNouvelleValeur();
-            m_ChartPhotodiode.Series["Series1"].Points.AddXY(x_Photo, nouvelleValeur);//(X = secondes, Y = valeur)
+            x_Gyro++;
+            //Graph Gyroscope
+            m_ChartGyroscope.Series["Series1"].Points.AddXY(x_Gyro, y_Gyro);//(X = secondes, Y = valeur)
+
+            if (m_ChartGyroscope.Series["Series1"].Points.Count > 60)//seulement les 60 dernières secondes
+            {
+                m_ChartGyroscope.Series["Series1"].Points.RemoveAt(0);
+
+                m_ChartGyroscope.ChartAreas[0].AxisX.Minimum = x_Gyro - 60;
+                m_ChartGyroscope.ChartAreas[0].AxisX.Maximum = x_Gyro;
+            }
+
+            //Graph PhotoDiode
+            m_ChartPhotodiode.Series["Series1"].Points.AddXY(x_Photo, y_Photo);//(X = secondes, Y = valeur)
 
             if (m_ChartPhotodiode.Series["Series1"].Points.Count > 60)//seulement les 60 dernières secondes
             {
@@ -76,13 +76,12 @@ namespace Billy_App
                 m_ChartPhotodiode.ChartAreas[0].AxisX.Maximum = x_Photo;
             }
         }
-
+        /*
         private double ObtenirNouvelleValeur()
         {
             // Lecture valeur capteur serial
-            return 0;
         }
-
+        */
         public void DemarrerTrace()
         {
             x_Photo = 0; // Réinitialiser l'incrément si nécessaire

@@ -116,6 +116,7 @@
             this.m_PanelImportFichier.Name = "m_PanelImportFichier";
             this.m_PanelImportFichier.Size = new System.Drawing.Size(200, 100);
             this.m_PanelImportFichier.TabIndex = 13;
+            this.m_PanelImportFichier.DragDrop += new System.Windows.Forms.DragEventHandler(this.m_PanelImportFichier_DragDrop);
             this.m_PanelImportFichier.DragEnter += new System.Windows.Forms.DragEventHandler(this.m_PanelImportFichier_DragEnter);
             // 
             // label1
@@ -140,9 +141,9 @@
             this.m_LblImportFichier.Location = new System.Drawing.Point(297, 214);
             this.m_LblImportFichier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.m_LblImportFichier.Name = "m_LblImportFichier";
-            this.m_LblImportFichier.Size = new System.Drawing.Size(117, 15);
+            this.m_LblImportFichier.Size = new System.Drawing.Size(60, 15);
             this.m_LblImportFichier.TabIndex = 16;
-            this.m_LblImportFichier.Text = "Chemin du fichier :";
+            this.m_LblImportFichier.Text = "Chemin :";
             // 
             // m_LblTransfertStatus
             // 

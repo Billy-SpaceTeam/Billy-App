@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.m_ChartPhotodiode = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.m_LblLiaisonSerie = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,15 +53,15 @@
             // m_ChartPhotodiode
             // 
             this.m_ChartPhotodiode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea3.Name = "ChartArea1";
-            this.m_ChartPhotodiode.ChartAreas.Add(chartArea3);
+            chartArea1.Name = "ChartArea1";
+            this.m_ChartPhotodiode.ChartAreas.Add(chartArea1);
             this.m_ChartPhotodiode.Location = new System.Drawing.Point(421, 254);
             this.m_ChartPhotodiode.Margin = new System.Windows.Forms.Padding(2);
             this.m_ChartPhotodiode.Name = "m_ChartPhotodiode";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Name = "Series1";
-            this.m_ChartPhotodiode.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Name = "Series1";
+            this.m_ChartPhotodiode.Series.Add(series1);
             this.m_ChartPhotodiode.Size = new System.Drawing.Size(382, 258);
             this.m_ChartPhotodiode.TabIndex = 0;
             this.m_ChartPhotodiode.Text = "PhotoDiode";
@@ -95,15 +95,15 @@
             // m_ChartGyroscope
             // 
             this.m_ChartGyroscope.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            chartArea4.Name = "ChartArea1";
-            this.m_ChartGyroscope.ChartAreas.Add(chartArea4);
+            chartArea2.Name = "ChartArea1";
+            this.m_ChartGyroscope.ChartAreas.Add(chartArea2);
             this.m_ChartGyroscope.Location = new System.Drawing.Point(0, 254);
             this.m_ChartGyroscope.Margin = new System.Windows.Forms.Padding(2);
             this.m_ChartGyroscope.Name = "m_ChartGyroscope";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Name = "Series1";
-            this.m_ChartGyroscope.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Name = "Series1";
+            this.m_ChartGyroscope.Series.Add(series2);
             this.m_ChartGyroscope.Size = new System.Drawing.Size(388, 258);
             this.m_ChartGyroscope.TabIndex = 4;
             this.m_ChartGyroscope.Text = "Gyroscope";

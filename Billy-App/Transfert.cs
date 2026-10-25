@@ -109,7 +109,7 @@ namespace Billy_App
             if (fichiers != null && fichiers.Length > 0)
             {
                 string cheminFichier = fichiers[0]; // Prend le premier fichier
-                this.m_LblImportFichier.Text = (cheminFichier);
+                this.m_LblImportFichier.Text = ("Chemin" + (cheminFichier));
                 TraiterFichier(cheminFichier);
             }
         }
@@ -120,7 +120,7 @@ namespace Billy_App
             string message = $"[{horodatage}]";
             try
             {
-                // Exemple : lire tout le contenu texte du fichier
+                // lire tout le contenu texte du fichier
                 string contenu = System.IO.File.ReadAllText(chemin);
                 MessageBox.Show($"Fichier chargé avec succès :\n{chemin}");
                 this.m_TxtBoxTransfert.AppendText(message + "Ficher chargé avec succeès" + Environment.NewLine);
@@ -130,6 +130,7 @@ namespace Billy_App
             {
                 MessageBox.Show($"Erreur lors de la lecture du fichier : {ex.Message}");
                 this.m_TxtBoxTransfert.AppendText(message + "Erreur : lecture du fichier" + Environment.NewLine);
+                this.m_LblTransfertStatus.Text = "Status : Erreur";
             }
         }
 
@@ -141,6 +142,7 @@ namespace Billy_App
             if (!File.Exists(cheminFichier))
             {
                 MessageBox.Show("Le fichier .bin est introuvable", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.m_LblTransfertStatus.Text = "Status : Erreur";
                 this.m_TxtBoxTransfert.AppendText(message + "Fichier .bin introuvable" + Environment.NewLine);
                 return false;
             }
@@ -286,6 +288,10 @@ namespace Billy_App
             else if (this.m_BoxTransfert.SelectedItem == "Fichier local")
             {
                 this.m_LblTransfertType.Text = "Type : Fichier local";
+                this.m_LblTransfertVersion.Text = "Version : non disponible";
+                this.m_LblTransfertDate.Text = "Date : non disponible";
+                this.m_LblTransfertStatus.Text = "Status : non chargé";
+                this.m_LblTransfertBranche.Text = "Branche : non disponible";
             }
         }
     }
