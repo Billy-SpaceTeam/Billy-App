@@ -1,6 +1,6 @@
 ﻿namespace Billy_App
 {
-    partial class Actions
+    partial class Actionnneur
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.

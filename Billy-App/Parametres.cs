@@ -138,6 +138,7 @@ namespace Billy_App
                             JsonElement derniereRelease = doc.RootElement[0];
                             newVersion = derniereRelease.GetProperty("tag_name").GetString();
                             string date = derniereRelease.GetProperty("published_at").GetString();
+                            string newVersionText = newVersion;
                             newVersion = newVersion.Replace(".", "");
                             this.m_LblVMajVersion.Text = $"Version : {newVersion}";
 
@@ -146,12 +147,12 @@ namespace Billy_App
                                 if (beta)
                                 {
                                     this.m_LblMajStatus.Text = "Mise à jour Beta disponible";
-                                    this.m_LblVMajVersion.Text = $"Version : {newVersion} Beta";
+                                    this.m_LblVMajVersion.Text = $"Version : {newVersionText} Beta";
                                 }
                                 else
                                 {
                                     this.m_LblMajStatus.Text = "Mise à jour disponible";
-                                    this.m_LblVMajVersion.Text = $"Version : {newVersion}";
+                                    this.m_LblVMajVersion.Text = $"Version : {newVersionText}";
                                 }
                                 this.m_LblMajDate.Text = $"Date : {date}";
                                 JsonElement assets = derniereRelease.GetProperty("assets");

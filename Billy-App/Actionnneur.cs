@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Billy_App
 {
-    public partial class Actions : UserControl
+    public partial class Actionnneur : UserControl
     {
-        public Actions()
+        public Actionnneur()
         {
             InitializeComponent();
         }

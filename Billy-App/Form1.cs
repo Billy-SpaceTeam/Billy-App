@@ -9,7 +9,7 @@ namespace Billy_App
     {
         private Connexion connexion;
         private Données données;
-        private Actions actions;
+        private Actionnneur actions;
         private Modes modes;
         private Transfert transfert;
         private Parametres parametres;
@@ -21,7 +21,7 @@ namespace Billy_App
 
             connexion = new Connexion(this);
             données = new Données();
-            actions = new Actions();
+            actions = new Actionnneur();
             modes = new Modes(this);
             transfert = new Transfert(this);
             parametres = new Parametres(this);
