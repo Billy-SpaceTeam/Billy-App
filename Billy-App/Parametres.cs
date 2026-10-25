@@ -96,7 +96,6 @@ namespace Billy_App
             }
             catch (System.ComponentModel.Win32Exception noBrowser)
             {
-            https://open.spotify.com/track/6TWWauThn6z8xOFpG4XF3O
                 if (noBrowser.ErrorCode == -2147467259)
                     MessageBox.Show(noBrowser.Message);
             }
@@ -113,65 +112,79 @@ namespace Billy_App
                 using (HttpClient client = new HttpClient())
                 {
                     client.DefaultRequestHeaders.UserAgent.ParseAdd("BillyAppUpdater");
-                    string urlApi;
-                    var versionActuelle = Application.ProductVersion;
-                    versionActuelle = versionActuelle.Replace(".", "");
-                    var newVersion = "";
-                    bool beta;
-                    if (this.m_ChekBoxPreRelease.CheckState == CheckState.Checked)
-                    {
-                        urlApi = $"https://api.github.com/repos/{m_RepoGitHub}/releases/latest";
-                        beta = true;
-                    }
-                    else
-                    {
-                        urlApi = $"https://api.github.com/repos/{m_RepoGitHub}/releases/Pre-release";
-                        beta = false;
-                    }
+
+                    bool beta = this.m_ChekBoxPreRelease.Checked;
+                    string urlApi = beta
+                        ? $"https://api.github.com/repos/{m_RepoGitHub}/releases"
+                        : $"https://api.github.com/repos/{m_RepoGitHub}/releases/latest";
+
                     string jsonResponse = await client.GetStringAsync(urlApi);
 
                     using (JsonDocument doc = JsonDocument.Parse(jsonResponse))
                     {
-                        // On vérifie que la réponse est bien un tableau non vide
-                        if (doc.RootElement.ValueKind == JsonValueKind.Array && doc.RootElement.GetArrayLength() > 0)
-                        {
-                            // Récupération de la release la plus récente (1er élément du tableau)
-                            JsonElement derniereRelease = doc.RootElement[0];
-                            newVersion = derniereRelease.GetProperty("tag_name").GetString();
-                            string date = derniereRelease.GetProperty("published_at").GetString();
-                            string newVersionText = newVersion;
-                            newVersion = newVersion.Replace(".", "");
-                            this.m_LblVMajVersion.Text = $"Version : {newVersion}";
+                        JsonElement derniereRelease;
 
-                            if (Convert.ToInt32(versionActuelle) < Convert.ToInt32(newVersion))
+                        // 1. Extraire la release selon le type de réponse JSON
+                        if (beta)
+                        {
+                            // /releases renvoie un tableau []
+                            if (doc.RootElement.ValueKind == JsonValueKind.Array && doc.RootElement.GetArrayLength() > 0)
                             {
-                                if (beta)
-                                {
-                                    this.m_LblMajStatus.Text = "Mise à jour Beta disponible";
-                                    this.m_LblVMajVersion.Text = $"Version : {newVersionText} Beta";
-                                }
-                                else
-                                {
-                                    this.m_LblMajStatus.Text = "Mise à jour disponible";
-                                    this.m_LblVMajVersion.Text = $"Version : {newVersionText}";
-                                }
-                                this.m_LblMajDate.Text = $"Date : {date}";
-                                JsonElement assets = derniereRelease.GetProperty("assets");
-                                urlDownload = assets[0].GetProperty("browser_download_url").GetString();
-                                this.download = true;
+                                derniereRelease = doc.RootElement[0];
                             }
                             else
                             {
-                                this.m_LblMajStatus.Text = "Status : A jour !";
-                                this.m_LblVMajVersion.Text = $"Version : {Application.ProductVersion}";
-                                this.m_LblMajDate.Text = $"Date : {DateTime.Now:dd/MM/yyyy}";
-                                this.download = false;
-                                //MessageBox.Show("Votre application est déjà à jour.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Aucune release trouvée.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                return;
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Aucune release n'a été trouvée sur ce dépôt.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            // /releases/latest renvoie un objet direct {}
+                            if (doc.RootElement.ValueKind == JsonValueKind.Object)
+                            {
+                                derniereRelease = doc.RootElement;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Aucune release officielle trouvée.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                return;
+                            }
+                        }
+
+                        // 2. Récupération des informations de la release
+                        string newVersionTag = derniereRelease.GetProperty("tag_name").GetString();
+                        string dateStr = derniereRelease.GetProperty("published_at").GetString();
+
+                        // Formater la date en lisible (ex: 25/10/2026)
+                        if (DateTime.TryParse(dateStr, out DateTime datePub))
+                        {
+                            dateStr = datePub.ToString("dd/MM/yyyy");
+                        }
+
+                        // Normalisation pour la comparaison (ex: "v1.0.2.1" ou "1.0.2.1" -> "1021")
+                        string versionActuelleClean = Application.ProductVersion.Replace(".", "");
+                        string newVersionClean = newVersionTag.Replace(".", "").Replace("v", "").Replace("V", "");
+
+                        if (versionActuelleClean != newVersionClean)
+                        {
+                            this.m_LblMajStatus.Text = beta ? "Mise à jour Beta disponible" : "Mise à jour disponible";
+                            this.m_LblVMajVersion.Text = $"Version : {newVersionTag}" + (beta ? " Beta" : "");
+                            this.m_LblMajDate.Text = $"Date : {dateStr}";
+
+                            JsonElement assets = derniereRelease.GetProperty("assets");
+                            if (assets.GetArrayLength() > 0)
+                            {
+                                urlDownload = assets[0].GetProperty("browser_download_url").GetString();
+                                this.download = true;
+                            }
+                        }
+                        else
+                        {
+                            this.m_LblMajStatus.Text = "Status : À jour !";
+                            this.m_LblVMajVersion.Text = $"Version : {Application.ProductVersion}";
+                            this.m_LblMajDate.Text = $"Date : {DateTime.Now:dd/MM/yyyy}";
+                            this.download = false;
                         }
                     }
                 }
@@ -181,18 +194,6 @@ namespace Billy_App
                 this.m_LblMajStatus.Text = "Status : Erreur";
                 MessageBox.Show($"Erreur lors de la vérification : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private async Task InstallerMiseAJour(string urlDownload)
-        {
-            // Ouvre le lien de téléchargement direct dans le navigateur par défaut
-            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
-            {
-                FileName = urlDownload,
-                UseShellExecute = true
-            });
-
-            await Task.CompletedTask;
         }
 
         private async void m_BpMetAJour_Click(object sender, EventArgs e)

@@ -5,10 +5,13 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Text.Json;
 using System.IO.Ports;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,16 +21,23 @@ namespace Billy_App
     {
         Form1 form;
         private string cheminFichier;
-        //private string arguments = $"-c port=SWD mode=UR -w \"{cheminFichier}\" 0x08000000 -v -rst";
-        //private string urlGithub = "https://github.com/Billy-SpaceTeam/Billy-CubeSat";
+        private string m_RepoGitHub = "Billy-SpaceTeam/Billy-CubeSat";
+        private string urlDownload;
         public Transfert(Form1 parent)
         {
             InitializeComponent();
             form = parent;
 
+            this.m_PanelImportFichier.BackColor = Color.DarkGray;
+
             this.m_BoxTransfert.Text = "Type de transfert";
             this.m_BoxTransfert.Items.Add("Github");
             this.m_BoxTransfert.Items.Add("Fichier local");
+            this.m_LblTransfertType.Text = "Type : Veuillez sélectionner un type";
+            this.m_LblTransfertVersion.Text = "Version : non disponible";
+            this.m_LblTransfertDate.Text = "Date : non disponible";
+            this.m_LblTransfertStatus.Text = "Status : non chargé";
+            this.m_LblTransfertBranche.Text = "Branche : non disponible";
         }
 
         private async void m_BpTransfert_Click(object sender, EventArgs e)
@@ -114,6 +124,7 @@ namespace Billy_App
                 string contenu = System.IO.File.ReadAllText(chemin);
                 MessageBox.Show($"Fichier chargé avec succès :\n{chemin}");
                 this.m_TxtBoxTransfert.AppendText(message + "Ficher chargé avec succeès" + Environment.NewLine);
+                this.m_LblTransfertStatus.Text = "Status : Fichier chargé avec succès"; 
             }
             catch (Exception ex)
             {
@@ -205,6 +216,76 @@ namespace Billy_App
                 this.m_TxtBoxTransfert.AppendText(message + "Erreur lors du flashage : " + ex.Message + Environment.NewLine);
                 MessageBox.Show($"Erreur lors du flashage : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+            }
+        }
+
+        private async void m_BoxTransfert_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(this.m_BoxTransfert.SelectedItem == "Github")
+            {
+                this.m_LblTransfertType.Text = "Type : Github";
+
+                try
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        client.DefaultRequestHeaders.UserAgent.ParseAdd("BillyCubeSatUpdater");
+
+                        string urlApi = $"https://api.github.com/repos/{m_RepoGitHub}/releases/latest";
+                        string jsonResponse = await client.GetStringAsync(urlApi);
+
+                        using (JsonDocument doc = JsonDocument.Parse(jsonResponse))
+                        {
+                            JsonElement derniereRelease;
+
+                            // 1. Extraire la release selon le type de réponse JSON
+                            // /releases/latest renvoie un objet direct {}
+                            if (doc.RootElement.ValueKind == JsonValueKind.Object)
+                            {
+                                derniereRelease = doc.RootElement;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Aucune release officielle trouvée.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                return;
+                            }
+                            // 2. Récupération des informations de la release
+                            string newVersionTag = derniereRelease.GetProperty("tag_name").GetString();
+                            string dateStr = derniereRelease.GetProperty("published_at").GetString();
+                            string target_commitish = derniereRelease.GetProperty("target_commitish").GetString();
+
+                            // Formater la date en lisible (ex: 25/10/2026)
+                            if (DateTime.TryParse(dateStr, out DateTime datePub))
+                            {
+                                dateStr = datePub.ToString("dd/MM/yyyy");
+                            }
+
+                            // Normalisation pour la comparaison (ex: "v1.0.2.1" ou "1.0.2.1" -> "1021")
+                            string versionActuelleClean = Application.ProductVersion.Replace(".", "");
+                            string newVersionClean = newVersionTag.Replace(".", "").Replace("v", "").Replace("V", "");
+
+                            this.m_LblTransfertVersion.Text = $"Version : {newVersionTag}";
+                            this.m_LblTransfertDate.Text = $"Date : {dateStr}";
+                            this.m_LblTransfertBranche.Text = $"Branche : {target_commitish}";
+
+                            JsonElement assets = derniereRelease.GetProperty("assets");
+                            if (assets.GetArrayLength() > 0)
+                            {
+                                urlDownload = assets[0].GetProperty("browser_download_url").GetString();
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    this.m_LblTransfertStatus.Text = "Status : Erreur";
+                    MessageBox.Show($"Erreur lors de la vérification : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else if (this.m_BoxTransfert.SelectedItem == "Fichier local")
+            {
+                this.m_LblTransfertType.Text = "Type : Fichier local";
             }
         }
     }

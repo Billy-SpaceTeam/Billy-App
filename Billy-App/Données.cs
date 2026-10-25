@@ -15,6 +15,11 @@ namespace Billy_App
         public Données()
         {
             InitializeComponent();
+
+            this.m_LblGyroModele.Text = "Modèle : SEN0142";
+            this.m_LblPhotoConstructeur.Text = "Constructeur : DFROBOT";
+            this.m_LblPhotoModele.Text = "Modèle : BPW34";
+            this.m_LblPhotoConstructeur.Text = "Constructeur : Vishay Semiconductors";
         }
     }
 }
