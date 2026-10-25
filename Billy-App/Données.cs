@@ -13,8 +13,7 @@ namespace Billy_App
 {
     public partial class Données : UserControl
     {
-        private int x_Photo = 0;
-        private int x_Gyro = 0;
+        private int x = 0;
         private int y_Photo = 0;
         private int y_Gyro = 0;
         public Données()
@@ -52,28 +51,27 @@ namespace Billy_App
         {
             this.m_LblGyro.Text = "Valeur : " + y_Gyro.ToString();
             this.m_LblPhoto.Text = "Valeur : " + y_Photo.ToString();
-            x_Photo++;
-            x_Gyro++;
+            x++;
             //Graph Gyroscope
-            m_ChartGyroscope.Series["Series1"].Points.AddXY(x_Gyro, y_Gyro);//(X = secondes, Y = valeur)
+            m_ChartGyroscope.Series["Series1"].Points.AddXY(x, y_Gyro);//(X = secondes, Y = valeur)
 
             if (m_ChartGyroscope.Series["Series1"].Points.Count > 60)//seulement les 60 dernières secondes
             {
                 m_ChartGyroscope.Series["Series1"].Points.RemoveAt(0);
 
-                m_ChartGyroscope.ChartAreas[0].AxisX.Minimum = x_Gyro - 60;
-                m_ChartGyroscope.ChartAreas[0].AxisX.Maximum = x_Gyro;
+                m_ChartGyroscope.ChartAreas[0].AxisX.Minimum = x - 60;
+                m_ChartGyroscope.ChartAreas[0].AxisX.Maximum = x;
             }
 
             //Graph PhotoDiode
-            m_ChartPhotodiode.Series["Series1"].Points.AddXY(x_Photo, y_Photo);//(X = secondes, Y = valeur)
+            m_ChartPhotodiode.Series["Series1"].Points.AddXY(x, y_Photo);//(X = secondes, Y = valeur)
 
             if (m_ChartPhotodiode.Series["Series1"].Points.Count > 60)//seulement les 60 dernières secondes
             {
                 m_ChartPhotodiode.Series["Series1"].Points.RemoveAt(0);
 
-                m_ChartPhotodiode.ChartAreas[0].AxisX.Minimum = x_Photo - 60;
-                m_ChartPhotodiode.ChartAreas[0].AxisX.Maximum = x_Photo;
+                m_ChartPhotodiode.ChartAreas[0].AxisX.Minimum = x - 60;
+                m_ChartPhotodiode.ChartAreas[0].AxisX.Maximum = x;
             }
         }
         /*
@@ -84,7 +82,7 @@ namespace Billy_App
         */
         public void DemarrerTrace()
         {
-            x_Photo = 0; // Réinitialiser l'incrément si nécessaire
+            x = 0; // Réinitialiser l'incrément si nécessaire
             m_ChartPhotodiode.Series["Series1"].Points.Clear();
             m_TimerGraph.Start();
         }

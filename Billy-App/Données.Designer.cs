@@ -55,14 +55,14 @@
             this.m_ChartPhotodiode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
             this.m_ChartPhotodiode.ChartAreas.Add(chartArea1);
-            this.m_ChartPhotodiode.Location = new System.Drawing.Point(421, 254);
+            this.m_ChartPhotodiode.Location = new System.Drawing.Point(413, 254);
             this.m_ChartPhotodiode.Margin = new System.Windows.Forms.Padding(2);
             this.m_ChartPhotodiode.Name = "m_ChartPhotodiode";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Name = "Series1";
             this.m_ChartPhotodiode.Series.Add(series1);
-            this.m_ChartPhotodiode.Size = new System.Drawing.Size(382, 258);
+            this.m_ChartPhotodiode.Size = new System.Drawing.Size(390, 258);
             this.m_ChartPhotodiode.TabIndex = 0;
             this.m_ChartPhotodiode.Text = "PhotoDiode";
             // 
@@ -189,24 +189,24 @@
             // m_BpDonneesChartGyro
             // 
             this.m_BpDonneesChartGyro.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.m_BpDonneesChartGyro.Location = new System.Drawing.Point(38, 211);
+            this.m_BpDonneesChartGyro.Location = new System.Drawing.Point(38, 202);
             this.m_BpDonneesChartGyro.Margin = new System.Windows.Forms.Padding(2);
             this.m_BpDonneesChartGyro.Name = "m_BpDonneesChartGyro";
             this.m_BpDonneesChartGyro.Size = new System.Drawing.Size(89, 26);
             this.m_BpDonneesChartGyro.TabIndex = 11;
-            this.m_BpDonneesChartGyro.Text = "Télécharger";
+            this.m_BpDonneesChartGyro.Text = "Exporter";
             this.m_BpDonneesChartGyro.UseVisualStyleBackColor = true;
             this.m_BpDonneesChartGyro.Click += new System.EventHandler(this.m_BpDonneesChartGyro_Click);
             // 
             // m_BpDonneesChartPhoto
             // 
             this.m_BpDonneesChartPhoto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.m_BpDonneesChartPhoto.Location = new System.Drawing.Point(452, 211);
+            this.m_BpDonneesChartPhoto.Location = new System.Drawing.Point(452, 202);
             this.m_BpDonneesChartPhoto.Margin = new System.Windows.Forms.Padding(2);
             this.m_BpDonneesChartPhoto.Name = "m_BpDonneesChartPhoto";
             this.m_BpDonneesChartPhoto.Size = new System.Drawing.Size(89, 26);
             this.m_BpDonneesChartPhoto.TabIndex = 12;
-            this.m_BpDonneesChartPhoto.Text = "Télécharger";
+            this.m_BpDonneesChartPhoto.Text = "Exporter";
             this.m_BpDonneesChartPhoto.UseVisualStyleBackColor = true;
             this.m_BpDonneesChartPhoto.Click += new System.EventHandler(this.m_BpDonneesChartPhoto_Click);
             // 
