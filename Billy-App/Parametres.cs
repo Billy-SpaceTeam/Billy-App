@@ -120,12 +120,12 @@ namespace Billy_App
                     bool beta;
                     if (this.m_ChekBoxPreRelease.CheckState == CheckState.Checked)
                     {
-                        urlApi = $"https://api.github.com/repos/{m_RepoGitHub}/releases";
+                        urlApi = $"https://api.github.com/repos/{m_RepoGitHub}/releases/latest";
                         beta = true;
                     }
                     else
                     {
-                        urlApi = $"https://api.github.com/repos/{m_RepoGitHub}/releases/latest";
+                        urlApi = $"https://api.github.com/repos/{m_RepoGitHub}/releases/Pre-release";
                         beta = false;
                     }
                     string jsonResponse = await client.GetStringAsync(urlApi);
@@ -143,7 +143,7 @@ namespace Billy_App
                             newVersion = newVersion.Replace(".", "");
                             this.m_LblVMajVersion.Text = $"Version : {newVersion}";
 
-                            if (versionActuelle != newVersion)
+                            if (Convert.ToInt32(versionActuelle) < Convert.ToInt32(newVersion))
                             {
                                 if (beta)
                                 {
