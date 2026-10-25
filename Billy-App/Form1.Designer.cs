@@ -49,7 +49,6 @@
             this.m_MenuParametre = new System.Windows.Forms.ToolStripMenuItem();
             this.m_SerialPort = new System.IO.Ports.SerialPort(this.components);
             this.m_PanelMenu = new System.Windows.Forms.Panel();
-            this.m_TimerSecondes = new System.Windows.Forms.Timer(this.components);
             this.m_StatBarre.SuspendLayout();
             this.m_Menu.SuspendLayout();
             this.SuspendLayout();
@@ -236,7 +235,6 @@
         private System.Windows.Forms.ToolStripStatusLabel m_LblStatusConnection;
         private System.Windows.Forms.ToolStripStatusLabel m_TxtStatusConnection;
         private System.Windows.Forms.Panel m_PanelMenu;
-        private System.Windows.Forms.Timer m_TimerSecondes;
         private System.Windows.Forms.ToolStripProgressBar m_ProgressBarConnexion;
         private System.Windows.Forms.ToolStripStatusLabel m_LblStatusPort;
         private System.Windows.Forms.ToolStripStatusLabel m_TxtStatusPort;

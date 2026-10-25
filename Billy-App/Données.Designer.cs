@@ -28,39 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.m_ChartPhotodiode = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.m_LblLiaisonSerie = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.m_ChartGyroscope = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.m_LblGyro = new System.Windows.Forms.Label();
             this.m_LblGyroModele = new System.Windows.Forms.Label();
             this.m_LblPhotoModele = new System.Windows.Forms.Label();
             this.m_LblPhoto = new System.Windows.Forms.Label();
             this.m_LblPhotoConstructeur = new System.Windows.Forms.Label();
             this.m_LblGyroConstructeur = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            this.m_BpDonneesChartGyro = new System.Windows.Forms.Button();
+            this.m_BpDonneesChartPhoto = new System.Windows.Forms.Button();
+            this.m_TimerGraph = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.m_ChartPhotodiode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_ChartGyroscope)).BeginInit();
             this.SuspendLayout();
             // 
-            // chart1
+            // m_ChartPhotodiode
             // 
-            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Location = new System.Drawing.Point(421, 254);
-            this.chart1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(382, 258);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.m_ChartPhotodiode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea3.Name = "ChartArea1";
+            this.m_ChartPhotodiode.ChartAreas.Add(chartArea3);
+            this.m_ChartPhotodiode.Location = new System.Drawing.Point(421, 254);
+            this.m_ChartPhotodiode.Margin = new System.Windows.Forms.Padding(2);
+            this.m_ChartPhotodiode.Name = "m_ChartPhotodiode";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Name = "Series1";
+            this.m_ChartPhotodiode.Series.Add(series3);
+            this.m_ChartPhotodiode.Size = new System.Drawing.Size(382, 258);
+            this.m_ChartPhotodiode.TabIndex = 0;
+            this.m_ChartPhotodiode.Text = "PhotoDiode";
             // 
             // m_LblLiaisonSerie
             // 
@@ -88,21 +92,21 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "PhotoDiode";
             // 
-            // chart2
+            // m_ChartGyroscope
             // 
-            this.chart2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            this.chart2.Location = new System.Drawing.Point(0, 254);
-            this.chart2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.chart2.Name = "chart2";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Name = "Series1";
-            this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(388, 258);
-            this.chart2.TabIndex = 4;
-            this.chart2.Text = "chart2";
+            this.m_ChartGyroscope.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            chartArea4.Name = "ChartArea1";
+            this.m_ChartGyroscope.ChartAreas.Add(chartArea4);
+            this.m_ChartGyroscope.Location = new System.Drawing.Point(0, 254);
+            this.m_ChartGyroscope.Margin = new System.Windows.Forms.Padding(2);
+            this.m_ChartGyroscope.Name = "m_ChartGyroscope";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Name = "Series1";
+            this.m_ChartGyroscope.Series.Add(series4);
+            this.m_ChartGyroscope.Size = new System.Drawing.Size(388, 258);
+            this.m_ChartGyroscope.TabIndex = 4;
+            this.m_ChartGyroscope.Text = "Gyroscope";
             // 
             // m_LblGyro
             // 
@@ -182,25 +186,56 @@
             this.m_LblGyroConstructeur.TabIndex = 10;
             this.m_LblGyroConstructeur.Text = "Constructeur :";
             // 
+            // m_BpDonneesChartGyro
+            // 
+            this.m_BpDonneesChartGyro.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_BpDonneesChartGyro.Location = new System.Drawing.Point(38, 211);
+            this.m_BpDonneesChartGyro.Margin = new System.Windows.Forms.Padding(2);
+            this.m_BpDonneesChartGyro.Name = "m_BpDonneesChartGyro";
+            this.m_BpDonneesChartGyro.Size = new System.Drawing.Size(89, 26);
+            this.m_BpDonneesChartGyro.TabIndex = 11;
+            this.m_BpDonneesChartGyro.Text = "Télécharger";
+            this.m_BpDonneesChartGyro.UseVisualStyleBackColor = true;
+            this.m_BpDonneesChartGyro.Click += new System.EventHandler(this.m_BpDonneesChartGyro_Click);
+            // 
+            // m_BpDonneesChartPhoto
+            // 
+            this.m_BpDonneesChartPhoto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.m_BpDonneesChartPhoto.Location = new System.Drawing.Point(452, 211);
+            this.m_BpDonneesChartPhoto.Margin = new System.Windows.Forms.Padding(2);
+            this.m_BpDonneesChartPhoto.Name = "m_BpDonneesChartPhoto";
+            this.m_BpDonneesChartPhoto.Size = new System.Drawing.Size(89, 26);
+            this.m_BpDonneesChartPhoto.TabIndex = 12;
+            this.m_BpDonneesChartPhoto.Text = "Télécharger";
+            this.m_BpDonneesChartPhoto.UseVisualStyleBackColor = true;
+            this.m_BpDonneesChartPhoto.Click += new System.EventHandler(this.m_BpDonneesChartPhoto_Click);
+            // 
+            // m_TimerGraph
+            // 
+            this.m_TimerGraph.Enabled = true;
+            this.m_TimerGraph.Tick += new System.EventHandler(this.m_TimerGraph_Tick);
+            // 
             // Données
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.m_BpDonneesChartPhoto);
+            this.Controls.Add(this.m_BpDonneesChartGyro);
             this.Controls.Add(this.m_LblGyroConstructeur);
             this.Controls.Add(this.m_LblPhotoConstructeur);
             this.Controls.Add(this.m_LblPhoto);
             this.Controls.Add(this.m_LblPhotoModele);
             this.Controls.Add(this.m_LblGyroModele);
             this.Controls.Add(this.m_LblGyro);
-            this.Controls.Add(this.chart2);
+            this.Controls.Add(this.m_ChartGyroscope);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_LblLiaisonSerie);
-            this.Controls.Add(this.chart1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.m_ChartPhotodiode);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Données";
             this.Size = new System.Drawing.Size(802, 512);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_ChartPhotodiode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_ChartGyroscope)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,15 +243,18 @@
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart m_ChartPhotodiode;
         private System.Windows.Forms.Label m_LblLiaisonSerie;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart m_ChartGyroscope;
         private System.Windows.Forms.Label m_LblGyro;
         private System.Windows.Forms.Label m_LblGyroModele;
         private System.Windows.Forms.Label m_LblPhotoModele;
         private System.Windows.Forms.Label m_LblPhoto;
         private System.Windows.Forms.Label m_LblPhotoConstructeur;
         private System.Windows.Forms.Label m_LblGyroConstructeur;
+        private System.Windows.Forms.Button m_BpDonneesChartGyro;
+        private System.Windows.Forms.Button m_BpDonneesChartPhoto;
+        private System.Windows.Forms.Timer m_TimerGraph;
     }
 }
