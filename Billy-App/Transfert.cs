@@ -67,6 +67,7 @@ namespace Billy_App
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Title = "Sélectionner un fichier";
+                openFileDialog.InitialDirectory = Properties.Settings.Default.CheminTransfert; //Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 openFileDialog.Filter = "Tous les fichiers (*.*)|*.*|Fichiers texte (*.txt)|*.txt";
                 openFileDialog.FilterIndex = 1;
 

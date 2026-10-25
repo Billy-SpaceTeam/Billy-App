@@ -182,6 +182,7 @@
             this.m_TxtBoxConnecterMdp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.m_TxtBoxConnecterMdp.Location = new System.Drawing.Point(571, 141);
             this.m_TxtBoxConnecterMdp.Name = "m_TxtBoxConnecterMdp";
+            this.m_TxtBoxConnecterMdp.PasswordChar = '*';
             this.m_TxtBoxConnecterMdp.Size = new System.Drawing.Size(100, 20);
             this.m_TxtBoxConnecterMdp.TabIndex = 12;
             // 
