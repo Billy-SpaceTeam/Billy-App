@@ -116,6 +116,7 @@
             this.m_BpMetAJour.TabIndex = 6;
             this.m_BpMetAJour.Text = "Mettre à jour";
             this.m_BpMetAJour.UseVisualStyleBackColor = true;
+            this.m_BpMetAJour.Click += new System.EventHandler(this.m_BpMetAJour_Click);
             // 
             // m_LblInfoVersion
             // 

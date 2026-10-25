@@ -1,12 +1,16 @@
 ﻿using System;
+using System.IO;
+using System.IO.Compression;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
-using System.Text.Json;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
@@ -19,8 +23,9 @@ namespace Billy_App
         private bool themeSombre = false;
         private readonly string SiteProjet = "https://github.com/Billy-SpaceTeam";
         private readonly string m_RepoGitHub = "Billy-SpaceTeam/Billy-App";
-        private readonly string m_VersionActuelle = "v1.0.0";
         private readonly string m_DateVersion = "25/10/2026";
+        private bool download;
+        private string urlDownload;
         public Parametres(Form1 parent)
         {
             InitializeComponent();
@@ -32,7 +37,7 @@ namespace Billy_App
             this.m_TxtBoxStockDonnees.Text = Properties.Settings.Default.CheminDonnees;
             this.m_TxtBoxStockExp.Text = Properties.Settings.Default.CheminExp;
 
-            this.m_LblInfoVersion.Text = $"Version actuelle : {m_VersionActuelle}";
+            this.m_LblInfoVersion.Text = $"Version actuelle : {Application.ProductVersion}";
             this.m_LblInfoDate.Text = $"Date de la version : {m_DateVersion}";
         }
 
@@ -108,13 +113,19 @@ namespace Billy_App
                 {
                     client.DefaultRequestHeaders.UserAgent.ParseAdd("BillyAppUpdater");
                     string urlApi;
+                    var versionActuelle = Application.ProductVersion;
+                    versionActuelle = versionActuelle.Replace(".", "");
+                    var newVersion = "";
+                    bool beta;
                     if (this.m_ChekBoxPreRelease.CheckState == CheckState.Checked)
                     {
                         urlApi = $"https://api.github.com/repos/{m_RepoGitHub}/releases";
+                        beta = true;
                     }
                     else
                     {
                         urlApi = $"https://api.github.com/repos/{m_RepoGitHub}/releases/latest";
+                        beta = false;
                     }
                     string jsonResponse = await client.GetStringAsync(urlApi);
 
@@ -125,30 +136,35 @@ namespace Billy_App
                         {
                             // Récupération de la release la plus récente (1er élément du tableau)
                             JsonElement derniereRelease = doc.RootElement[0];
-                            string derniereVersion = derniereRelease.GetProperty("tag_name").GetString();
-                            this.m_LblVMajVersion.Text = $"Version : {derniereVersion}";
+                            newVersion = derniereRelease.GetProperty("tag_name").GetString();
+                            string date = derniereRelease.GetProperty("published_at").GetString();
+                            newVersion = newVersion.Replace(".", "");
+                            this.m_LblVMajVersion.Text = $"Version : {newVersion}";
 
-                            if (derniereVersion != m_VersionActuelle)
+                            if (versionActuelle != newVersion)
                             {
-                                DialogResult result = MessageBox.Show(
-                                    $"Une nouvelle version ({derniereVersion}) est disponible !\nVoulez-vous la télécharger et l'installer ?",
-                                    "Mise à jour disponible",
-                                    MessageBoxButtons.YesNo,
-                                    MessageBoxIcon.Information);
-
-                                if (result == DialogResult.Yes)
+                                if (beta)
                                 {
-                                    JsonElement assets = derniereRelease.GetProperty("assets");
-                                    if (assets.GetArrayLength() > 0)
-                                    {
-                                        string urlDownload = assets[0].GetProperty("browser_download_url").GetString();
-                                        await InstallerMiseAJour(urlDownload);
-                                    }
+                                    this.m_LblMajStatus.Text = "Mise à jour Beta disponible";
+                                    this.m_LblVMajVersion.Text = $"Version : {newVersion} Beta";
                                 }
+                                else
+                                {
+                                    this.m_LblMajStatus.Text = "Mise à jour disponible";
+                                    this.m_LblVMajVersion.Text = $"Version : {newVersion}";
+                                }
+                                this.m_LblMajDate.Text = $"Date : {date}";
+                                JsonElement assets = derniereRelease.GetProperty("assets");
+                                urlDownload = assets[0].GetProperty("browser_download_url").GetString();
+                                this.download = true;
                             }
                             else
                             {
-                                MessageBox.Show("Votre application est déjà à jour.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.m_LblMajStatus.Text = "Status : A jour !";
+                                this.m_LblVMajVersion.Text = $"Version : {Application.ProductVersion}";
+                                this.m_LblMajDate.Text = $"Date : {DateTime.Now:dd/MM/yyyy}";
+                                this.download = false;
+                                //MessageBox.Show("Votre application est déjà à jour.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                         else
@@ -160,6 +176,7 @@ namespace Billy_App
             }
             catch (Exception ex)
             {
+                this.m_LblMajStatus.Text = "Status : Erreur";
                 MessageBox.Show($"Erreur lors de la vérification : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -174,6 +191,81 @@ namespace Billy_App
             });
 
             await Task.CompletedTask;
+        }
+
+        private async void m_BpMetAJour_Click(object sender, EventArgs e)
+        {
+            if (!download)
+            {
+                MessageBox.Show("Aucune mise à jour disponible pour le moment.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            //await InstallerMiseAJour(urlDownload);
+            try
+            {
+                // 1. Définir les chemins dans le dossier temporaire de Windows
+                string tempPath = Path.GetTempPath();
+                string zipPath = Path.Combine(tempPath, "BillyAppUpdate.zip");
+                string extractPath = Path.Combine(tempPath, "BillyAppUpdateExtracted");
+                string batPath = Path.Combine(tempPath, "update.bat");
+
+                // Dossier actuel de l'application en cours
+                string currentAppPath = AppDomain.CurrentDomain.BaseDirectory;
+
+                // 2. Télécharger le fichier ZIP depuis GitHub
+                using (HttpClient client = new HttpClient())
+                {
+                    // Ajouter un User-Agent pour GitHub
+                    client.DefaultRequestHeaders.UserAgent.ParseAdd("BillyAppUpdater");
+                    byte[] fileBytes = await client.GetByteArrayAsync(urlDownload);
+                    File.WriteAllBytes(zipPath, fileBytes);
+                }
+
+                // 3. Nettoyer le dossier d'extraction s'il existe déjà, puis extraire le ZIP
+                if (Directory.Exists(extractPath))
+                {
+                    Directory.Delete(extractPath, true);
+                }
+                ZipFile.ExtractToDirectory(zipPath, extractPath);
+
+                // 4. Créer le script Batch (.bat) qui fera le remplacement
+                string batContent = $@"
+@echo off
+echo Mise a jour de Billy-App en cours. Veuillez patienter...
+:: Attend 2 secondes pour s'assurer que l'app C# est bien fermee
+timeout /t 2 /nobreak > NUL
+
+:: Copie et ecrase tous les nouveaux fichiers vers le dossier de l'app
+xcopy /Y /E ""{extractPath}\*"" ""{currentAppPath}""
+
+:: Relance l'application
+start """" ""{Path.Combine(currentAppPath, "Billy-App.exe")}""
+
+:: Nettoie les fichiers temporaires
+del ""{zipPath}""
+rmdir /S /Q ""{extractPath}""
+
+:: Le script se supprime lui-meme a la fin
+del ""%~f0""
+";
+                File.WriteAllText(batPath, batContent);
+
+                // 5. Exécuter le script Batch
+                ProcessStartInfo psi = new ProcessStartInfo
+                {
+                    FileName = batPath,
+                    UseShellExecute = true,
+                    WindowStyle = ProcessWindowStyle.Normal // Tu peux mettre .Hidden plus tard pour cacher la console
+                };
+                Process.Start(psi);
+
+                // 6. Quitter IMMEDIATEMENT l'application pour libérer les fichiers
+                Application.Exit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors de l'installation : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
