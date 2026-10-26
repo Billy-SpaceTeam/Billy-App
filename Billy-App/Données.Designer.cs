@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.m_ChartPhotodiode = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.m_LblLiaisonSerie = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_ChartGyroscope = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.m_LblGyro = new System.Windows.Forms.Label();
+            this.m_LblGyro_x = new System.Windows.Forms.Label();
             this.m_LblGyroModele = new System.Windows.Forms.Label();
             this.m_LblPhotoModele = new System.Windows.Forms.Label();
             this.m_LblPhoto = new System.Windows.Forms.Label();
@@ -47,6 +47,8 @@
             this.m_BpDonneesChartPhoto = new System.Windows.Forms.Button();
             this.m_TimerGraph = new System.Windows.Forms.Timer(this.components);
             this.m_BpDonneesPlay = new System.Windows.Forms.Button();
+            this.m_LblGyro_y = new System.Windows.Forms.Label();
+            this.m_LblGyro_z = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_ChartPhotodiode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_ChartGyroscope)).BeginInit();
             this.SuspendLayout();
@@ -54,15 +56,15 @@
             // m_ChartPhotodiode
             // 
             this.m_ChartPhotodiode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea5.Name = "ChartArea1";
-            this.m_ChartPhotodiode.ChartAreas.Add(chartArea5);
+            chartArea3.Name = "ChartArea1";
+            this.m_ChartPhotodiode.ChartAreas.Add(chartArea3);
             this.m_ChartPhotodiode.Location = new System.Drawing.Point(551, 313);
             this.m_ChartPhotodiode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_ChartPhotodiode.Name = "m_ChartPhotodiode";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Name = "Series1";
-            this.m_ChartPhotodiode.Series.Add(series5);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Name = "Series1";
+            this.m_ChartPhotodiode.Series.Add(series3);
             this.m_ChartPhotodiode.Size = new System.Drawing.Size(520, 318);
             this.m_ChartPhotodiode.TabIndex = 0;
             this.m_ChartPhotodiode.Text = "PhotoDiode";
@@ -94,30 +96,30 @@
             // m_ChartGyroscope
             // 
             this.m_ChartGyroscope.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            chartArea6.Name = "ChartArea1";
-            this.m_ChartGyroscope.ChartAreas.Add(chartArea6);
+            chartArea4.Name = "ChartArea1";
+            this.m_ChartGyroscope.ChartAreas.Add(chartArea4);
             this.m_ChartGyroscope.Location = new System.Drawing.Point(0, 313);
             this.m_ChartGyroscope.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_ChartGyroscope.Name = "m_ChartGyroscope";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Name = "Series1";
-            this.m_ChartGyroscope.Series.Add(series6);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Name = "Series1";
+            this.m_ChartGyroscope.Series.Add(series4);
             this.m_ChartGyroscope.Size = new System.Drawing.Size(517, 318);
             this.m_ChartGyroscope.TabIndex = 4;
             this.m_ChartGyroscope.Text = "Gyroscope";
             // 
-            // m_LblGyro
+            // m_LblGyro_x
             // 
-            this.m_LblGyro.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.m_LblGyro.AutoSize = true;
-            this.m_LblGyro.BackColor = System.Drawing.SystemColors.Control;
-            this.m_LblGyro.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblGyro.Location = new System.Drawing.Point(47, 166);
-            this.m_LblGyro.Name = "m_LblGyro";
-            this.m_LblGyro.Size = new System.Drawing.Size(67, 19);
-            this.m_LblGyro.TabIndex = 5;
-            this.m_LblGyro.Text = "Valeur :";
+            this.m_LblGyro_x.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_LblGyro_x.AutoSize = true;
+            this.m_LblGyro_x.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblGyro_x.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblGyro_x.Location = new System.Drawing.Point(47, 166);
+            this.m_LblGyro_x.Name = "m_LblGyro_x";
+            this.m_LblGyro_x.Size = new System.Drawing.Size(81, 19);
+            this.m_LblGyro_x.TabIndex = 5;
+            this.m_LblGyro_x.Text = "Valeur x :";
             // 
             // m_LblGyroModele
             // 
@@ -218,13 +220,39 @@
             this.m_BpDonneesPlay.TabIndex = 13;
             this.m_BpDonneesPlay.Text = "Pause";
             this.m_BpDonneesPlay.UseVisualStyleBackColor = true;
-            this.m_BpDonneesPlay.Click += new System.EventHandler(this.button1_Click);
+            this.m_BpDonneesPlay.Click += new System.EventHandler(this.m_BpPlay_Click);
+            // 
+            // m_LblGyro_y
+            // 
+            this.m_LblGyro_y.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_LblGyro_y.AutoSize = true;
+            this.m_LblGyro_y.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblGyro_y.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblGyro_y.Location = new System.Drawing.Point(47, 185);
+            this.m_LblGyro_y.Name = "m_LblGyro_y";
+            this.m_LblGyro_y.Size = new System.Drawing.Size(81, 19);
+            this.m_LblGyro_y.TabIndex = 14;
+            this.m_LblGyro_y.Text = "Valeur y :";
+            // 
+            // m_LblGyro_z
+            // 
+            this.m_LblGyro_z.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_LblGyro_z.AutoSize = true;
+            this.m_LblGyro_z.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblGyro_z.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblGyro_z.Location = new System.Drawing.Point(46, 204);
+            this.m_LblGyro_z.Name = "m_LblGyro_z";
+            this.m_LblGyro_z.Size = new System.Drawing.Size(81, 19);
+            this.m_LblGyro_z.TabIndex = 15;
+            this.m_LblGyro_z.Text = "Valeur z :";
             // 
             // Données
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.Controls.Add(this.m_LblGyro_z);
+            this.Controls.Add(this.m_LblGyro_y);
             this.Controls.Add(this.m_BpDonneesPlay);
             this.Controls.Add(this.m_BpDonneesChartPhoto);
             this.Controls.Add(this.m_BpDonneesChartGyro);
@@ -233,7 +261,7 @@
             this.Controls.Add(this.m_LblPhoto);
             this.Controls.Add(this.m_LblPhotoModele);
             this.Controls.Add(this.m_LblGyroModele);
-            this.Controls.Add(this.m_LblGyro);
+            this.Controls.Add(this.m_LblGyro_x);
             this.Controls.Add(this.m_ChartGyroscope);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_LblLiaisonSerie);
@@ -254,7 +282,7 @@
         private System.Windows.Forms.Label m_LblLiaisonSerie;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataVisualization.Charting.Chart m_ChartGyroscope;
-        private System.Windows.Forms.Label m_LblGyro;
+        private System.Windows.Forms.Label m_LblGyro_x;
         private System.Windows.Forms.Label m_LblGyroModele;
         private System.Windows.Forms.Label m_LblPhotoModele;
         private System.Windows.Forms.Label m_LblPhoto;
@@ -264,5 +292,7 @@
         private System.Windows.Forms.Button m_BpDonneesChartPhoto;
         private System.Windows.Forms.Timer m_TimerGraph;
         private System.Windows.Forms.Button m_BpDonneesPlay;
+        private System.Windows.Forms.Label m_LblGyro_y;
+        private System.Windows.Forms.Label m_LblGyro_z;
     }
 }

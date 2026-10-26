@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Billy_App
 {
     public partial class Actionnneur : UserControl
     {
-        private bool ServoMoteur = false;
-        private int MoteurVitesse = 0;
+        private bool ServoMoteur = true;
+        private int MoteurVitesse = 1;
         private int x = 0;
         private bool Play = false;
         public Actionnneur()
@@ -25,6 +26,12 @@ namespace Billy_App
             this.m_LblMoteurConstructeur.Text = "Constructeur : ";
             this.m_LblServoConstructeur.Text = "Constructeur : ";
 
+            this.m_ChartMoteur.Series.Add("Moteur a Reaction");
+            this.m_ChartServo.Series.Add("ServoMoteur");
+            this.m_ChartMoteur.Series["Moteur a Reaction"].ChartType = SeriesChartType.Line;
+            this.m_ChartServo.Series["ServoMoteur"].ChartType = SeriesChartType.Line;
+            this.m_ChartMoteur.Series["Moteur a Reaction"].Color = Color.Blue;
+            this.m_ChartServo.Series["ServoMoteur"].Color = Color.Blue;
             this.m_ChartMoteur.ChartAreas[0].AxisX.Title = "Temps (s)";
             this.m_ChartServo.ChartAreas[0].AxisX.Title = "Temps (s)";
             this.m_ChartServo.ChartAreas[0].AxisY.Title = "Tension (V)";
@@ -95,8 +102,8 @@ namespace Billy_App
                 this.m_BpActionneurPlay.Text = "Pause";
                 m_TimerGraph.Start();
                 x = 0;
-                m_ChartMoteur.Series["Series1"].Points.Clear();
-                m_ChartServo.Series["Series1"].Points.Clear();
+                m_ChartMoteur.Series["Moteur a Reaction"].Points.Clear();
+                m_ChartServo.Series["ServoMoteur"].Points.Clear();
             }
             else
             {

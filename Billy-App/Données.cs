@@ -14,8 +14,10 @@ namespace Billy_App
     public partial class Données : UserControl
     {
         private int x = 0;
-        private int y_Photo = 1;
-        private int y_Gyro = 1;
+        private int Photodiode = 1;
+        private int x_Gyro = 1;
+        private int y_Gyro = 2;
+        private int z_Gyro = 3;
         private bool Play = false;
         public Données()
         {
@@ -26,13 +28,27 @@ namespace Billy_App
             this.m_LblPhotoModele.Text = "Modèle : BPW34";
             this.m_LblPhotoConstructeur.Text = "Constructeur : Vishay Semiconductors";
 
+            //Photodiode
             this.m_ChartPhotodiode.Series.Add("Photodiode");
             this.m_ChartPhotodiode.Series["Photodiode"].ChartType = SeriesChartType.Line;
             this.m_ChartPhotodiode.Series["Photodiode"].Color = Color.Blue;
             this.m_ChartPhotodiode.ChartAreas[0].AxisX.Title = "Temps (s)";
+            this.m_ChartPhotodiode.ChartAreas[0].AxisY.Title = "Tension (V)";
+
+            //Gyroscope
+            this.m_ChartGyroscope.Series.Add("Gyroscope_x");
+            this.m_ChartGyroscope.Series["Gyroscope_x"].ChartType = SeriesChartType.Line;
+            this.m_ChartGyroscope.Series["Gyroscope_x"].Color = Color.Blue;
+
+            this.m_ChartGyroscope.Series.Add("Gyroscope_y");
+            this.m_ChartGyroscope.Series["Gyroscope_y"].ChartType = SeriesChartType.Line;
+            this.m_ChartGyroscope.Series["Gyroscope_y"].Color = Color.Green;
+
+            this.m_ChartGyroscope.Series.Add("Gyroscope_z");
+            this.m_ChartGyroscope.Series["Gyroscope_z"].ChartType = SeriesChartType.Line;
+            this.m_ChartGyroscope.Series["Gyroscope_z"].Color = Color.Red;
             this.m_ChartGyroscope.ChartAreas[0].AxisX.Title = "Temps (s)";
             this.m_ChartGyroscope.ChartAreas[0].AxisY.Title = "Tension (V)";
-            this.m_ChartPhotodiode.ChartAreas[0].AxisY.Title = "Tension (V)";
         }
 
         //données.m_TimerSecondes_Tick(int x);
@@ -65,26 +81,31 @@ namespace Billy_App
 
         private void m_TimerGraph_Tick(object sender, EventArgs e)
         {
-            this.m_LblGyro.Text = "Valeur : " + y_Gyro.ToString();
-            this.m_LblPhoto.Text = "Valeur : " + y_Photo.ToString();
+            this.m_LblGyro_x.Text = "Valeur x : " + x_Gyro.ToString();
+            this.m_LblGyro_y.Text = "Valeur y : " + y_Gyro.ToString();
+            this.m_LblGyro_z.Text = "Valeur z : " + z_Gyro.ToString();
+
+            this.m_LblPhoto.Text = "Valeur : " + Photodiode.ToString();
             x++;
             //Graph Gyroscope
-            m_ChartGyroscope.Series["Series1"].Points.AddXY((x/10), y_Gyro);//(X = secondes, Y = valeur)
+            m_ChartGyroscope.Series["Gyroscope_x"].Points.AddXY((x/10), x_Gyro);//(X = secondes, Y = valeur)
+            m_ChartGyroscope.Series["Gyroscope_y"].Points.AddXY((x / 10), y_Gyro);
+            m_ChartGyroscope.Series["Gyroscope_z"].Points.AddXY((x / 10), z_Gyro);
 
-            if (m_ChartGyroscope.Series["Series1"].Points.Count > 60)//seulement les 60 dernières secondes
+            if (m_ChartGyroscope.Series["Gyroscope_x"].Points.Count > 60)//seulement les 60 dernières secondes
             {
-                m_ChartGyroscope.Series["Series1"].Points.RemoveAt(0);
+                m_ChartGyroscope.Series["Gyroscope_x"].Points.RemoveAt(0);
 
                 m_ChartGyroscope.ChartAreas[0].AxisX.Minimum = (x/10) - 6;
                 m_ChartGyroscope.ChartAreas[0].AxisX.Maximum = (x/10);
             }
 
             //Graph PhotoDiode
-            m_ChartPhotodiode.Series["Series1"].Points.AddXY((x/10), y_Photo);//(X = secondes, Y = valeur)
+            m_ChartPhotodiode.Series["Photodiode"].Points.AddXY((x/10), Photodiode);//(X = secondes, Y = valeur)
 
-            if (m_ChartPhotodiode.Series["Series1"].Points.Count > 60)//seulement les 60 dernières secondes
+            if (m_ChartPhotodiode.Series["Photodiode"].Points.Count > 60)//seulement les 60 dernières secondes
             {
-                m_ChartPhotodiode.Series["Series1"].Points.RemoveAt(0);
+                m_ChartPhotodiode.Series["Photodiode"].Points.RemoveAt(0);
 
                 m_ChartPhotodiode.ChartAreas[0].AxisX.Minimum = (x/10) - 6;
                 m_ChartPhotodiode.ChartAreas[0].AxisX.Maximum = (x/10);
@@ -97,7 +118,7 @@ namespace Billy_App
         }
         */
 
-        private void button1_Click(object sender, EventArgs e)
+        private void m_BpPlay_Click(object sender, EventArgs e)
         {
             if(Play)
             {
@@ -105,8 +126,11 @@ namespace Billy_App
                 this.m_BpDonneesPlay.Text = "Pause";
                 m_TimerGraph.Start();
                 x = 0;
-                m_ChartPhotodiode.Series["Series1"].Points.Clear();
-                m_ChartGyroscope.Series["Series1"].Points.Clear();
+                m_ChartPhotodiode.Series["Photodiode"].Points.Clear();
+
+                m_ChartGyroscope.Series["Gyroscope_x"].Points.Clear();
+                m_ChartGyroscope.Series["Gyroscope_y"].Points.Clear();
+                m_ChartGyroscope.Series["Gyroscope_z"].Points.Clear();
             }
             else
             {
