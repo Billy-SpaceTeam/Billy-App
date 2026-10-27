@@ -52,6 +52,20 @@ namespace Billy_App
             this.m_ChartGyroscope.Series.Add("Gyroscope_z");
             this.m_ChartGyroscope.Series["Gyroscope_z"].ChartType = SeriesChartType.Line;
             this.m_ChartGyroscope.Series["Gyroscope_z"].Color = Color.Red;
+
+            //Accelerometre
+            this.m_ChartGyroscope.Series.Add("Accelerometre_x");
+            this.m_ChartGyroscope.Series["Accelerometre_x"].ChartType = SeriesChartType.Line;
+            this.m_ChartGyroscope.Series["Accelerometre_x"].Color = Color.Blue;
+
+            this.m_ChartGyroscope.Series.Add("Accelerometre_y");
+            this.m_ChartGyroscope.Series["Accelerometre_y"].ChartType = SeriesChartType.Line;
+            this.m_ChartGyroscope.Series["Accelerometre_y"].Color = Color.Green;
+
+            this.m_ChartGyroscope.Series.Add("Accelerometre_z");
+            this.m_ChartGyroscope.Series["Accelerometre_z"].ChartType = SeriesChartType.Line;
+            this.m_ChartGyroscope.Series["Accelerometre_z"].Color = Color.Red;
+
             this.m_ChartGyroscope.ChartAreas[0].AxisX.Title = "Temps (s)";
             this.m_ChartGyroscope.ChartAreas[0].AxisY.Title = "Tension (V)";
         }
@@ -86,9 +100,11 @@ namespace Billy_App
 
         private void m_TimerGraph_Tick(object sender, EventArgs e)
         {
+            //Gyro
             this.m_LblGyro_x.Text = "x : " + x_Gyro.ToString();
             this.m_LblGyro_y.Text = "y : " + y_Gyro.ToString();
             this.m_LblGyro_z.Text = "z : " + z_Gyro.ToString();
+            //Accel
             this.m_LblAccel_x.Text = "x : " + x_Accel.ToString();
             this.m_LblAccel_y.Text = "y : " + y_Accel.ToString();
             this.m_LblAccel_z.Text = "z : " + z_Accel.ToString();
@@ -99,6 +115,10 @@ namespace Billy_App
             m_ChartGyroscope.Series["Gyroscope_x"].Points.AddXY((x/10), x_Gyro);//(X = secondes, Y = valeur)
             m_ChartGyroscope.Series["Gyroscope_y"].Points.AddXY((x / 10), y_Gyro);
             m_ChartGyroscope.Series["Gyroscope_z"].Points.AddXY((x / 10), z_Gyro);
+            //Graph Accelerometer
+            m_ChartGyroscope.Series["Accelerometre_x"].Points.AddXY((x / 10), x_Accel);
+            m_ChartGyroscope.Series["Accelerometre_y"].Points.AddXY((x / 10), y_Accel);
+            m_ChartGyroscope.Series["Accelerometre_z"].Points.AddXY((x / 10), z_Accel);
 
             if (m_ChartGyroscope.Series["Gyroscope_x"].Points.Count > 60)//seulement les 60 dernières secondes
             {
@@ -179,6 +199,78 @@ namespace Billy_App
             catch (System.Exception other)
             {
                 MessageBox.Show(other.Message);
+            }
+        }
+
+        private void m_CheckGyro_x_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.m_CheckGyro_x.Checked)
+            {
+                this.m_ChartGyroscope.Series["Gyroscope_x"].Enabled = true;
+            }
+            else
+            {
+                this.m_ChartGyroscope.Series["Gyroscope_x"].Enabled = false;
+            }
+        }
+
+        private void m_CheckGyro_y_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.m_CheckGyro_y.Checked)
+            {
+                this.m_ChartGyroscope.Series["Gyroscope_y"].Enabled = true;
+            }
+            else
+            {
+                this.m_ChartGyroscope.Series["Gyroscope_y"].Enabled = false;
+            }
+        }
+
+        private void m_CheckGyro_z_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.m_CheckGyro_z.Checked)
+            {
+                this.m_ChartGyroscope.Series["Gyroscope_z"].Enabled = true;
+            }
+            else
+            {
+                this.m_ChartGyroscope.Series["Gyroscope_z"].Enabled = false;
+            }
+        }
+
+        private void m_CheckAcc_x_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.m_CheckAcc_x.Checked)
+            {
+                this.m_ChartGyroscope.Series["Accelerometre_x"].Enabled = true;
+            }
+            else
+            {
+                this.m_ChartGyroscope.Series["Accelerometre_x"].Enabled = false;
+            }
+        }
+
+        private void m_CheckAcc_y_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.m_CheckAcc_y.Checked)
+            {
+                this.m_ChartGyroscope.Series["Accelerometre_y"].Enabled = true;
+            }
+            else
+            {
+                this.m_ChartGyroscope.Series["Accelerometre_y"].Enabled = false;
+            }
+        }
+
+        private void m_CheckAcc_z_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.m_CheckAcc_z.Checked)
+            {
+                this.m_ChartGyroscope.Series["Accelerometre_z"].Enabled = true;
+            }
+            else
+            {
+                this.m_ChartGyroscope.Series["Accelerometre_z"].Enabled = false;
             }
         }
     }

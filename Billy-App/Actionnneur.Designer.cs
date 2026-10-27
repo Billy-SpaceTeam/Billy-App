@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.m_LblLiaisonSerie = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_LblMoteurConstructeur = new System.Windows.Forms.Label();
@@ -160,15 +160,15 @@
             // m_ChartMoteur
             // 
             this.m_ChartMoteur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            chartArea3.Name = "ChartArea1";
-            this.m_ChartMoteur.ChartAreas.Add(chartArea3);
+            chartArea11.Name = "ChartArea1";
+            this.m_ChartMoteur.ChartAreas.Add(chartArea11);
             this.m_ChartMoteur.Location = new System.Drawing.Point(0, 313);
             this.m_ChartMoteur.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_ChartMoteur.Name = "m_ChartMoteur";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Name = "Series1";
-            this.m_ChartMoteur.Series.Add(series3);
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series11.Name = "Series1";
+            this.m_ChartMoteur.Series.Add(series11);
             this.m_ChartMoteur.Size = new System.Drawing.Size(517, 318);
             this.m_ChartMoteur.TabIndex = 17;
             this.m_ChartMoteur.Text = "Moteur a Réaction";
@@ -176,15 +176,15 @@
             // m_ChartServo
             // 
             this.m_ChartServo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            chartArea4.Name = "ChartArea1";
-            this.m_ChartServo.ChartAreas.Add(chartArea4);
+            chartArea12.Name = "ChartArea1";
+            this.m_ChartServo.ChartAreas.Add(chartArea12);
             this.m_ChartServo.Location = new System.Drawing.Point(552, 313);
             this.m_ChartServo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_ChartServo.Name = "m_ChartServo";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Name = "Series1";
-            this.m_ChartServo.Series.Add(series4);
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series12.Name = "Series1";
+            this.m_ChartServo.Series.Add(series12);
             this.m_ChartServo.Size = new System.Drawing.Size(517, 318);
             this.m_ChartServo.TabIndex = 18;
             this.m_ChartServo.Text = "Gyroscope";
@@ -260,6 +260,7 @@
             this.m_CheckMoteur_x.Size = new System.Drawing.Size(18, 17);
             this.m_CheckMoteur_x.TabIndex = 26;
             this.m_CheckMoteur_x.UseVisualStyleBackColor = true;
+            this.m_CheckMoteur_x.CheckedChanged += new System.EventHandler(this.m_CheckMoteur_x_CheckedChanged);
             // 
             // m_CheckMoteur_y
             // 
@@ -272,6 +273,7 @@
             this.m_CheckMoteur_y.Size = new System.Drawing.Size(18, 17);
             this.m_CheckMoteur_y.TabIndex = 27;
             this.m_CheckMoteur_y.UseVisualStyleBackColor = true;
+            this.m_CheckMoteur_y.CheckedChanged += new System.EventHandler(this.m_CheckMoteur_y_CheckedChanged);
             // 
             // m_CheckMoteur_z
             // 
@@ -284,6 +286,7 @@
             this.m_CheckMoteur_z.Size = new System.Drawing.Size(18, 17);
             this.m_CheckMoteur_z.TabIndex = 28;
             this.m_CheckMoteur_z.UseVisualStyleBackColor = true;
+            this.m_CheckMoteur_z.CheckedChanged += new System.EventHandler(this.m_CheckMoteur_z_CheckedChanged);
             // 
             // Actionnneur
             // 

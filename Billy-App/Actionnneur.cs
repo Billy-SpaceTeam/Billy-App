@@ -131,5 +131,41 @@ namespace Billy_App
                 m_TimerGraph.Stop();
             }
         }
+
+        private void m_CheckMoteur_x_CheckedChanged(object sender, EventArgs e)
+        {
+            if(this.m_CheckMoteur_x.Checked)
+            {
+                this.m_ChartMoteur.Series["Moteur_x"].Enabled = true;
+            }
+            else
+            {
+                this.m_ChartMoteur.Series["Moteur_x"].Enabled = false;
+            }
+        }
+
+        private void m_CheckMoteur_y_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.m_CheckMoteur_y.Checked)
+            {
+                this.m_ChartMoteur.Series["Moteur_y"].Enabled = true;
+            }
+            else
+            {
+                this.m_ChartMoteur.Series["Moteur_y"].Enabled = false;
+            }
+        }
+
+        private void m_CheckMoteur_z_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.m_CheckMoteur_z.Checked)
+            {
+                this.m_ChartMoteur.Series["Moteur_z"].Enabled = true;
+            }
+            else
+            {
+                this.m_ChartMoteur.Series["Moteur_z"].Enabled = false;
+            }
+        }
     }
 }

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea19 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea20 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.m_ChartPhotodiode = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.m_LblLiaisonSerie = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,15 +67,15 @@
             // m_ChartPhotodiode
             // 
             this.m_ChartPhotodiode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea7.Name = "ChartArea1";
-            this.m_ChartPhotodiode.ChartAreas.Add(chartArea7);
+            chartArea19.Name = "ChartArea1";
+            this.m_ChartPhotodiode.ChartAreas.Add(chartArea19);
             this.m_ChartPhotodiode.Location = new System.Drawing.Point(551, 313);
             this.m_ChartPhotodiode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_ChartPhotodiode.Name = "m_ChartPhotodiode";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series7.Name = "Series1";
-            this.m_ChartPhotodiode.Series.Add(series7);
+            series19.ChartArea = "ChartArea1";
+            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series19.Name = "Series1";
+            this.m_ChartPhotodiode.Series.Add(series19);
             this.m_ChartPhotodiode.Size = new System.Drawing.Size(520, 318);
             this.m_ChartPhotodiode.TabIndex = 0;
             this.m_ChartPhotodiode.Text = "PhotoDiode";
@@ -107,15 +107,15 @@
             // m_ChartGyroscope
             // 
             this.m_ChartGyroscope.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            chartArea8.Name = "ChartArea1";
-            this.m_ChartGyroscope.ChartAreas.Add(chartArea8);
+            chartArea20.Name = "ChartArea1";
+            this.m_ChartGyroscope.ChartAreas.Add(chartArea20);
             this.m_ChartGyroscope.Location = new System.Drawing.Point(0, 313);
             this.m_ChartGyroscope.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_ChartGyroscope.Name = "m_ChartGyroscope";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series8.Name = "Series1";
-            this.m_ChartGyroscope.Series.Add(series8);
+            series20.ChartArea = "ChartArea1";
+            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series20.Name = "Series1";
+            this.m_ChartGyroscope.Series.Add(series20);
             this.m_ChartGyroscope.Size = new System.Drawing.Size(517, 318);
             this.m_ChartGyroscope.TabIndex = 4;
             this.m_ChartGyroscope.Text = "Gyroscope";
@@ -332,6 +332,7 @@
             this.m_CheckGyro_x.Size = new System.Drawing.Size(18, 17);
             this.m_CheckGyro_x.TabIndex = 22;
             this.m_CheckGyro_x.UseVisualStyleBackColor = true;
+            this.m_CheckGyro_x.CheckedChanged += new System.EventHandler(this.m_CheckGyro_x_CheckedChanged);
             // 
             // m_CheckGyro_z
             // 
@@ -344,6 +345,7 @@
             this.m_CheckGyro_z.Size = new System.Drawing.Size(18, 17);
             this.m_CheckGyro_z.TabIndex = 23;
             this.m_CheckGyro_z.UseVisualStyleBackColor = true;
+            this.m_CheckGyro_z.CheckedChanged += new System.EventHandler(this.m_CheckGyro_z_CheckedChanged);
             // 
             // m_CheckGyro_y
             // 
@@ -356,6 +358,7 @@
             this.m_CheckGyro_y.Size = new System.Drawing.Size(18, 17);
             this.m_CheckGyro_y.TabIndex = 24;
             this.m_CheckGyro_y.UseVisualStyleBackColor = true;
+            this.m_CheckGyro_y.CheckedChanged += new System.EventHandler(this.m_CheckGyro_y_CheckedChanged);
             // 
             // m_CheckAcc_y
             // 
@@ -368,6 +371,7 @@
             this.m_CheckAcc_y.Size = new System.Drawing.Size(18, 17);
             this.m_CheckAcc_y.TabIndex = 27;
             this.m_CheckAcc_y.UseVisualStyleBackColor = true;
+            this.m_CheckAcc_y.CheckedChanged += new System.EventHandler(this.m_CheckAcc_y_CheckedChanged);
             // 
             // m_CheckAcc_z
             // 
@@ -380,6 +384,7 @@
             this.m_CheckAcc_z.Size = new System.Drawing.Size(18, 17);
             this.m_CheckAcc_z.TabIndex = 26;
             this.m_CheckAcc_z.UseVisualStyleBackColor = true;
+            this.m_CheckAcc_z.CheckedChanged += new System.EventHandler(this.m_CheckAcc_z_CheckedChanged);
             // 
             // m_CheckAcc_x
             // 
@@ -392,6 +397,7 @@
             this.m_CheckAcc_x.Size = new System.Drawing.Size(18, 17);
             this.m_CheckAcc_x.TabIndex = 25;
             this.m_CheckAcc_x.UseVisualStyleBackColor = true;
+            this.m_CheckAcc_x.CheckedChanged += new System.EventHandler(this.m_CheckAcc_x_CheckedChanged);
             // 
             // Données
             // 
