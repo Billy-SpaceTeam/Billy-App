@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.m_LblLiaisonSerie = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_LblMoteurConstructeur = new System.Windows.Forms.Label();
@@ -40,13 +40,15 @@
             this.m_LblServo = new System.Windows.Forms.Label();
             this.m_LblServoModele = new System.Windows.Forms.Label();
             this.m_LblMoteurModele = new System.Windows.Forms.Label();
-            this.m_LblMoteur = new System.Windows.Forms.Label();
+            this.m_LblMoteur_x = new System.Windows.Forms.Label();
             this.m_TimerGraph = new System.Windows.Forms.Timer(this.components);
             this.m_ChartMoteur = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.m_ChartServo = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.m_BpExporterMoteur = new System.Windows.Forms.Button();
             this.m_BpExporterServo = new System.Windows.Forms.Button();
             this.m_BpActionneurPlay = new System.Windows.Forms.Button();
+            this.m_LblMoteur_y = new System.Windows.Forms.Label();
+            this.m_LblMoteur_z = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_ChartMoteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_ChartServo)).BeginInit();
             this.SuspendLayout();
@@ -135,17 +137,17 @@
             this.m_LblMoteurModele.TabIndex = 12;
             this.m_LblMoteurModele.Text = "Modèle :";
             // 
-            // m_LblMoteur
+            // m_LblMoteur_x
             // 
-            this.m_LblMoteur.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.m_LblMoteur.AutoSize = true;
-            this.m_LblMoteur.BackColor = System.Drawing.SystemColors.Control;
-            this.m_LblMoteur.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblMoteur.Location = new System.Drawing.Point(47, 160);
-            this.m_LblMoteur.Name = "m_LblMoteur";
-            this.m_LblMoteur.Size = new System.Drawing.Size(67, 19);
-            this.m_LblMoteur.TabIndex = 11;
-            this.m_LblMoteur.Text = "Valeur :";
+            this.m_LblMoteur_x.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_LblMoteur_x.AutoSize = true;
+            this.m_LblMoteur_x.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblMoteur_x.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblMoteur_x.Location = new System.Drawing.Point(47, 160);
+            this.m_LblMoteur_x.Name = "m_LblMoteur_x";
+            this.m_LblMoteur_x.Size = new System.Drawing.Size(30, 19);
+            this.m_LblMoteur_x.TabIndex = 11;
+            this.m_LblMoteur_x.Text = "x :";
             // 
             // m_TimerGraph
             // 
@@ -155,15 +157,15 @@
             // m_ChartMoteur
             // 
             this.m_ChartMoteur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            chartArea1.Name = "ChartArea1";
-            this.m_ChartMoteur.ChartAreas.Add(chartArea1);
+            chartArea3.Name = "ChartArea1";
+            this.m_ChartMoteur.ChartAreas.Add(chartArea3);
             this.m_ChartMoteur.Location = new System.Drawing.Point(0, 313);
             this.m_ChartMoteur.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_ChartMoteur.Name = "m_ChartMoteur";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Name = "Series1";
-            this.m_ChartMoteur.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Name = "Series1";
+            this.m_ChartMoteur.Series.Add(series3);
             this.m_ChartMoteur.Size = new System.Drawing.Size(517, 318);
             this.m_ChartMoteur.TabIndex = 17;
             this.m_ChartMoteur.Text = "Moteur a Réaction";
@@ -171,15 +173,15 @@
             // m_ChartServo
             // 
             this.m_ChartServo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            chartArea2.Name = "ChartArea1";
-            this.m_ChartServo.ChartAreas.Add(chartArea2);
+            chartArea4.Name = "ChartArea1";
+            this.m_ChartServo.ChartAreas.Add(chartArea4);
             this.m_ChartServo.Location = new System.Drawing.Point(552, 313);
             this.m_ChartServo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_ChartServo.Name = "m_ChartServo";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Name = "Series1";
-            this.m_ChartServo.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Name = "Series1";
+            this.m_ChartServo.Series.Add(series4);
             this.m_ChartServo.Size = new System.Drawing.Size(517, 318);
             this.m_ChartServo.TabIndex = 18;
             this.m_ChartServo.Text = "Gyroscope";
@@ -220,10 +222,36 @@
             this.m_BpActionneurPlay.UseVisualStyleBackColor = true;
             this.m_BpActionneurPlay.Click += new System.EventHandler(this.m_BpActionneurPlay_Click);
             // 
+            // m_LblMoteur_y
+            // 
+            this.m_LblMoteur_y.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_LblMoteur_y.AutoSize = true;
+            this.m_LblMoteur_y.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblMoteur_y.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblMoteur_y.Location = new System.Drawing.Point(47, 179);
+            this.m_LblMoteur_y.Name = "m_LblMoteur_y";
+            this.m_LblMoteur_y.Size = new System.Drawing.Size(30, 19);
+            this.m_LblMoteur_y.TabIndex = 22;
+            this.m_LblMoteur_y.Text = "y :";
+            // 
+            // m_LblMoteur_z
+            // 
+            this.m_LblMoteur_z.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_LblMoteur_z.AutoSize = true;
+            this.m_LblMoteur_z.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblMoteur_z.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblMoteur_z.Location = new System.Drawing.Point(47, 198);
+            this.m_LblMoteur_z.Name = "m_LblMoteur_z";
+            this.m_LblMoteur_z.Size = new System.Drawing.Size(30, 19);
+            this.m_LblMoteur_z.TabIndex = 23;
+            this.m_LblMoteur_z.Text = "z :";
+            // 
             // Actionnneur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.m_LblMoteur_z);
+            this.Controls.Add(this.m_LblMoteur_y);
             this.Controls.Add(this.m_BpActionneurPlay);
             this.Controls.Add(this.m_BpExporterServo);
             this.Controls.Add(this.m_BpExporterMoteur);
@@ -234,7 +262,7 @@
             this.Controls.Add(this.m_LblServo);
             this.Controls.Add(this.m_LblServoModele);
             this.Controls.Add(this.m_LblMoteurModele);
-            this.Controls.Add(this.m_LblMoteur);
+            this.Controls.Add(this.m_LblMoteur_x);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_LblLiaisonSerie);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -256,12 +284,14 @@
         private System.Windows.Forms.Label m_LblServo;
         private System.Windows.Forms.Label m_LblServoModele;
         private System.Windows.Forms.Label m_LblMoteurModele;
-        private System.Windows.Forms.Label m_LblMoteur;
+        private System.Windows.Forms.Label m_LblMoteur_x;
         private System.Windows.Forms.Timer m_TimerGraph;
         private System.Windows.Forms.DataVisualization.Charting.Chart m_ChartMoteur;
         private System.Windows.Forms.DataVisualization.Charting.Chart m_ChartServo;
         private System.Windows.Forms.Button m_BpExporterMoteur;
         private System.Windows.Forms.Button m_BpExporterServo;
         private System.Windows.Forms.Button m_BpActionneurPlay;
+        private System.Windows.Forms.Label m_LblMoteur_y;
+        private System.Windows.Forms.Label m_LblMoteur_z;
     }
 }

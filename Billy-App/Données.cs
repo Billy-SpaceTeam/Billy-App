@@ -18,6 +18,9 @@ namespace Billy_App
         private int x_Gyro = 1;
         private int y_Gyro = 2;
         private int z_Gyro = 3;
+        private int x_Accel = 1;
+        private int y_Accel = 2;
+        private int z_Accel = 3;
         private bool Play = false;
         public Données()
         {
@@ -81,9 +84,12 @@ namespace Billy_App
 
         private void m_TimerGraph_Tick(object sender, EventArgs e)
         {
-            this.m_LblGyro_x.Text = "Valeur x : " + x_Gyro.ToString();
-            this.m_LblGyro_y.Text = "Valeur y : " + y_Gyro.ToString();
-            this.m_LblGyro_z.Text = "Valeur z : " + z_Gyro.ToString();
+            this.m_LblGyro_x.Text = "x : " + x_Gyro.ToString();
+            this.m_LblGyro_y.Text = "y : " + y_Gyro.ToString();
+            this.m_LblGyro_z.Text = "z : " + z_Gyro.ToString();
+            this.m_LblAccel_x.Text = "x : " + x_Accel.ToString();
+            this.m_LblAccel_y.Text = "y : " + y_Accel.ToString();
+            this.m_LblAccel_z.Text = "z : " + z_Accel.ToString();
 
             this.m_LblPhoto.Text = "Valeur : " + Photodiode.ToString();
             x++;
