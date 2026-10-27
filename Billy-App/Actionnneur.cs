@@ -14,17 +14,17 @@ namespace Billy_App
     public partial class Actionnneur : UserControl
     {
         private bool ServoMoteur = true;
-        private int MoteurVitesse = 1;
+        private int Moteur_x = 1;
         private int x = 0;
         private bool Play = false;
         public Actionnneur()
         {
             InitializeComponent();
 
-            this.m_LblMoteurModele.Text = "Modèle : ";
-            this.m_LblServoModele.Text = "Modèle : ";
-            this.m_LblMoteurConstructeur.Text = "Constructeur : ";
-            this.m_LblServoConstructeur.Text = "Constructeur : ";
+            this.m_LblMoteurModele.Text = "Modèle : non disponible";
+            this.m_LblServoModele.Text = "Modèle : non disponible";
+            this.m_LblMoteurConstructeur.Text = "Constructeur : non disponible";
+            this.m_LblServoConstructeur.Text = "Constructeur : non disponible";
 
             this.m_ChartMoteur.Series.Add("Moteur a Reaction");
             this.m_ChartServo.Series.Add("ServoMoteur");
@@ -41,12 +41,12 @@ namespace Billy_App
         private void m_TimerGraph_Tick(object sender, EventArgs e)
         {
             this.m_LblServo.Text = "Valeur : " + this.ServoMoteur;
-            this.m_LblMoteur.Text = "Valeur : " + this.MoteurVitesse;
+            this.m_LblMoteur.Text = "Valeur : " + this.Moteur_x;
 
             x++;
 
             //Graph Moteur a reaction
-            m_ChartMoteur.Series["Series1"].Points.AddXY((x/10), MoteurVitesse);//(X = secondes, Y = valeur)
+            m_ChartMoteur.Series["Series1"].Points.AddXY((x/10), Moteur_x);//(X = secondes, Y = valeur)
 
             if (m_ChartMoteur.Series["Series1"].Points.Count > 60)//seulement les 60 dernières secondes
             {
