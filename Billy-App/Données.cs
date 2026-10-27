@@ -22,6 +22,8 @@ namespace Billy_App
         private int y_Accel = 2;
         private int z_Accel = 3;
         private bool Play = false;
+        private readonly string SiteGyro = "https://img.dfrobot.com.cn/wiki/5b973267c87e6f19943ab3ad/a1a4d9e8c56d96319695a90095ad1c98.pdf";
+        private readonly string SitePhotoDiode = "https://www.vishay.com/docs/81521/bpw34.pdf";
         public Données()
         {
             InitializeComponent();
@@ -143,6 +145,40 @@ namespace Billy_App
                 Play = true;
                 this.m_BpDonneesPlay.Text = "Play";
                 m_TimerGraph.Stop();
+            }
+        }
+
+        private void m_LblGyroModele_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(SiteGyro);
+            }
+            catch (System.ComponentModel.Win32Exception noBrowser)
+            {
+                if (noBrowser.ErrorCode == -2147467259)
+                    MessageBox.Show(noBrowser.Message);
+            }
+            catch (System.Exception other)
+            {
+                MessageBox.Show(other.Message);
+            }
+        }
+
+        private void m_LblPhotoModele_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(SitePhotoDiode);
+            }
+            catch (System.ComponentModel.Win32Exception noBrowser)
+            {
+                if (noBrowser.ErrorCode == -2147467259)
+                    MessageBox.Show(noBrowser.Message);
+            }
+            catch (System.Exception other)
+            {
+                MessageBox.Show(other.Message);
             }
         }
     }
