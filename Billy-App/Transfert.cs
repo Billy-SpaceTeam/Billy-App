@@ -294,5 +294,28 @@ namespace Billy_App
                 this.m_LblTransfertBranche.Text = "Branche : non disponible";
             }
         }
+
+        private void m_LblTransfertVersion_Click(object sender, EventArgs e)
+        {
+            string urlVersionGit = $"https://github.com/{m_RepoGitHub}/releases/latest"; //https://github.com/Billy-SpaceTeam/Billy-App/releases/tag/1.0.2.3
+
+            if (this.m_BoxTransfert.SelectedItem == "Github")
+            {
+                this.m_LblTransfertVersion.Cursor = Cursors.Hand;
+                try
+                {
+                    System.Diagnostics.Process.Start(urlVersionGit);
+                }
+                catch (System.ComponentModel.Win32Exception noBrowser)
+                {
+                    if (noBrowser.ErrorCode == -2147467259)
+                        MessageBox.Show(noBrowser.Message);
+                }
+                catch (System.Exception other)
+                {
+                    MessageBox.Show(other.Message);
+                }
+            }
+        }
     }
 }
