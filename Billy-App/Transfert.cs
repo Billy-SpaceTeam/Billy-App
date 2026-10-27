@@ -226,7 +226,7 @@ namespace Billy_App
             if(this.m_BoxTransfert.SelectedItem == "Github")
             {
                 this.m_LblTransfertType.Text = "Type : Github";
-
+                this.m_LblTransfertVersion.Cursor = Cursors.Hand;
                 try
                 {
                     using (HttpClient client = new HttpClient())
@@ -292,6 +292,7 @@ namespace Billy_App
                 this.m_LblTransfertDate.Text = "Date : non disponible";
                 this.m_LblTransfertStatus.Text = "Status : non chargé";
                 this.m_LblTransfertBranche.Text = "Branche : non disponible";
+                this.m_LblTransfertVersion.Cursor = Cursors.Default;
             }
         }
 
@@ -301,7 +302,6 @@ namespace Billy_App
 
             if (this.m_BoxTransfert.SelectedItem == "Github")
             {
-                this.m_LblTransfertVersion.Cursor = Cursors.Hand;
                 try
                 {
                     System.Diagnostics.Process.Start(urlVersionGit);

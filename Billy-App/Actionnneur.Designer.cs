@@ -49,6 +49,9 @@
             this.m_BpActionneurPlay = new System.Windows.Forms.Button();
             this.m_LblMoteur_y = new System.Windows.Forms.Label();
             this.m_LblMoteur_z = new System.Windows.Forms.Label();
+            this.m_CheckMoteur_x = new System.Windows.Forms.CheckBox();
+            this.m_CheckMoteur_y = new System.Windows.Forms.CheckBox();
+            this.m_CheckMoteur_z = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.m_ChartMoteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_ChartServo)).BeginInit();
             this.SuspendLayout();
@@ -143,7 +146,7 @@
             this.m_LblMoteur_x.AutoSize = true;
             this.m_LblMoteur_x.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblMoteur_x.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblMoteur_x.Location = new System.Drawing.Point(47, 160);
+            this.m_LblMoteur_x.Location = new System.Drawing.Point(75, 157);
             this.m_LblMoteur_x.Name = "m_LblMoteur_x";
             this.m_LblMoteur_x.Size = new System.Drawing.Size(30, 19);
             this.m_LblMoteur_x.TabIndex = 11;
@@ -228,7 +231,7 @@
             this.m_LblMoteur_y.AutoSize = true;
             this.m_LblMoteur_y.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblMoteur_y.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblMoteur_y.Location = new System.Drawing.Point(47, 179);
+            this.m_LblMoteur_y.Location = new System.Drawing.Point(75, 176);
             this.m_LblMoteur_y.Name = "m_LblMoteur_y";
             this.m_LblMoteur_y.Size = new System.Drawing.Size(30, 19);
             this.m_LblMoteur_y.TabIndex = 22;
@@ -240,16 +243,55 @@
             this.m_LblMoteur_z.AutoSize = true;
             this.m_LblMoteur_z.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblMoteur_z.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblMoteur_z.Location = new System.Drawing.Point(47, 198);
+            this.m_LblMoteur_z.Location = new System.Drawing.Point(75, 195);
             this.m_LblMoteur_z.Name = "m_LblMoteur_z";
             this.m_LblMoteur_z.Size = new System.Drawing.Size(30, 19);
             this.m_LblMoteur_z.TabIndex = 23;
             this.m_LblMoteur_z.Text = "z :";
             // 
+            // m_CheckMoteur_x
+            // 
+            this.m_CheckMoteur_x.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_CheckMoteur_x.AutoSize = true;
+            this.m_CheckMoteur_x.Checked = true;
+            this.m_CheckMoteur_x.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.m_CheckMoteur_x.Location = new System.Drawing.Point(51, 160);
+            this.m_CheckMoteur_x.Name = "m_CheckMoteur_x";
+            this.m_CheckMoteur_x.Size = new System.Drawing.Size(18, 17);
+            this.m_CheckMoteur_x.TabIndex = 26;
+            this.m_CheckMoteur_x.UseVisualStyleBackColor = true;
+            // 
+            // m_CheckMoteur_y
+            // 
+            this.m_CheckMoteur_y.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_CheckMoteur_y.AutoSize = true;
+            this.m_CheckMoteur_y.Checked = true;
+            this.m_CheckMoteur_y.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.m_CheckMoteur_y.Location = new System.Drawing.Point(51, 179);
+            this.m_CheckMoteur_y.Name = "m_CheckMoteur_y";
+            this.m_CheckMoteur_y.Size = new System.Drawing.Size(18, 17);
+            this.m_CheckMoteur_y.TabIndex = 27;
+            this.m_CheckMoteur_y.UseVisualStyleBackColor = true;
+            // 
+            // m_CheckMoteur_z
+            // 
+            this.m_CheckMoteur_z.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_CheckMoteur_z.AutoSize = true;
+            this.m_CheckMoteur_z.Checked = true;
+            this.m_CheckMoteur_z.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.m_CheckMoteur_z.Location = new System.Drawing.Point(51, 198);
+            this.m_CheckMoteur_z.Name = "m_CheckMoteur_z";
+            this.m_CheckMoteur_z.Size = new System.Drawing.Size(18, 17);
+            this.m_CheckMoteur_z.TabIndex = 28;
+            this.m_CheckMoteur_z.UseVisualStyleBackColor = true;
+            // 
             // Actionnneur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.m_CheckMoteur_z);
+            this.Controls.Add(this.m_CheckMoteur_y);
+            this.Controls.Add(this.m_CheckMoteur_x);
             this.Controls.Add(this.m_LblMoteur_z);
             this.Controls.Add(this.m_LblMoteur_y);
             this.Controls.Add(this.m_BpActionneurPlay);
@@ -293,5 +335,8 @@
         private System.Windows.Forms.Button m_BpActionneurPlay;
         private System.Windows.Forms.Label m_LblMoteur_y;
         private System.Windows.Forms.Label m_LblMoteur_z;
+        private System.Windows.Forms.CheckBox m_CheckMoteur_x;
+        private System.Windows.Forms.CheckBox m_CheckMoteur_y;
+        private System.Windows.Forms.CheckBox m_CheckMoteur_z;
     }
 }

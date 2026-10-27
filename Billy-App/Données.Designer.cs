@@ -54,6 +54,12 @@
             this.m_LblAccel_x = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.m_CheckGyro_x = new System.Windows.Forms.CheckBox();
+            this.m_CheckGyro_z = new System.Windows.Forms.CheckBox();
+            this.m_CheckGyro_y = new System.Windows.Forms.CheckBox();
+            this.m_CheckAcc_y = new System.Windows.Forms.CheckBox();
+            this.m_CheckAcc_z = new System.Windows.Forms.CheckBox();
+            this.m_CheckAcc_x = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.m_ChartPhotodiode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_ChartGyroscope)).BeginInit();
             this.SuspendLayout();
@@ -120,7 +126,7 @@
             this.m_LblGyro_x.AutoSize = true;
             this.m_LblGyro_x.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblGyro_x.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblGyro_x.Location = new System.Drawing.Point(47, 166);
+            this.m_LblGyro_x.Location = new System.Drawing.Point(72, 162);
             this.m_LblGyro_x.Name = "m_LblGyro_x";
             this.m_LblGyro_x.Size = new System.Drawing.Size(30, 19);
             this.m_LblGyro_x.TabIndex = 5;
@@ -142,7 +148,7 @@
             // 
             // m_LblPhotoModele
             // 
-            this.m_LblPhotoModele.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_LblPhotoModele.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.m_LblPhotoModele.AutoSize = true;
             this.m_LblPhotoModele.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblPhotoModele.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -156,7 +162,7 @@
             // 
             // m_LblPhoto
             // 
-            this.m_LblPhoto.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_LblPhoto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.m_LblPhoto.AutoSize = true;
             this.m_LblPhoto.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblPhoto.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -168,7 +174,7 @@
             // 
             // m_LblPhotoConstructeur
             // 
-            this.m_LblPhotoConstructeur.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_LblPhotoConstructeur.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.m_LblPhotoConstructeur.AutoSize = true;
             this.m_LblPhotoConstructeur.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblPhotoConstructeur.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -237,7 +243,7 @@
             this.m_LblGyro_y.AutoSize = true;
             this.m_LblGyro_y.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblGyro_y.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblGyro_y.Location = new System.Drawing.Point(47, 185);
+            this.m_LblGyro_y.Location = new System.Drawing.Point(72, 181);
             this.m_LblGyro_y.Name = "m_LblGyro_y";
             this.m_LblGyro_y.Size = new System.Drawing.Size(30, 19);
             this.m_LblGyro_y.TabIndex = 14;
@@ -249,7 +255,7 @@
             this.m_LblGyro_z.AutoSize = true;
             this.m_LblGyro_z.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblGyro_z.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblGyro_z.Location = new System.Drawing.Point(46, 204);
+            this.m_LblGyro_z.Location = new System.Drawing.Point(71, 200);
             this.m_LblGyro_z.Name = "m_LblGyro_z";
             this.m_LblGyro_z.Size = new System.Drawing.Size(30, 19);
             this.m_LblGyro_z.TabIndex = 15;
@@ -261,7 +267,7 @@
             this.m_LblAccel_z.AutoSize = true;
             this.m_LblAccel_z.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblAccel_z.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblAccel_z.Location = new System.Drawing.Point(276, 204);
+            this.m_LblAccel_z.Location = new System.Drawing.Point(303, 201);
             this.m_LblAccel_z.Name = "m_LblAccel_z";
             this.m_LblAccel_z.Size = new System.Drawing.Size(30, 19);
             this.m_LblAccel_z.TabIndex = 18;
@@ -273,7 +279,7 @@
             this.m_LblAccel_y.AutoSize = true;
             this.m_LblAccel_y.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblAccel_y.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblAccel_y.Location = new System.Drawing.Point(277, 185);
+            this.m_LblAccel_y.Location = new System.Drawing.Point(304, 182);
             this.m_LblAccel_y.Name = "m_LblAccel_y";
             this.m_LblAccel_y.Size = new System.Drawing.Size(30, 19);
             this.m_LblAccel_y.TabIndex = 17;
@@ -285,7 +291,7 @@
             this.m_LblAccel_x.AutoSize = true;
             this.m_LblAccel_x.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblAccel_x.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblAccel_x.Location = new System.Drawing.Point(277, 166);
+            this.m_LblAccel_x.Location = new System.Drawing.Point(304, 163);
             this.m_LblAccel_x.Name = "m_LblAccel_x";
             this.m_LblAccel_x.Size = new System.Drawing.Size(30, 19);
             this.m_LblAccel_x.TabIndex = 16;
@@ -315,11 +321,89 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "Accelerometre";
             // 
+            // m_CheckGyro_x
+            // 
+            this.m_CheckGyro_x.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_CheckGyro_x.AutoSize = true;
+            this.m_CheckGyro_x.Checked = true;
+            this.m_CheckGyro_x.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.m_CheckGyro_x.Location = new System.Drawing.Point(51, 165);
+            this.m_CheckGyro_x.Name = "m_CheckGyro_x";
+            this.m_CheckGyro_x.Size = new System.Drawing.Size(18, 17);
+            this.m_CheckGyro_x.TabIndex = 22;
+            this.m_CheckGyro_x.UseVisualStyleBackColor = true;
+            // 
+            // m_CheckGyro_z
+            // 
+            this.m_CheckGyro_z.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_CheckGyro_z.AutoSize = true;
+            this.m_CheckGyro_z.Checked = true;
+            this.m_CheckGyro_z.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.m_CheckGyro_z.Location = new System.Drawing.Point(51, 202);
+            this.m_CheckGyro_z.Name = "m_CheckGyro_z";
+            this.m_CheckGyro_z.Size = new System.Drawing.Size(18, 17);
+            this.m_CheckGyro_z.TabIndex = 23;
+            this.m_CheckGyro_z.UseVisualStyleBackColor = true;
+            // 
+            // m_CheckGyro_y
+            // 
+            this.m_CheckGyro_y.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_CheckGyro_y.AutoSize = true;
+            this.m_CheckGyro_y.Checked = true;
+            this.m_CheckGyro_y.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.m_CheckGyro_y.Location = new System.Drawing.Point(51, 183);
+            this.m_CheckGyro_y.Name = "m_CheckGyro_y";
+            this.m_CheckGyro_y.Size = new System.Drawing.Size(18, 17);
+            this.m_CheckGyro_y.TabIndex = 24;
+            this.m_CheckGyro_y.UseVisualStyleBackColor = true;
+            // 
+            // m_CheckAcc_y
+            // 
+            this.m_CheckAcc_y.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_CheckAcc_y.AutoSize = true;
+            this.m_CheckAcc_y.Checked = true;
+            this.m_CheckAcc_y.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.m_CheckAcc_y.Location = new System.Drawing.Point(280, 184);
+            this.m_CheckAcc_y.Name = "m_CheckAcc_y";
+            this.m_CheckAcc_y.Size = new System.Drawing.Size(18, 17);
+            this.m_CheckAcc_y.TabIndex = 27;
+            this.m_CheckAcc_y.UseVisualStyleBackColor = true;
+            // 
+            // m_CheckAcc_z
+            // 
+            this.m_CheckAcc_z.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_CheckAcc_z.AutoSize = true;
+            this.m_CheckAcc_z.Checked = true;
+            this.m_CheckAcc_z.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.m_CheckAcc_z.Location = new System.Drawing.Point(280, 203);
+            this.m_CheckAcc_z.Name = "m_CheckAcc_z";
+            this.m_CheckAcc_z.Size = new System.Drawing.Size(18, 17);
+            this.m_CheckAcc_z.TabIndex = 26;
+            this.m_CheckAcc_z.UseVisualStyleBackColor = true;
+            // 
+            // m_CheckAcc_x
+            // 
+            this.m_CheckAcc_x.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_CheckAcc_x.AutoSize = true;
+            this.m_CheckAcc_x.Checked = true;
+            this.m_CheckAcc_x.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.m_CheckAcc_x.Location = new System.Drawing.Point(280, 166);
+            this.m_CheckAcc_x.Name = "m_CheckAcc_x";
+            this.m_CheckAcc_x.Size = new System.Drawing.Size(18, 17);
+            this.m_CheckAcc_x.TabIndex = 25;
+            this.m_CheckAcc_x.UseVisualStyleBackColor = true;
+            // 
             // Données
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.Controls.Add(this.m_CheckAcc_y);
+            this.Controls.Add(this.m_CheckAcc_z);
+            this.Controls.Add(this.m_CheckAcc_x);
+            this.Controls.Add(this.m_CheckGyro_y);
+            this.Controls.Add(this.m_CheckGyro_z);
+            this.Controls.Add(this.m_CheckGyro_x);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.m_LblAccel_z);
@@ -373,5 +457,11 @@
         private System.Windows.Forms.Label m_LblAccel_x;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox m_CheckGyro_x;
+        private System.Windows.Forms.CheckBox m_CheckGyro_z;
+        private System.Windows.Forms.CheckBox m_CheckGyro_y;
+        private System.Windows.Forms.CheckBox m_CheckAcc_y;
+        private System.Windows.Forms.CheckBox m_CheckAcc_z;
+        private System.Windows.Forms.CheckBox m_CheckAcc_x;
     }
 }

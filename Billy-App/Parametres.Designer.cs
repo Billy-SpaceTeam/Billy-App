@@ -62,20 +62,19 @@
             this.m_LblApparence.AutoSize = true;
             this.m_LblApparence.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblApparence.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblApparence.Location = new System.Drawing.Point(35, 54);
-            this.m_LblApparence.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblApparence.Location = new System.Drawing.Point(47, 66);
             this.m_LblApparence.Name = "m_LblApparence";
-            this.m_LblApparence.Size = new System.Drawing.Size(94, 20);
+            this.m_LblApparence.Size = new System.Drawing.Size(118, 26);
             this.m_LblApparence.TabIndex = 2;
             this.m_LblApparence.Text = "Apparence";
             // 
             // m_BpThemes
             // 
             this.m_BpThemes.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.m_BpThemes.Location = new System.Drawing.Point(39, 86);
-            this.m_BpThemes.Margin = new System.Windows.Forms.Padding(2);
+            this.m_BpThemes.Location = new System.Drawing.Point(52, 106);
+            this.m_BpThemes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_BpThemes.Name = "m_BpThemes";
-            this.m_BpThemes.Size = new System.Drawing.Size(90, 33);
+            this.m_BpThemes.Size = new System.Drawing.Size(120, 41);
             this.m_BpThemes.TabIndex = 3;
             this.m_BpThemes.Text = "Thème Sombre";
             this.m_BpThemes.UseVisualStyleBackColor = true;
@@ -87,20 +86,19 @@
             this.m_LblMiseAJour.AutoSize = true;
             this.m_LblMiseAJour.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblMiseAJour.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblMiseAJour.Location = new System.Drawing.Point(35, 159);
-            this.m_LblMiseAJour.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblMiseAJour.Location = new System.Drawing.Point(47, 196);
             this.m_LblMiseAJour.Name = "m_LblMiseAJour";
-            this.m_LblMiseAJour.Size = new System.Drawing.Size(101, 20);
+            this.m_LblMiseAJour.Size = new System.Drawing.Size(126, 26);
             this.m_LblMiseAJour.TabIndex = 4;
             this.m_LblMiseAJour.Text = "Mise à Jour";
             // 
             // m_BpVerifMaj
             // 
             this.m_BpVerifMaj.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.m_BpVerifMaj.Location = new System.Drawing.Point(39, 192);
-            this.m_BpVerifMaj.Margin = new System.Windows.Forms.Padding(2);
+            this.m_BpVerifMaj.Location = new System.Drawing.Point(52, 236);
+            this.m_BpVerifMaj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_BpVerifMaj.Name = "m_BpVerifMaj";
-            this.m_BpVerifMaj.Size = new System.Drawing.Size(85, 33);
+            this.m_BpVerifMaj.Size = new System.Drawing.Size(113, 41);
             this.m_BpVerifMaj.TabIndex = 5;
             this.m_BpVerifMaj.Text = "Vérifier";
             this.m_BpVerifMaj.UseVisualStyleBackColor = true;
@@ -109,10 +107,10 @@
             // m_BpMetAJour
             // 
             this.m_BpMetAJour.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.m_BpMetAJour.Location = new System.Drawing.Point(39, 239);
-            this.m_BpMetAJour.Margin = new System.Windows.Forms.Padding(2);
+            this.m_BpMetAJour.Location = new System.Drawing.Point(52, 294);
+            this.m_BpMetAJour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_BpMetAJour.Name = "m_BpMetAJour";
-            this.m_BpMetAJour.Size = new System.Drawing.Size(85, 33);
+            this.m_BpMetAJour.Size = new System.Drawing.Size(113, 41);
             this.m_BpMetAJour.TabIndex = 6;
             this.m_BpMetAJour.Text = "Mettre à jour";
             this.m_BpMetAJour.UseVisualStyleBackColor = true;
@@ -123,13 +121,14 @@
             this.m_LblInfoVersion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.m_LblInfoVersion.AutoSize = true;
             this.m_LblInfoVersion.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblInfoVersion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.m_LblInfoVersion.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblInfoVersion.Location = new System.Drawing.Point(449, 368);
-            this.m_LblInfoVersion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblInfoVersion.Location = new System.Drawing.Point(599, 464);
             this.m_LblInfoVersion.Name = "m_LblInfoVersion";
-            this.m_LblInfoVersion.Size = new System.Drawing.Size(120, 15);
+            this.m_LblInfoVersion.Size = new System.Drawing.Size(136, 16);
             this.m_LblInfoVersion.TabIndex = 17;
             this.m_LblInfoVersion.Text = "Version du logiciel :";
+            this.m_LblInfoVersion.Click += new System.EventHandler(this.m_LblInfoVersion_Click);
             // 
             // m_LblInformations
             // 
@@ -137,10 +136,9 @@
             this.m_LblInformations.AutoSize = true;
             this.m_LblInformations.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblInformations.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblInformations.Location = new System.Drawing.Point(448, 305);
-            this.m_LblInformations.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblInformations.Location = new System.Drawing.Point(597, 375);
             this.m_LblInformations.Name = "m_LblInformations";
-            this.m_LblInformations.Size = new System.Drawing.Size(114, 20);
+            this.m_LblInformations.Size = new System.Drawing.Size(141, 26);
             this.m_LblInformations.TabIndex = 18;
             this.m_LblInformations.Text = "Informations";
             // 
@@ -150,10 +148,9 @@
             this.m_LblInfoDate.AutoSize = true;
             this.m_LblInfoDate.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblInfoDate.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblInfoDate.Location = new System.Drawing.Point(449, 393);
-            this.m_LblInfoDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblInfoDate.Location = new System.Drawing.Point(599, 480);
             this.m_LblInfoDate.Name = "m_LblInfoDate";
-            this.m_LblInfoDate.Size = new System.Drawing.Size(43, 15);
+            this.m_LblInfoDate.Size = new System.Drawing.Size(49, 16);
             this.m_LblInfoDate.TabIndex = 19;
             this.m_LblInfoDate.Text = "Date :";
             // 
@@ -163,19 +160,19 @@
             this.m_LblStockage.AutoSize = true;
             this.m_LblStockage.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblStockage.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblStockage.Location = new System.Drawing.Point(448, 54);
-            this.m_LblStockage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblStockage.Location = new System.Drawing.Point(597, 66);
             this.m_LblStockage.Name = "m_LblStockage";
-            this.m_LblStockage.Size = new System.Drawing.Size(83, 20);
+            this.m_LblStockage.Size = new System.Drawing.Size(104, 26);
             this.m_LblStockage.TabIndex = 20;
             this.m_LblStockage.Text = "Stockage";
             // 
             // m_TxtBoxStockTrans
             // 
             this.m_TxtBoxStockTrans.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.m_TxtBoxStockTrans.Location = new System.Drawing.Point(453, 122);
+            this.m_TxtBoxStockTrans.Location = new System.Drawing.Point(604, 150);
+            this.m_TxtBoxStockTrans.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.m_TxtBoxStockTrans.Name = "m_TxtBoxStockTrans";
-            this.m_TxtBoxStockTrans.Size = new System.Drawing.Size(235, 20);
+            this.m_TxtBoxStockTrans.Size = new System.Drawing.Size(312, 22);
             this.m_TxtBoxStockTrans.TabIndex = 21;
             this.m_TxtBoxStockTrans.TextChanged += new System.EventHandler(this.m_TxtBoxStockTrans_TextChanged);
             // 
@@ -185,29 +182,30 @@
             this.m_LblRaccourcis.AutoSize = true;
             this.m_LblRaccourcis.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblRaccourcis.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblRaccourcis.Location = new System.Drawing.Point(34, 330);
-            this.m_LblRaccourcis.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblRaccourcis.Location = new System.Drawing.Point(45, 406);
             this.m_LblRaccourcis.Name = "m_LblRaccourcis";
-            this.m_LblRaccourcis.Size = new System.Drawing.Size(94, 20);
+            this.m_LblRaccourcis.Size = new System.Drawing.Size(118, 26);
             this.m_LblRaccourcis.TabIndex = 22;
             this.m_LblRaccourcis.Text = "Raccourcis";
             // 
             // m_TxtBoxRaccourciIp
             // 
             this.m_TxtBoxRaccourciIp.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.m_TxtBoxRaccourciIp.Location = new System.Drawing.Point(73, 372);
+            this.m_TxtBoxRaccourciIp.Location = new System.Drawing.Point(97, 458);
+            this.m_TxtBoxRaccourciIp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.m_TxtBoxRaccourciIp.Name = "m_TxtBoxRaccourciIp";
-            this.m_TxtBoxRaccourciIp.Size = new System.Drawing.Size(176, 20);
+            this.m_TxtBoxRaccourciIp.Size = new System.Drawing.Size(233, 22);
             this.m_TxtBoxRaccourciIp.TabIndex = 23;
             this.m_TxtBoxRaccourciIp.TextChanged += new System.EventHandler(this.m_TxtBoxRaccourciIp_TextChanged);
             // 
             // m_TxtBoxRaccourciMdp
             // 
             this.m_TxtBoxRaccourciMdp.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.m_TxtBoxRaccourciMdp.Location = new System.Drawing.Point(149, 408);
+            this.m_TxtBoxRaccourciMdp.Location = new System.Drawing.Point(199, 502);
+            this.m_TxtBoxRaccourciMdp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.m_TxtBoxRaccourciMdp.Name = "m_TxtBoxRaccourciMdp";
             this.m_TxtBoxRaccourciMdp.PasswordChar = '*';
-            this.m_TxtBoxRaccourciMdp.Size = new System.Drawing.Size(100, 20);
+            this.m_TxtBoxRaccourciMdp.Size = new System.Drawing.Size(132, 22);
             this.m_TxtBoxRaccourciMdp.TabIndex = 24;
             this.m_TxtBoxRaccourciMdp.TextChanged += new System.EventHandler(this.m_TxtBoxRaccourciMdp_TextChanged);
             // 
@@ -217,10 +215,9 @@
             this.m_LblRaccourcisIp.AutoSize = true;
             this.m_LblRaccourcisIp.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblRaccourcisIp.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblRaccourcisIp.Location = new System.Drawing.Point(37, 372);
-            this.m_LblRaccourcisIp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblRaccourcisIp.Location = new System.Drawing.Point(49, 458);
             this.m_LblRaccourcisIp.Name = "m_LblRaccourcisIp";
-            this.m_LblRaccourcisIp.Size = new System.Drawing.Size(28, 15);
+            this.m_LblRaccourcisIp.Size = new System.Drawing.Size(31, 16);
             this.m_LblRaccourcisIp.TabIndex = 25;
             this.m_LblRaccourcisIp.Text = "Ip :";
             // 
@@ -230,20 +227,19 @@
             this.m_LblRaccourcisMdp.AutoSize = true;
             this.m_LblRaccourcisMdp.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblRaccourcisMdp.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblRaccourcisMdp.Location = new System.Drawing.Point(37, 408);
-            this.m_LblRaccourcisMdp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblRaccourcisMdp.Location = new System.Drawing.Point(49, 502);
             this.m_LblRaccourcisMdp.Name = "m_LblRaccourcisMdp";
-            this.m_LblRaccourcisMdp.Size = new System.Drawing.Size(91, 15);
+            this.m_LblRaccourcisMdp.Size = new System.Drawing.Size(107, 16);
             this.m_LblRaccourcisMdp.TabIndex = 26;
             this.m_LblRaccourcisMdp.Text = "Mot de Passe :";
             // 
             // m_BpLienGithub
             // 
             this.m_BpLienGithub.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.m_BpLienGithub.Location = new System.Drawing.Point(453, 427);
-            this.m_BpLienGithub.Margin = new System.Windows.Forms.Padding(2);
+            this.m_BpLienGithub.Location = new System.Drawing.Point(604, 526);
+            this.m_BpLienGithub.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_BpLienGithub.Name = "m_BpLienGithub";
-            this.m_BpLienGithub.Size = new System.Drawing.Size(136, 30);
+            this.m_BpLienGithub.Size = new System.Drawing.Size(181, 37);
             this.m_BpLienGithub.TabIndex = 27;
             this.m_BpLienGithub.Text = "Github du Projet";
             this.m_BpLienGithub.UseVisualStyleBackColor = true;
@@ -255,10 +251,9 @@
             this.m_LblStockTrans.AutoSize = true;
             this.m_LblStockTrans.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblStockTrans.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblStockTrans.Location = new System.Drawing.Point(450, 103);
-            this.m_LblStockTrans.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblStockTrans.Location = new System.Drawing.Point(600, 127);
             this.m_LblStockTrans.Name = "m_LblStockTrans";
-            this.m_LblStockTrans.Size = new System.Drawing.Size(200, 15);
+            this.m_LblStockTrans.Size = new System.Drawing.Size(229, 16);
             this.m_LblStockTrans.TabIndex = 28;
             this.m_LblStockTrans.Text = "Chemin des fichiers de transfert :";
             // 
@@ -268,28 +263,29 @@
             this.m_LblStockDonnees.AutoSize = true;
             this.m_LblStockDonnees.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblStockDonnees.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblStockDonnees.Location = new System.Drawing.Point(450, 159);
-            this.m_LblStockDonnees.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblStockDonnees.Location = new System.Drawing.Point(600, 196);
             this.m_LblStockDonnees.Name = "m_LblStockDonnees";
-            this.m_LblStockDonnees.Size = new System.Drawing.Size(136, 15);
+            this.m_LblStockDonnees.Size = new System.Drawing.Size(153, 16);
             this.m_LblStockDonnees.TabIndex = 29;
             this.m_LblStockDonnees.Text = "Chemin des données :";
             // 
             // m_TxtBoxStockDonnees
             // 
             this.m_TxtBoxStockDonnees.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.m_TxtBoxStockDonnees.Location = new System.Drawing.Point(453, 178);
+            this.m_TxtBoxStockDonnees.Location = new System.Drawing.Point(604, 219);
+            this.m_TxtBoxStockDonnees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.m_TxtBoxStockDonnees.Name = "m_TxtBoxStockDonnees";
-            this.m_TxtBoxStockDonnees.Size = new System.Drawing.Size(235, 20);
+            this.m_TxtBoxStockDonnees.Size = new System.Drawing.Size(312, 22);
             this.m_TxtBoxStockDonnees.TabIndex = 30;
             this.m_TxtBoxStockDonnees.TextChanged += new System.EventHandler(this.m_TxtBoxStockDonnees_TextChanged);
             // 
             // m_TxtBoxStockExp
             // 
             this.m_TxtBoxStockExp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.m_TxtBoxStockExp.Location = new System.Drawing.Point(453, 238);
+            this.m_TxtBoxStockExp.Location = new System.Drawing.Point(604, 293);
+            this.m_TxtBoxStockExp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.m_TxtBoxStockExp.Name = "m_TxtBoxStockExp";
-            this.m_TxtBoxStockExp.Size = new System.Drawing.Size(235, 20);
+            this.m_TxtBoxStockExp.Size = new System.Drawing.Size(312, 22);
             this.m_TxtBoxStockExp.TabIndex = 32;
             this.m_TxtBoxStockExp.TextChanged += new System.EventHandler(this.m_TxtBoxStockExp_TextChanged);
             // 
@@ -299,10 +295,9 @@
             this.m_LblStockExp.AutoSize = true;
             this.m_LblStockExp.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblStockExp.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblStockExp.Location = new System.Drawing.Point(450, 219);
-            this.m_LblStockExp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblStockExp.Location = new System.Drawing.Point(600, 270);
             this.m_LblStockExp.Name = "m_LblStockExp";
-            this.m_LblStockExp.Size = new System.Drawing.Size(159, 15);
+            this.m_LblStockExp.Size = new System.Drawing.Size(180, 16);
             this.m_LblStockExp.TabIndex = 31;
             this.m_LblStockExp.Text = "Chemin des exportations :";
             // 
@@ -312,10 +307,9 @@
             this.m_LblMajStatus.AutoSize = true;
             this.m_LblMajStatus.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblMajStatus.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblMajStatus.Location = new System.Drawing.Point(146, 219);
-            this.m_LblMajStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblMajStatus.Location = new System.Drawing.Point(195, 270);
             this.m_LblMajStatus.Name = "m_LblMajStatus";
-            this.m_LblMajStatus.Size = new System.Drawing.Size(52, 15);
+            this.m_LblMajStatus.Size = new System.Drawing.Size(62, 16);
             this.m_LblMajStatus.TabIndex = 33;
             this.m_LblMajStatus.Text = "Status :";
             // 
@@ -325,12 +319,12 @@
             this.m_LblVMajVersion.AutoSize = true;
             this.m_LblVMajVersion.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblVMajVersion.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblVMajVersion.Location = new System.Drawing.Point(146, 238);
-            this.m_LblVMajVersion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblVMajVersion.Location = new System.Drawing.Point(195, 293);
             this.m_LblVMajVersion.Name = "m_LblVMajVersion";
-            this.m_LblVMajVersion.Size = new System.Drawing.Size(65, 15);
+            this.m_LblVMajVersion.Size = new System.Drawing.Size(73, 16);
             this.m_LblVMajVersion.TabIndex = 34;
             this.m_LblVMajVersion.Text = "Versions :";
+            this.m_LblVMajVersion.Click += new System.EventHandler(this.m_LblVMajVersion_Click);
             // 
             // m_LblMajDate
             // 
@@ -338,10 +332,9 @@
             this.m_LblMajDate.AutoSize = true;
             this.m_LblMajDate.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblMajDate.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblMajDate.Location = new System.Drawing.Point(146, 257);
-            this.m_LblMajDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblMajDate.Location = new System.Drawing.Point(195, 316);
             this.m_LblMajDate.Name = "m_LblMajDate";
-            this.m_LblMajDate.Size = new System.Drawing.Size(43, 15);
+            this.m_LblMajDate.Size = new System.Drawing.Size(49, 16);
             this.m_LblMajDate.TabIndex = 35;
             this.m_LblMajDate.Text = "Date :";
             // 
@@ -351,10 +344,9 @@
             this.m_LblInfoCredit.AutoSize = true;
             this.m_LblInfoCredit.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblInfoCredit.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblInfoCredit.Location = new System.Drawing.Point(449, 344);
-            this.m_LblInfoCredit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.m_LblInfoCredit.Location = new System.Drawing.Point(599, 423);
             this.m_LblInfoCredit.Name = "m_LblInfoCredit";
-            this.m_LblInfoCredit.Size = new System.Drawing.Size(214, 15);
+            this.m_LblInfoCredit.Size = new System.Drawing.Size(240, 16);
             this.m_LblInfoCredit.TabIndex = 36;
             this.m_LblInfoCredit.Text = "Developpée par Clément et Jérémie";
             // 
@@ -362,16 +354,17 @@
             // 
             this.m_ChekBoxPreRelease.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.m_ChekBoxPreRelease.AutoSize = true;
-            this.m_ChekBoxPreRelease.Location = new System.Drawing.Point(149, 199);
+            this.m_ChekBoxPreRelease.Location = new System.Drawing.Point(199, 245);
+            this.m_ChekBoxPreRelease.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.m_ChekBoxPreRelease.Name = "m_ChekBoxPreRelease";
-            this.m_ChekBoxPreRelease.Size = new System.Drawing.Size(122, 17);
+            this.m_ChekBoxPreRelease.Size = new System.Drawing.Size(155, 20);
             this.m_ChekBoxPreRelease.TabIndex = 37;
             this.m_ChekBoxPreRelease.Text = "Version Pre-Release";
             this.m_ChekBoxPreRelease.UseVisualStyleBackColor = true;
             // 
             // Parametres
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.m_ChekBoxPreRelease);
             this.Controls.Add(this.m_LblInfoCredit);
@@ -399,8 +392,9 @@
             this.Controls.Add(this.m_LblMiseAJour);
             this.Controls.Add(this.m_BpThemes);
             this.Controls.Add(this.m_LblApparence);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Parametres";
-            this.Size = new System.Drawing.Size(802, 512);
+            this.Size = new System.Drawing.Size(1069, 630);
             this.ResumeLayout(false);
             this.PerformLayout();
 

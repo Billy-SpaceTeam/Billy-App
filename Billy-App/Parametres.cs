@@ -171,6 +171,7 @@ namespace Billy_App
                             this.m_LblMajStatus.Text = beta ? "Mise à jour Beta disponible" : "Mise à jour disponible";
                             this.m_LblVMajVersion.Text = $"Version : {newVersionTag}" + (beta ? " Beta" : "");
                             this.m_LblMajDate.Text = $"Date : {dateStr}";
+                            this.m_LblVMajVersion.Cursor = Cursors.Hand;
 
                             JsonElement assets = derniereRelease.GetProperty("assets");
                             if (assets.GetArrayLength() > 0)
@@ -269,6 +270,45 @@ del ""%~f0""
             catch (Exception ex)
             {
                 MessageBox.Show($"Erreur lors de l'installation : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void m_LblInfoVersion_Click(object sender, EventArgs e)
+        {
+            string urlVersion = $"https://github.com/{m_RepoGitHub}/releases/{Application.ProductVersion}";
+            try
+            {
+                System.Diagnostics.Process.Start(urlVersion);
+            }
+            catch (System.ComponentModel.Win32Exception noBrowser)
+            {
+                if (noBrowser.ErrorCode == -2147467259)
+                    MessageBox.Show(noBrowser.Message);
+            }
+            catch (System.Exception other)
+            {
+                MessageBox.Show(other.Message);
+            }
+        }
+
+        private void m_LblVMajVersion_Click(object sender, EventArgs e)
+        {
+            string urlVersion = $"https://github.com/{m_RepoGitHub}/releases/latest";
+            if (download)
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start(urlVersion);
+                }
+                catch (System.ComponentModel.Win32Exception noBrowser)
+                {
+                    if (noBrowser.ErrorCode == -2147467259)
+                        MessageBox.Show(noBrowser.Message);
+                }
+                catch (System.Exception other)
+                {
+                    MessageBox.Show(other.Message);
+                }
             }
         }
     }
