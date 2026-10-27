@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.m_ChartPhotodiode = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.m_LblLiaisonSerie = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,15 +61,15 @@
             // m_ChartPhotodiode
             // 
             this.m_ChartPhotodiode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.Name = "ChartArea1";
-            this.m_ChartPhotodiode.ChartAreas.Add(chartArea1);
+            chartArea7.Name = "ChartArea1";
+            this.m_ChartPhotodiode.ChartAreas.Add(chartArea7);
             this.m_ChartPhotodiode.Location = new System.Drawing.Point(551, 313);
             this.m_ChartPhotodiode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_ChartPhotodiode.Name = "m_ChartPhotodiode";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Name = "Series1";
-            this.m_ChartPhotodiode.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Name = "Series1";
+            this.m_ChartPhotodiode.Series.Add(series7);
             this.m_ChartPhotodiode.Size = new System.Drawing.Size(520, 318);
             this.m_ChartPhotodiode.TabIndex = 0;
             this.m_ChartPhotodiode.Text = "PhotoDiode";
@@ -101,15 +101,15 @@
             // m_ChartGyroscope
             // 
             this.m_ChartGyroscope.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            chartArea2.Name = "ChartArea1";
-            this.m_ChartGyroscope.ChartAreas.Add(chartArea2);
+            chartArea8.Name = "ChartArea1";
+            this.m_ChartGyroscope.ChartAreas.Add(chartArea8);
             this.m_ChartGyroscope.Location = new System.Drawing.Point(0, 313);
             this.m_ChartGyroscope.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_ChartGyroscope.Name = "m_ChartGyroscope";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Name = "Series1";
-            this.m_ChartGyroscope.Series.Add(series2);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.Name = "Series1";
+            this.m_ChartGyroscope.Series.Add(series8);
             this.m_ChartGyroscope.Size = new System.Drawing.Size(517, 318);
             this.m_ChartGyroscope.TabIndex = 4;
             this.m_ChartGyroscope.Text = "Gyroscope";
@@ -131,24 +131,28 @@
             this.m_LblGyroModele.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.m_LblGyroModele.AutoSize = true;
             this.m_LblGyroModele.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblGyroModele.Cursor = System.Windows.Forms.Cursors.Hand;
             this.m_LblGyroModele.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_LblGyroModele.Location = new System.Drawing.Point(47, 103);
             this.m_LblGyroModele.Name = "m_LblGyroModele";
             this.m_LblGyroModele.Size = new System.Drawing.Size(74, 19);
             this.m_LblGyroModele.TabIndex = 6;
             this.m_LblGyroModele.Text = "Modèle :";
+            this.m_LblGyroModele.Click += new System.EventHandler(this.m_LblGyroModele_Click);
             // 
             // m_LblPhotoModele
             // 
             this.m_LblPhotoModele.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.m_LblPhotoModele.AutoSize = true;
             this.m_LblPhotoModele.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblPhotoModele.Cursor = System.Windows.Forms.Cursors.Hand;
             this.m_LblPhotoModele.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_LblPhotoModele.Location = new System.Drawing.Point(598, 103);
             this.m_LblPhotoModele.Name = "m_LblPhotoModele";
             this.m_LblPhotoModele.Size = new System.Drawing.Size(74, 19);
             this.m_LblPhotoModele.TabIndex = 7;
             this.m_LblPhotoModele.Text = "Modèle :";
+            this.m_LblPhotoModele.Click += new System.EventHandler(this.m_LblPhotoModele_Click);
             // 
             // m_LblPhoto
             // 
