@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.m_ChartPhotodiode = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.m_LblLiaisonSerie = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +49,11 @@
             this.m_BpDonneesPlay = new System.Windows.Forms.Button();
             this.m_LblGyro_y = new System.Windows.Forms.Label();
             this.m_LblGyro_z = new System.Windows.Forms.Label();
+            this.m_LblAccel_z = new System.Windows.Forms.Label();
+            this.m_LblAccel_y = new System.Windows.Forms.Label();
+            this.m_LblAccel_x = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_ChartPhotodiode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_ChartGyroscope)).BeginInit();
             this.SuspendLayout();
@@ -56,15 +61,15 @@
             // m_ChartPhotodiode
             // 
             this.m_ChartPhotodiode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea3.Name = "ChartArea1";
-            this.m_ChartPhotodiode.ChartAreas.Add(chartArea3);
+            chartArea1.Name = "ChartArea1";
+            this.m_ChartPhotodiode.ChartAreas.Add(chartArea1);
             this.m_ChartPhotodiode.Location = new System.Drawing.Point(551, 313);
             this.m_ChartPhotodiode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_ChartPhotodiode.Name = "m_ChartPhotodiode";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Name = "Series1";
-            this.m_ChartPhotodiode.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Name = "Series1";
+            this.m_ChartPhotodiode.Series.Add(series1);
             this.m_ChartPhotodiode.Size = new System.Drawing.Size(520, 318);
             this.m_ChartPhotodiode.TabIndex = 0;
             this.m_ChartPhotodiode.Text = "PhotoDiode";
@@ -96,15 +101,15 @@
             // m_ChartGyroscope
             // 
             this.m_ChartGyroscope.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            chartArea4.Name = "ChartArea1";
-            this.m_ChartGyroscope.ChartAreas.Add(chartArea4);
+            chartArea2.Name = "ChartArea1";
+            this.m_ChartGyroscope.ChartAreas.Add(chartArea2);
             this.m_ChartGyroscope.Location = new System.Drawing.Point(0, 313);
             this.m_ChartGyroscope.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_ChartGyroscope.Name = "m_ChartGyroscope";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Name = "Series1";
-            this.m_ChartGyroscope.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Name = "Series1";
+            this.m_ChartGyroscope.Series.Add(series2);
             this.m_ChartGyroscope.Size = new System.Drawing.Size(517, 318);
             this.m_ChartGyroscope.TabIndex = 4;
             this.m_ChartGyroscope.Text = "Gyroscope";
@@ -117,9 +122,9 @@
             this.m_LblGyro_x.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_LblGyro_x.Location = new System.Drawing.Point(47, 166);
             this.m_LblGyro_x.Name = "m_LblGyro_x";
-            this.m_LblGyro_x.Size = new System.Drawing.Size(81, 19);
+            this.m_LblGyro_x.Size = new System.Drawing.Size(30, 19);
             this.m_LblGyro_x.TabIndex = 5;
-            this.m_LblGyro_x.Text = "Valeur x :";
+            this.m_LblGyro_x.Text = "x :";
             // 
             // m_LblGyroModele
             // 
@@ -127,7 +132,7 @@
             this.m_LblGyroModele.AutoSize = true;
             this.m_LblGyroModele.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblGyroModele.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblGyroModele.Location = new System.Drawing.Point(47, 116);
+            this.m_LblGyroModele.Location = new System.Drawing.Point(47, 103);
             this.m_LblGyroModele.Name = "m_LblGyroModele";
             this.m_LblGyroModele.Size = new System.Drawing.Size(74, 19);
             this.m_LblGyroModele.TabIndex = 6;
@@ -139,7 +144,7 @@
             this.m_LblPhotoModele.AutoSize = true;
             this.m_LblPhotoModele.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblPhotoModele.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblPhotoModele.Location = new System.Drawing.Point(599, 116);
+            this.m_LblPhotoModele.Location = new System.Drawing.Point(598, 103);
             this.m_LblPhotoModele.Name = "m_LblPhotoModele";
             this.m_LblPhotoModele.Size = new System.Drawing.Size(74, 19);
             this.m_LblPhotoModele.TabIndex = 7;
@@ -163,7 +168,7 @@
             this.m_LblPhotoConstructeur.AutoSize = true;
             this.m_LblPhotoConstructeur.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblPhotoConstructeur.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblPhotoConstructeur.Location = new System.Drawing.Point(599, 135);
+            this.m_LblPhotoConstructeur.Location = new System.Drawing.Point(598, 122);
             this.m_LblPhotoConstructeur.Name = "m_LblPhotoConstructeur";
             this.m_LblPhotoConstructeur.Size = new System.Drawing.Size(118, 19);
             this.m_LblPhotoConstructeur.TabIndex = 9;
@@ -175,7 +180,7 @@
             this.m_LblGyroConstructeur.AutoSize = true;
             this.m_LblGyroConstructeur.BackColor = System.Drawing.SystemColors.Control;
             this.m_LblGyroConstructeur.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_LblGyroConstructeur.Location = new System.Drawing.Point(47, 135);
+            this.m_LblGyroConstructeur.Location = new System.Drawing.Point(47, 122);
             this.m_LblGyroConstructeur.Name = "m_LblGyroConstructeur";
             this.m_LblGyroConstructeur.Size = new System.Drawing.Size(118, 19);
             this.m_LblGyroConstructeur.TabIndex = 10;
@@ -230,9 +235,9 @@
             this.m_LblGyro_y.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_LblGyro_y.Location = new System.Drawing.Point(47, 185);
             this.m_LblGyro_y.Name = "m_LblGyro_y";
-            this.m_LblGyro_y.Size = new System.Drawing.Size(81, 19);
+            this.m_LblGyro_y.Size = new System.Drawing.Size(30, 19);
             this.m_LblGyro_y.TabIndex = 14;
-            this.m_LblGyro_y.Text = "Valeur y :";
+            this.m_LblGyro_y.Text = "y :";
             // 
             // m_LblGyro_z
             // 
@@ -242,15 +247,80 @@
             this.m_LblGyro_z.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_LblGyro_z.Location = new System.Drawing.Point(46, 204);
             this.m_LblGyro_z.Name = "m_LblGyro_z";
-            this.m_LblGyro_z.Size = new System.Drawing.Size(81, 19);
+            this.m_LblGyro_z.Size = new System.Drawing.Size(30, 19);
             this.m_LblGyro_z.TabIndex = 15;
-            this.m_LblGyro_z.Text = "Valeur z :";
+            this.m_LblGyro_z.Text = "z :";
+            // 
+            // m_LblAccel_z
+            // 
+            this.m_LblAccel_z.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_LblAccel_z.AutoSize = true;
+            this.m_LblAccel_z.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblAccel_z.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblAccel_z.Location = new System.Drawing.Point(276, 204);
+            this.m_LblAccel_z.Name = "m_LblAccel_z";
+            this.m_LblAccel_z.Size = new System.Drawing.Size(30, 19);
+            this.m_LblAccel_z.TabIndex = 18;
+            this.m_LblAccel_z.Text = "z :";
+            // 
+            // m_LblAccel_y
+            // 
+            this.m_LblAccel_y.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_LblAccel_y.AutoSize = true;
+            this.m_LblAccel_y.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblAccel_y.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblAccel_y.Location = new System.Drawing.Point(277, 185);
+            this.m_LblAccel_y.Name = "m_LblAccel_y";
+            this.m_LblAccel_y.Size = new System.Drawing.Size(30, 19);
+            this.m_LblAccel_y.TabIndex = 17;
+            this.m_LblAccel_y.Text = "y :";
+            // 
+            // m_LblAccel_x
+            // 
+            this.m_LblAccel_x.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.m_LblAccel_x.AutoSize = true;
+            this.m_LblAccel_x.BackColor = System.Drawing.SystemColors.Control;
+            this.m_LblAccel_x.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_LblAccel_x.Location = new System.Drawing.Point(277, 166);
+            this.m_LblAccel_x.Name = "m_LblAccel_x";
+            this.m_LblAccel_x.Size = new System.Drawing.Size(30, 19);
+            this.m_LblAccel_x.TabIndex = 16;
+            this.m_LblAccel_x.Text = "x :";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
+            this.label5.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(47, 147);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 19);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Gyroscope :";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.Control;
+            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(276, 147);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(117, 19);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Accelerometre";
             // 
             // Données
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.m_LblAccel_z);
+            this.Controls.Add(this.m_LblAccel_y);
+            this.Controls.Add(this.m_LblAccel_x);
             this.Controls.Add(this.m_LblGyro_z);
             this.Controls.Add(this.m_LblGyro_y);
             this.Controls.Add(this.m_BpDonneesPlay);
@@ -294,5 +364,10 @@
         private System.Windows.Forms.Button m_BpDonneesPlay;
         private System.Windows.Forms.Label m_LblGyro_y;
         private System.Windows.Forms.Label m_LblGyro_z;
+        private System.Windows.Forms.Label m_LblAccel_z;
+        private System.Windows.Forms.Label m_LblAccel_y;
+        private System.Windows.Forms.Label m_LblAccel_x;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
