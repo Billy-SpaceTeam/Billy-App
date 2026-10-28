@@ -23,7 +23,6 @@ namespace Billy_App
         private bool themeSombre = false;
         private readonly string SiteProjet = "https://github.com/Billy-SpaceTeam";
         private readonly string m_RepoGitHub = "Billy-SpaceTeam/Billy-App";
-        private readonly string m_DateVersion = "25/10/2026";
         private bool download;
         private string urlDownload;
         public Parametres(Form1 parent)
@@ -37,8 +36,10 @@ namespace Billy_App
             this.m_TxtBoxStockDonnees.Text = Properties.Settings.Default.CheminDonnees;
             this.m_TxtBoxStockExp.Text = Properties.Settings.Default.CheminExp;
 
+            string exePath = Application.ExecutablePath;
             this.m_LblInfoVersion.Text = $"Version actuelle : {Application.ProductVersion}";
-            this.m_LblInfoDate.Text = $"Date de la version : {m_DateVersion}";
+            string dateVersion = System.IO.File.GetLastWriteTime(exePath).ToString("dd/MM/yyyy");
+            this.m_LblInfoDate.Text = $"Date de la version : {dateVersion}";
         }
 
         private void m_BpThemes_Click(object sender, EventArgs e)
