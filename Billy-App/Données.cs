@@ -22,7 +22,7 @@ namespace Billy_App
         private int y_Accel = 2;
         private int z_Accel = 3;
         private bool Play = false;
-        private readonly string SiteGyro = "https://img.dfrobot.com.cn/wiki/5b973267c87e6f19943ab3ad/a1a4d9e8c56d96319695a90095ad1c98.pdf";
+        private readonly string SiteGyro = "https://www.farnell.com/datasheets/4376716.pdf?_gl=1*3s1c18*_gcl_au*NjMyNTc4NzM1LjE3OTMxOTE0ODc.";
         private readonly string SitePhotoDiode = "https://www.vishay.com/docs/81521/bpw34.pdf";
         public Données()
         {
